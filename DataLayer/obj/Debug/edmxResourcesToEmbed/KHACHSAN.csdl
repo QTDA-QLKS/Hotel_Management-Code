@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KHACHSAN" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_DatPhong">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDKH" Type="Int32" />
+    <Property Name="IDPHONG" Type="Int32" />
+    <Property Name="NGAYDAT" Type="DateTime" Precision="3" />
+    <Property Name="NGAYTRA" Type="DateTime" Precision="3" />
+    <Property Name="SONGAYTHUCO" Type="Int32" />
+    <Property Name="UID" Type="Int32" />
+    <Property Name="IDSP" Type="Int32" />
+    <NavigationProperty Name="tb_KhachHang" Relationship="Self.FK_tb_DatPhong_tb_KhachHang" FromRole="tb_DatPhong" ToRole="tb_KhachHang" />
+    <NavigationProperty Name="tb_Phong" Relationship="Self.FK_tb_DatPhong_tb_Phong" FromRole="tb_DatPhong" ToRole="tb_Phong" />
+    <NavigationProperty Name="tb_Users" Relationship="Self.FK_tb_DatPhong_tb_Users" FromRole="tb_DatPhong" ToRole="tb_Users" />
+  </EntityType>
+  <EntityType Name="tb_Func">
+    <Key>
+      <PropertyRef Name="FUNC_CODE" />
+      <PropertyRef Name="SORT" />
+    </Key>
+    <Property Name="FUNC_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SORT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISGROUP" Type="Boolean" />
+    <Property Name="PARENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MENU" Type="Boolean" />
+    <Property Name="TIPS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tb_KhachHang">
+    <Key>
+      <PropertyRef Name="IDKH" />
+    </Key>
+    <Property Name="IDKH" Type="Int32" Nullable="false" />
+    <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CCCD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIENTHOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_DatPhong" Relationship="Self.FK_tb_DatPhong_tb_KhachHang" FromRole="tb_KhachHang" ToRole="tb_DatPhong" />
+  </EntityType>
+  <EntityType Name="tb_LoaiPhong">
+    <Key>
+      <PropertyRef Name="IDLOAIPHONG" />
+    </Key>
+    <Property Name="IDLOAIPHONG" Type="Int32" Nullable="false" />
+    <Property Name="TENLOAIPHONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DONGIA" Type="Double" />
+    <Property Name="SONGUOI" Type="Int32" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <NavigationProperty Name="tb_Phong" Relationship="Self.FK_tb_Phong_tb_LoaiPhong" FromRole="tb_LoaiPhong" ToRole="tb_Phong" />
+  </EntityType>
+  <EntityType Name="tb_Phong">
+    <Key>
+      <PropertyRef Name="IDPHONG" />
+    </Key>
+    <Property Name="IDPHONG" Type="Int32" Nullable="false" />
+    <Property Name="TENPHONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TRANGTHAI" Type="Boolean" />
+    <Property Name="IDTANG" Type="Int32" Nullable="false" />
+    <Property Name="IDLOAIPHONG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tb_DatPhong" Relationship="Self.FK_tb_DatPhong_tb_Phong" FromRole="tb_Phong" ToRole="tb_DatPhong" />
+    <NavigationProperty Name="tb_LoaiPhong" Relationship="Self.FK_tb_Phong_tb_LoaiPhong" FromRole="tb_Phong" ToRole="tb_LoaiPhong" />
+    <NavigationProperty Name="tb_Tang" Relationship="Self.FK_tb_Phong_tb_Tang" FromRole="tb_Phong" ToRole="tb_Tang" />
+  </EntityType>
+  <EntityType Name="tb_SanPham">
+    <Key>
+      <PropertyRef Name="IDSP" />
+    </Key>
+    <Property Name="IDSP" Type="Int32" Nullable="false" />
+    <Property Name="TENSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DONGIA" Type="Double" />
+  </EntityType>
+  <EntityType Name="tb_Tang">
+    <Key>
+      <PropertyRef Name="IDTANG" />
+    </Key>
+    <Property Name="IDTANG" Type="Int32" Nullable="false" />
+    <Property Name="TENTANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_Phong" Relationship="Self.FK_tb_Phong_tb_Tang" FromRole="tb_Tang" ToRole="tb_Phong" />
+  </EntityType>
+  <EntityType Name="tb_Users">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FULLNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISGROUP" Type="Boolean" />
+    <Property Name="DISABLED" Type="Boolean" />
+    <NavigationProperty Name="tb_DatPhong" Relationship="Self.FK_tb_DatPhong_tb_Users" FromRole="tb_Users" ToRole="tb_DatPhong" />
+  </EntityType>
+  <Association Name="FK_tb_DatPhong_tb_KhachHang">
+    <End Role="tb_KhachHang" Type="Self.tb_KhachHang" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tb_DatPhong" Type="Self.tb_DatPhong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_KhachHang">
+        <PropertyRef Name="IDKH" />
+      </Principal>
+      <Dependent Role="tb_DatPhong">
+        <PropertyRef Name="IDKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_DatPhong_tb_Phong">
+    <End Role="tb_Phong" Type="Self.tb_Phong" Multiplicity="0..1" />
+    <End Role="tb_DatPhong" Type="Self.tb_DatPhong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Phong">
+        <PropertyRef Name="IDPHONG" />
+      </Principal>
+      <Dependent Role="tb_DatPhong">
+        <PropertyRef Name="IDPHONG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_DatPhong_tb_Users">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="0..1" />
+    <End Role="tb_DatPhong" Type="Self.tb_DatPhong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="tb_DatPhong">
+        <PropertyRef Name="UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_Phong_tb_LoaiPhong">
+    <End Role="tb_LoaiPhong" Type="Self.tb_LoaiPhong" Multiplicity="1" />
+    <End Role="tb_Phong" Type="Self.tb_Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_LoaiPhong">
+        <PropertyRef Name="IDLOAIPHONG" />
+      </Principal>
+      <Dependent Role="tb_Phong">
+        <PropertyRef Name="IDLOAIPHONG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_Phong_tb_Tang">
+    <End Role="tb_Tang" Type="Self.tb_Tang" Multiplicity="1" />
+    <End Role="tb_Phong" Type="Self.tb_Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Tang">
+        <PropertyRef Name="IDTANG" />
+      </Principal>
+      <Dependent Role="tb_Phong">
+        <PropertyRef Name="IDTANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tb_DatPhong" EntityType="Self.tb_DatPhong" />
+    <EntitySet Name="tb_Func" EntityType="Self.tb_Func" />
+    <EntitySet Name="tb_KhachHang" EntityType="Self.tb_KhachHang" />
+    <EntitySet Name="tb_LoaiPhong" EntityType="Self.tb_LoaiPhong" />
+    <EntitySet Name="tb_Phong" EntityType="Self.tb_Phong" />
+    <EntitySet Name="tb_SanPham" EntityType="Self.tb_SanPham" />
+    <EntitySet Name="tb_Tang" EntityType="Self.tb_Tang" />
+    <EntitySet Name="tb_Users" EntityType="Self.tb_Users" />
+    <AssociationSet Name="FK_tb_DatPhong_tb_KhachHang" Association="Self.FK_tb_DatPhong_tb_KhachHang">
+      <End Role="tb_KhachHang" EntitySet="tb_KhachHang" />
+      <End Role="tb_DatPhong" EntitySet="tb_DatPhong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_DatPhong_tb_Phong" Association="Self.FK_tb_DatPhong_tb_Phong">
+      <End Role="tb_Phong" EntitySet="tb_Phong" />
+      <End Role="tb_DatPhong" EntitySet="tb_DatPhong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_DatPhong_tb_Users" Association="Self.FK_tb_DatPhong_tb_Users">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_DatPhong" EntitySet="tb_DatPhong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_Phong_tb_LoaiPhong" Association="Self.FK_tb_Phong_tb_LoaiPhong">
+      <End Role="tb_LoaiPhong" EntitySet="tb_LoaiPhong" />
+      <End Role="tb_Phong" EntitySet="tb_Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_Phong_tb_Tang" Association="Self.FK_tb_Phong_tb_Tang">
+      <End Role="tb_Tang" EntitySet="tb_Tang" />
+      <End Role="tb_Phong" EntitySet="tb_Phong" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

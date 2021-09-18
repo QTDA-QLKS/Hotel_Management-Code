@@ -51,11 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONGTY.cs" />
+    <Compile Include="FUNC.cs" />
+    <Compile Include="PHONG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TANG.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">

@@ -47,7 +47,7 @@ namespace DataLayer
             this.database = _database;
         }
 
-        public void ConnectData()
+        public void SaveFile()
         {
             if (File.Exists("connectdb.dba"))
                 File.Delete("connectdb.dba");

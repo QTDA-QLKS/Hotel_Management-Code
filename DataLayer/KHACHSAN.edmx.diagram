@@ -4,21 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5aaccb8f016e40d9b5dcdf0cb26c3ba9" Name="Diagram1">
-        <EntityTypeShape EntityType="KHACHSAN.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KHACHSAN.tb_DatPhong" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="KHACHSAN.tb_Func" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KHACHSAN.tb_KhachHang" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KHACHSAN.tb_LoaiPhong" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KHACHSAN.tb_Phong" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KHACHSAN.tb_SanPham" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KHACHSAN.tb_Tang" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KHACHSAN.tb_Users" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_tb_KhachHang" ManuallyRouted="false" />
-        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_tb_Phong" ManuallyRouted="false" />
-        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_tb_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="KHACHSAN.FK_tb_Phong_tb_LoaiPhong" ManuallyRouted="false" />
-        <AssociationConnector Association="KHACHSAN.FK_tb_Phong_tb_Tang" ManuallyRouted="false" />
+      <Diagram DiagramId="9ecb4585a6bd4ff0bfdfe29aa862c911" Name="Diagram1">
+        <EntityTypeShape EntityType="KHACHSAN.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_CongTy" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_DatPhong" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_DatPhong_CT" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_DatPhong_SanPham" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_DonVi" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_KhachHang" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_LoaiPhong" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_Param" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_Phong" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_Phong_ThietBi" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SanPham" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SYS_FUNC" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SYS_GROUP" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SYS_REPORT" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SYS_RIGHT" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SYS_RIGHT_REP" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SYS_USER" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_Tang" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_ThietBi" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

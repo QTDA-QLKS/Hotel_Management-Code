@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace THUEPHONG
@@ -13,7 +14,15 @@ namespace THUEPHONG
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            if (File.Exists("connectdb.dba"))
+            {
+                Application.Run(new frmMain());
+            }
+            else
+            {
+                Application.Run(new frmKetNoiDB());
+            }    
+               
         }
     }
 }

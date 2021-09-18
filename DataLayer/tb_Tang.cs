@@ -14,16 +14,8 @@ namespace DataLayer
     
     public partial class tb_Tang
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_Tang()
-        {
-            this.tb_Phong = new HashSet<tb_Phong>();
-        }
-    
         public int IDTANG { get; set; }
         public string TENTANG { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Phong> tb_Phong { get; set; }
+        public Nullable<bool> DISABLED { get; set; }
     }
 }

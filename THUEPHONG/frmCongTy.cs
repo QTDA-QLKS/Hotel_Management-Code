@@ -102,6 +102,7 @@ namespace THUEPHONG
             if (_them)
             {
                 tb_CongTy cty = new tb_CongTy();
+                cty.MACTY = txtMACTY.Text;
                 cty.TENCTY = txtTen.Text;
                 cty.DIACHI = txtDiaChi.Text;
                 cty.DIENTHOAI = txtDienThoai.Text;

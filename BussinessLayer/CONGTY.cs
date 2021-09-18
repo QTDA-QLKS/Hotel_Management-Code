@@ -33,5 +33,36 @@ namespace BussinessLayer
                 throw new Exception("Có lỗi"+ex.Message);
             }
         }
+        public void update(tb_CongTy cty)
+        {
+            tb_CongTy _cty = db.tb_CongTy.FirstOrDefault(x=>x.MACTY==cty.MACTY);
+            _cty.TENCTY = cty.TENCTY;
+            _cty.DIENTHOAI = cty.DIENTHOAI;
+            _cty.FAX = cty.FAX;
+            _cty.EMAIL = cty.EMAIL;
+            _cty.DIACHI = cty.DIACHI;
+            _cty.DISABLED = cty.DISABLED;
+            try
+            {
+                db.SaveChanges();
+
+            }catch(Exception ex)
+            {
+                throw new Exception("Có lỗi xảy ra " + ex.Message);
+            }
+
+        }
+        public void delete (string macty)
+        {
+            tb_CongTy cty = db.tb_CongTy.FirstOrDefault(x => x.MACTY == macty);
+            cty.DISABLED = true;
+            try
+            {
+                db.SaveChanges();
+            }catch (Exception ex)
+            {
+                throw new Exception("Lỗi rồi bạn ơi" + ex.Message);
+            }
+        }
     }
 }

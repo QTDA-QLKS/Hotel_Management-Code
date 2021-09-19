@@ -14,11 +14,20 @@ namespace DataLayer
     
     public partial class tb_LoaiPhong
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tb_LoaiPhong()
+        {
+            this.tb_Phong = new HashSet<tb_Phong>();
+        }
+    
         public int IDLOAIPHONG { get; set; }
         public string TENLOAIPHONG { get; set; }
         public Nullable<double> DONGIA { get; set; }
         public Nullable<int> SONGUOITOIDA { get; set; }
         public Nullable<int> SOGIUONG { get; set; }
         public Nullable<bool> DISABLED { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_Phong> tb_Phong { get; set; }
     }
 }

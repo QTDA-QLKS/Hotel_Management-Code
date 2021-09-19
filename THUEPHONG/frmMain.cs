@@ -117,6 +117,12 @@ namespace THUEPHONG
                         frm.ShowDialog();
                         break;
                     }
+                case "KHACHHANG":
+                    {
+                        frmKhachHang frm = new frmKhachHang();
+                        frm.ShowDialog();
+                        break;
+                    }
             }
         }
 

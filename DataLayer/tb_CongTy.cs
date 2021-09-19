@@ -14,6 +14,13 @@ namespace DataLayer
     
     public partial class tb_CongTy
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tb_CongTy()
+        {
+            this.tb_DatPhong = new HashSet<tb_DatPhong>();
+            this.tb_Param = new HashSet<tb_Param>();
+        }
+    
         public string MACTY { get; set; }
         public string TENCTY { get; set; }
         public string DIENTHOAI { get; set; }
@@ -21,5 +28,10 @@ namespace DataLayer
         public string FAX { get; set; }
         public string DIACHI { get; set; }
         public Nullable<bool> DISABLED { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_DatPhong> tb_DatPhong { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_Param> tb_Param { get; set; }
     }
 }

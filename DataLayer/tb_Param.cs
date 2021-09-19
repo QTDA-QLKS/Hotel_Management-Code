@@ -18,5 +18,7 @@ namespace DataLayer
         public string MADVI { get; set; }
         public string TENCTY { get; set; }
         public string TENDVI { get; set; }
+    
+        public virtual tb_CongTy tb_CongTy { get; set; }
     }
 }

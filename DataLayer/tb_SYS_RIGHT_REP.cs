@@ -17,5 +17,7 @@ namespace DataLayer
         public int REP_CODE { get; set; }
         public int IDUSER { get; set; }
         public Nullable<bool> USER_RIGHT { get; set; }
+    
+        public virtual tb_SYS_REPORT tb_SYS_REPORT { get; set; }
     }
 }

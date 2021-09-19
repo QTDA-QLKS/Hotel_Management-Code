@@ -58,7 +58,6 @@ namespace BussinessLayer
         public void delete(string madvi)
         {
             tb_DonVi _dvi = db.tb_DonVi.FirstOrDefault(x => x.MADVI == madvi);
-            _dvi.DISABLED = true;
             try
             {
                 db.SaveChanges();

@@ -14,11 +14,22 @@ namespace DataLayer
     
     public partial class tb_Phong
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tb_Phong()
+        {
+            this.tb_Phong_ThietBi = new HashSet<tb_Phong_ThietBi>();
+        }
+    
         public int IDPHONG { get; set; }
         public string TENPHONG { get; set; }
         public Nullable<bool> STATUS { get; set; }
         public int IDTANG { get; set; }
         public int IDLOAIPHONG { get; set; }
         public Nullable<bool> DISABLED { get; set; }
+    
+        public virtual tb_LoaiPhong tb_LoaiPhong { get; set; }
+        public virtual tb_Tang tb_Tang { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_Phong_ThietBi> tb_Phong_ThietBi { get; set; }
     }
 }

@@ -25,6 +25,17 @@
         <EntityTypeShape EntityType="KHACHSAN.tb_SYS_USER" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KHACHSAN.tb_Tang" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KHACHSAN.tb_ThietBi" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_tb_CongTy" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_Param_tb_CongTy" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_CT_tb_DatPhong" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_SanPham_tb_DatPhong" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_tb_KhachHang" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_SanPham_tb_SanPham" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_Phong_tb_LoaiPhong" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_Phong_tb_Tang" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_Phong_ThietBi_tb_Phong" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_Phong_ThietBi_tb_ThietBi" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_SYS_RIGHT_REP_tb_SYS_REPORT" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

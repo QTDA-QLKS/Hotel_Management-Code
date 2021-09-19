@@ -17,5 +17,8 @@ namespace DataLayer
         public int IDPHONG { get; set; }
         public int IDTB { get; set; }
         public Nullable<int> SOLUONG { get; set; }
+    
+        public virtual tb_Phong tb_Phong { get; set; }
+        public virtual tb_ThietBi tb_ThietBi { get; set; }
     }
 }

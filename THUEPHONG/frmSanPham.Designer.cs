@@ -1,7 +1,7 @@
 ﻿
 namespace THUEPHONG
 {
-    partial class frmTang
+    partial class frmSanPham
     {
         /// <summary>
         /// Required designer variable.
@@ -39,12 +39,14 @@ namespace THUEPHONG
             this.gcDanhSach = new DevExpress.XtraGrid.GridControl();
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.DISABLED = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TENTANG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENSP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTenSP = new System.Windows.Forms.TextBox();
             this.chDisabled = new System.Windows.Forms.CheckBox();
-            this.txtTen = new System.Windows.Forms.TextBox();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
@@ -63,8 +65,8 @@ namespace THUEPHONG
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(723, 47);
-            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Size = new System.Drawing.Size(768, 47);
+            this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnThem
@@ -133,8 +135,8 @@ namespace THUEPHONG
             this.gcDanhSach.Location = new System.Drawing.Point(0, 47);
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(723, 200);
-            this.gcDanhSach.TabIndex = 2;
+            this.gcDanhSach.Size = new System.Drawing.Size(768, 200);
+            this.gcDanhSach.TabIndex = 3;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
             // 
@@ -142,7 +144,8 @@ namespace THUEPHONG
             // 
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.DISABLED,
-            this.TENTANG});
+            this.TENSP,
+            this.DONGIA});
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
             this.gvDanhSach.OptionsView.ShowGroupPanel = false;
@@ -156,77 +159,102 @@ namespace THUEPHONG
             this.DISABLED.Name = "DISABLED";
             this.DISABLED.Visible = true;
             this.DISABLED.VisibleIndex = 0;
-            this.DISABLED.Width = 50;
+            this.DISABLED.Width = 25;
             // 
-            // TENTANG
+            // TENSP
             // 
-            this.TENTANG.Caption = "TÊN TẦNG";
-            this.TENTANG.FieldName = "TENTANG";
-            this.TENTANG.MinWidth = 25;
-            this.TENTANG.Name = "TENTANG";
-            this.TENTANG.Visible = true;
-            this.TENTANG.VisibleIndex = 1;
-            this.TENTANG.Width = 643;
+            this.TENSP.Caption = "TÊN SP";
+            this.TENSP.FieldName = "TENSP";
+            this.TENSP.MinWidth = 25;
+            this.TENSP.Name = "TENSP";
+            this.TENSP.Visible = true;
+            this.TENSP.VisibleIndex = 1;
+            this.TENSP.Width = 357;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.Caption = "ĐƠN GIÁ";
+            this.DONGIA.FieldName = "DONGIA";
+            this.DONGIA.MinWidth = 25;
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.Visible = true;
+            this.DONGIA.VisibleIndex = 2;
+            this.DONGIA.Width = 356;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtTenSP);
             this.groupBox1.Controls.Add(this.chDisabled);
-            this.groupBox1.Controls.Add(this.txtTen);
+            this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 247);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(723, 101);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(768, 120);
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(29, 39);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 17);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Tên SP";
+            // 
+            // txtTenSP
+            // 
+            this.txtTenSP.Location = new System.Drawing.Point(107, 34);
+            this.txtTenSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.Size = new System.Drawing.Size(187, 23);
+            this.txtTenSP.TabIndex = 11;
             // 
             // chDisabled
             // 
             this.chDisabled.AutoSize = true;
-            this.chDisabled.Location = new System.Drawing.Point(622, 38);
+            this.chDisabled.Location = new System.Drawing.Point(680, 37);
+            this.chDisabled.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chDisabled.Name = "chDisabled";
             this.chDisabled.Size = new System.Drawing.Size(80, 21);
-            this.chDisabled.TabIndex = 11;
+            this.chDisabled.TabIndex = 10;
             this.chDisabled.Text = "Disabled";
             this.chDisabled.UseVisualStyleBackColor = true;
             // 
-            // txtTen
+            // txtDonGia
             // 
-            this.txtTen.Location = new System.Drawing.Point(78, 36);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(523, 23);
-            this.txtTen.TabIndex = 1;
+            this.txtDonGia.Location = new System.Drawing.Point(391, 35);
+            this.txtDonGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(212, 23);
+            this.txtDonGia.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 36);
+            this.label1.Location = new System.Drawing.Point(300, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 17);
+            this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tên";
+            this.label1.Text = "Đơn Giá";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(78, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(523, 23);
-            this.textBox1.TabIndex = 12;
-            // 
-            // frmTang
+            // frmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 348);
+            this.ClientSize = new System.Drawing.Size(768, 367);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "frmTang";
+            this.Name = "frmSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản Lý Tầng";
-            this.Load += new System.EventHandler(this.frmTang_Load);
+            this.Text = "Sản Phẩm -Dịch Vụ";
+            this.Load += new System.EventHandler(this.frmSanPham_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).EndInit();
@@ -250,11 +278,13 @@ namespace THUEPHONG
         private DevExpress.XtraGrid.GridControl gcDanhSach;
         private DevExpress.XtraGrid.Views.Grid.GridView gvDanhSach;
         private DevExpress.XtraGrid.Columns.GridColumn DISABLED;
-        private DevExpress.XtraGrid.Columns.GridColumn TENTANG;
+        private DevExpress.XtraGrid.Columns.GridColumn TENSP;
+        private DevExpress.XtraGrid.Columns.GridColumn DONGIA;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtTen;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.CheckBox chDisabled;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDonGia;
+        private System.Windows.Forms.Label label1;
     }
 }

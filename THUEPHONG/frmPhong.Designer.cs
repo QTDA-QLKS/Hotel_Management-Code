@@ -1,7 +1,7 @@
 ﻿
 namespace THUEPHONG
 {
-    partial class frmTang
+    partial class frmPhong
     {
         /// <summary>
         /// Required designer variable.
@@ -39,12 +39,19 @@ namespace THUEPHONG
             this.gcDanhSach = new DevExpress.XtraGrid.GridControl();
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.DISABLED = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.STATUS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENTANG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENLOAIPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboCty = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtMACTY = new System.Windows.Forms.TextBox();
             this.chDisabled = new System.Windows.Forms.CheckBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
@@ -63,7 +70,7 @@ namespace THUEPHONG
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(723, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(760, 47);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -75,7 +82,6 @@ namespace THUEPHONG
             this.btnThem.Size = new System.Drawing.Size(50, 44);
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -85,7 +91,6 @@ namespace THUEPHONG
             this.btnSua.Size = new System.Drawing.Size(38, 44);
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -95,7 +100,6 @@ namespace THUEPHONG
             this.btnXoa.Size = new System.Drawing.Size(39, 44);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -105,7 +109,6 @@ namespace THUEPHONG
             this.btnLuu.Size = new System.Drawing.Size(37, 44);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnBoQua
             // 
@@ -115,7 +118,6 @@ namespace THUEPHONG
             this.btnBoQua.Size = new System.Drawing.Size(60, 44);
             this.btnBoQua.Text = "Bỏ qua";
             this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
             // 
             // btnThoat
             // 
@@ -125,7 +127,6 @@ namespace THUEPHONG
             this.btnThoat.Size = new System.Drawing.Size(51, 44);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // gcDanhSach
             // 
@@ -133,7 +134,7 @@ namespace THUEPHONG
             this.gcDanhSach.Location = new System.Drawing.Point(0, 47);
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(723, 200);
+            this.gcDanhSach.Size = new System.Drawing.Size(760, 200);
             this.gcDanhSach.TabIndex = 2;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -142,11 +143,13 @@ namespace THUEPHONG
             // 
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.DISABLED,
-            this.TENTANG});
+            this.TENPHONG,
+            this.STATUS,
+            this.TENTANG,
+            this.TENLOAIPHONG});
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
             this.gvDanhSach.OptionsView.ShowGroupPanel = false;
-            this.gvDanhSach.Click += new System.EventHandler(this.gvDanhSach_Click);
             // 
             // DISABLED
             // 
@@ -156,7 +159,27 @@ namespace THUEPHONG
             this.DISABLED.Name = "DISABLED";
             this.DISABLED.Visible = true;
             this.DISABLED.VisibleIndex = 0;
-            this.DISABLED.Width = 50;
+            this.DISABLED.Width = 36;
+            // 
+            // TENPHONG
+            // 
+            this.TENPHONG.Caption = "TÊN PHÒNG";
+            this.TENPHONG.FieldName = "TENPHONG";
+            this.TENPHONG.MinWidth = 25;
+            this.TENPHONG.Name = "TENPHONG";
+            this.TENPHONG.Visible = true;
+            this.TENPHONG.VisibleIndex = 1;
+            this.TENPHONG.Width = 159;
+            // 
+            // STATUS
+            // 
+            this.STATUS.Caption = "TRẠNG THÁI";
+            this.STATUS.FieldName = "STATUS";
+            this.STATUS.MinWidth = 25;
+            this.STATUS.Name = "STATUS";
+            this.STATUS.Visible = true;
+            this.STATUS.VisibleIndex = 2;
+            this.STATUS.Width = 98;
             // 
             // TENTANG
             // 
@@ -165,68 +188,124 @@ namespace THUEPHONG
             this.TENTANG.MinWidth = 25;
             this.TENTANG.Name = "TENTANG";
             this.TENTANG.Visible = true;
-            this.TENTANG.VisibleIndex = 1;
-            this.TENTANG.Width = 643;
+            this.TENTANG.VisibleIndex = 3;
+            this.TENTANG.Width = 172;
+            // 
+            // TENLOAIPHONG
+            // 
+            this.TENLOAIPHONG.Caption = "TÊN LOẠI PHÒNG";
+            this.TENLOAIPHONG.FieldName = "TENLOAIPHONG";
+            this.TENLOAIPHONG.MinWidth = 25;
+            this.TENLOAIPHONG.Name = "TENLOAIPHONG";
+            this.TENLOAIPHONG.Visible = true;
+            this.TENLOAIPHONG.VisibleIndex = 4;
+            this.TENLOAIPHONG.Width = 98;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.cboCty);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtMACTY);
             this.groupBox1.Controls.Add(this.chDisabled);
             this.groupBox1.Controls.Add(this.txtTen);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 247);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(723, 101);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(760, 181);
+            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
+            // 
+            // cboCty
+            // 
+            this.cboCty.FormattingEnabled = true;
+            this.cboCty.Location = new System.Drawing.Point(107, 78);
+            this.cboCty.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboCty.Name = "cboCty";
+            this.cboCty.Size = new System.Drawing.Size(187, 24);
+            this.cboCty.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(29, 85);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 17);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Tầng";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(29, 39);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 17);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Tên Phòng";
+            // 
+            // txtMACTY
+            // 
+            this.txtMACTY.Location = new System.Drawing.Point(107, 34);
+            this.txtMACTY.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMACTY.Name = "txtMACTY";
+            this.txtMACTY.Size = new System.Drawing.Size(187, 23);
+            this.txtMACTY.TabIndex = 11;
             // 
             // chDisabled
             // 
             this.chDisabled.AutoSize = true;
-            this.chDisabled.Location = new System.Drawing.Point(622, 38);
+            this.chDisabled.Location = new System.Drawing.Point(509, 81);
+            this.chDisabled.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chDisabled.Name = "chDisabled";
             this.chDisabled.Size = new System.Drawing.Size(80, 21);
-            this.chDisabled.TabIndex = 11;
+            this.chDisabled.TabIndex = 10;
             this.chDisabled.Text = "Disabled";
             this.chDisabled.UseVisualStyleBackColor = true;
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(78, 36);
+            this.txtTen.Location = new System.Drawing.Point(391, 35);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(523, 23);
+            this.txtTen.Size = new System.Drawing.Size(249, 23);
             this.txtTen.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 36);
+            this.label1.Location = new System.Drawing.Point(300, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 17);
+            this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tên";
+            this.label1.Text = "Loại Phòng";
             // 
-            // textBox1
+            // checkBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(523, 23);
-            this.textBox1.TabIndex = 12;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(391, 78);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 21);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.Text = "Disabled";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // frmTang
+            // frmPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 348);
+            this.ClientSize = new System.Drawing.Size(760, 428);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "frmTang";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản Lý Tầng";
-            this.Load += new System.EventHandler(this.frmTang_Load);
+            this.Name = "frmPhong";
+            this.Text = "frmPhong";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).EndInit();
@@ -250,11 +329,18 @@ namespace THUEPHONG
         private DevExpress.XtraGrid.GridControl gcDanhSach;
         private DevExpress.XtraGrid.Views.Grid.GridView gvDanhSach;
         private DevExpress.XtraGrid.Columns.GridColumn DISABLED;
+        private DevExpress.XtraGrid.Columns.GridColumn TENPHONG;
+        private DevExpress.XtraGrid.Columns.GridColumn STATUS;
         private DevExpress.XtraGrid.Columns.GridColumn TENTANG;
+        private DevExpress.XtraGrid.Columns.GridColumn TENLOAIPHONG;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox cboCty;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtMACTY;
+        private System.Windows.Forms.CheckBox chDisabled;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox chDisabled;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

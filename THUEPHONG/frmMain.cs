@@ -129,6 +129,24 @@ namespace THUEPHONG
                         frm.ShowDialog();
                         break;
                     }
+                case "LOAIPHONG":
+                    {
+                        frmLoaiPhong frm = new frmLoaiPhong();
+                        frm.ShowDialog();
+                        break;
+                    }
+                case "PHONG":
+                    {
+                        frmPhong frm = new frmPhong();
+                        frm.ShowDialog();
+                        break;
+                    }
+                case "SANPHAM":
+                    {
+                        frmSanPham frm = new frmSanPham();
+                        frm.ShowDialog();
+                        break;
+                    }
             }
         }
 

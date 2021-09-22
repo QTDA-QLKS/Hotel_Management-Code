@@ -6,27 +6,26 @@ using System.Threading.Tasks;
 using DataLayer;
 namespace BussinessLayer
 {
-    public class PHONG
+    public class SANPHAM
     {
         Entities db;
-        public PHONG()
+        public SANPHAM()
         {
             db = Entities.CreateEntities();
         }
-        public List<tb_Phong> getAll()
+        public tb_SanPham getItem(int sp)
         {
-            return db.tb_Phong.ToList();
+            return db.tb_SanPham.FirstOrDefault(x => x.IDSP == sp);
         }
-        public List<tb_Phong> getByTang(int idTang)
+        public List<tb_SanPham> getAll()
         {
-            return db.tb_Phong.Where(x => x.IDTANG == idTang).ToList();
+            return db.tb_SanPham.ToList();
         }
-
-        public void add(tb_Phong phong)
+        public void add(tb_SanPham sp)
         {
             try
             {
-                db.tb_Phong.Add(phong);
+                db.tb_SanPham.Add(sp);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -34,14 +33,12 @@ namespace BussinessLayer
                 throw new Exception("Có lỗi" + ex.Message);
             }
         }
-        public void update(tb_Phong phong)
+        public void update(tb_SanPham sp)
         {
-            tb_Phong _kh = db.tb_Phong.FirstOrDefault(x => x.IDPHONG == phong.IDPHONG);
-            _kh.TENPHONG = phong.TENPHONG;
-            _kh.STATUS = phong.STATUS;
-            _kh.IDTANG = phong.IDTANG;
-            _kh.IDLOAIPHONG = phong.IDLOAIPHONG;
-            _kh.DISABLED = phong.DISABLED;
+            tb_SanPham _cty = db.tb_SanPham.FirstOrDefault(x => x.IDSP == sp.IDSP);
+            _cty.TENSP = sp.TENSP;
+            _cty.DONGIA = sp.DONGIA;
+            _cty.DISABLED = sp.DISABLED;
             try
             {
                 db.SaveChanges();
@@ -53,10 +50,10 @@ namespace BussinessLayer
             }
 
         }
-
-        public void delete(int idphong)
+        public void delete(int idsp)
         {
-            tb_Phong _kh = db.tb_Phong.FirstOrDefault(x => x.IDPHONG == idphong);
+            tb_SanPham cty = db.tb_SanPham.FirstOrDefault(x => x.IDSP == idsp);
+            cty.DISABLED = true;
             try
             {
                 db.SaveChanges();

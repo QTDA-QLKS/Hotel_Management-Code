@@ -18,9 +18,9 @@ namespace BussinessLayer
             db = Entities.CreateEntities();
         }
 
-        public tb_Tang getItem(string tang)
+        public tb_Tang getItem(int tang)
         {
-            return db.tb_Tang.FirstOrDefault(x => x.TENTANG == tang);
+            return db.tb_Tang.FirstOrDefault(x => x.IDTANG == tang);
         }
 
         public List<tb_Tang> getAll()

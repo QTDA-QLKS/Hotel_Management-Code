@@ -123,6 +123,12 @@ namespace THUEPHONG
                         frm.ShowDialog();
                         break;
                     }
+                case "TANG":
+                    {
+                        frmTang frm = new frmTang();
+                        frm.ShowDialog();
+                        break;
+                    }
             }
         }
 

@@ -136,7 +136,7 @@ namespace THUEPHONG
             else
             {
                 tb_DonVi dvi = _donvi.getItem(_madvi);
-                dvi.MACTY = cboCty.SelectedValue.ToString();
+                dvi.MACTY = txtMACTY.Text;
                 dvi.TENDVI = txtTen.Text;
                 dvi.DIACHI = txtDiaChi.Text;
                 dvi.DIENTHOAI = txtDienThoai.Text;

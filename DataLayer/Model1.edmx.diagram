@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="75da906d398b45129217535e04b40dc2" Name="Diagram1">
+        <EntityTypeShape EntityType="KHACHSAN.sysdiagram" Width="1.5" PointX="10.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_CongTy" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_DatPhong" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_DatPhong_CT" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_DatPhong_SanPham" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_DonVi" Width="1.5" PointX="12.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_KhachHang" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_LoaiPhong" Width="1.5" PointX="5.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_Param" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_Phong" Width="1.5" PointX="8" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_Phong_ThietBi" Width="1.5" PointX="10.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SanPham" Width="1.5" PointX="6" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SYS_FUNC" Width="1.5" PointX="12.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SYS_GROUP" Width="1.5" PointX="2.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SYS_REPORT" Width="1.5" PointX="10.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SYS_RIGHT" Width="1.5" PointX="10.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SYS_RIGHT_REP" Width="1.5" PointX="13" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_SYS_USER" Width="1.5" PointX="12.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_Tang" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHACHSAN.tb_ThietBi" Width="1.5" PointX="8" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_tb_CongTy" ManuallyRouted="false" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_Param_tb_CongTy" ManuallyRouted="false" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_CT_tb_DatPhong" ManuallyRouted="false" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_SanPham_tb_DatPhong" ManuallyRouted="false" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_tb_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_DatPhong_SanPham_tb_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_Phong_tb_LoaiPhong" ManuallyRouted="false" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_Phong_tb_Tang" ManuallyRouted="false" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_Phong_ThietBi_tb_Phong" ManuallyRouted="false" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_Phong_ThietBi_tb_ThietBi" ManuallyRouted="false" />
+        <AssociationConnector Association="KHACHSAN.FK_tb_SYS_RIGHT_REP_tb_SYS_REPORT" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

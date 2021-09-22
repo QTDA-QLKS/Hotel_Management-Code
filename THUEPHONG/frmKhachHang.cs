@@ -22,7 +22,7 @@ namespace THUEPHONG
 
         KHACHHANG _khachhang;
         bool _them;
-        int _idkh;
+        string _idkh;
 
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
@@ -43,6 +43,7 @@ namespace THUEPHONG
 
         void _enabled(bool t)
         {
+            txtGioiTinh.Enabled = t;
             txtMACTY.Enabled = t;
             txtTen.Enabled = t;
             txtDienThoai.Enabled = t;
@@ -54,6 +55,7 @@ namespace THUEPHONG
 
         void _reset()
         {
+            txtGioiTinh.Text = "";
             txtMACTY.Text = "";
             txtTen.Text = "";
             txtDienThoai.Text = "";
@@ -80,7 +82,10 @@ namespace THUEPHONG
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            _them = false;
+            _enabled(true);
+            txtMACTY.Enabled = false;
+            showHideControl(false);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -98,6 +103,7 @@ namespace THUEPHONG
             if (_them)
             {
                 tb_KhachHang kh = new tb_KhachHang();
+                kh.GIOITINH = txtGioiTinh.Text;
                 kh.HOTEN = txtTen.Text;
                 kh.DIACHI = txtDiaChi.Text;
                 kh.DIENTHOAI = txtDienThoai.Text;
@@ -109,6 +115,7 @@ namespace THUEPHONG
             else
             {
                 tb_KhachHang kh = _khachhang.getItem(_idkh);
+                kh.GIOITINH = txtGioiTinh.Text;
                 kh.HOTEN = txtTen.Text;
                 kh.DIACHI = txtDiaChi.Text;
                 kh.DIENTHOAI = txtDienThoai.Text;
@@ -141,9 +148,10 @@ namespace THUEPHONG
         {
             if (gvDanhSach.RowCount > 0)
             {
-                //_idkh = gvDanhSach.GetFocusedRowCellValue("IDKH").ToString();
+                _idkh = gvDanhSach.GetFocusedRowCellValue("IDKH").ToString();
                 txtMACTY.Text = gvDanhSach.GetFocusedRowCellValue("IDKH").ToString();
                 txtTen.Text = gvDanhSach.GetFocusedRowCellValue("HOTEN").ToString();
+                txtGioiTinh.Text = gvDanhSach.GetFocusedRowCellValue("GIOITINH").ToString();
                 txtDienThoai.Text = gvDanhSach.GetFocusedRowCellValue("DIENTHOAI").ToString();
                 txtCCCD.Text = gvDanhSach.GetFocusedRowCellValue("CCCD").ToString();
                 txtEmail.Text = gvDanhSach.GetFocusedRowCellValue("EMAIL").ToString();

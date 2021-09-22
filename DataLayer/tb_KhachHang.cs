@@ -20,9 +20,9 @@ namespace DataLayer
             this.tb_DatPhong = new HashSet<tb_DatPhong>();
         }
     
-        public int IDKH { get; set; }
+        public string IDKH { get; set; }
         public string HOTEN { get; set; }
-        public Nullable<bool> GIOITINH { get; set; }
+        public string GIOITINH { get; set; }
         public string CCCD { get; set; }
         public string EMAIL { get; set; }
         public string DIENTHOAI { get; set; }

@@ -114,7 +114,6 @@ namespace THUEPHONG
             else
             {
                 tb_CongTy cty = _congty.getItem(_macty);
-                cty.MACTY = txtMACTY.Text;
                 cty.TENCTY = txtTen.Text;
                 cty.DIACHI = txtDiaChi.Text;
                 cty.DIENTHOAI = txtDienThoai.Text;

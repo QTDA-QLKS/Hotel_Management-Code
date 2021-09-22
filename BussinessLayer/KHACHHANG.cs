@@ -13,7 +13,7 @@ namespace BussinessLayer
         {
             db = Entities.CreateEntities();
         }
-        public tb_KhachHang getItem(int idkh)
+        public tb_KhachHang getItem(string idkh)
         {
             return db.tb_KhachHang.FirstOrDefault(x => x.IDKH == idkh);
         }
@@ -36,6 +36,7 @@ namespace BussinessLayer
         public void update(tb_KhachHang kh)
         {
             tb_KhachHang _kh = db.tb_KhachHang.FirstOrDefault(x => x.IDKH == kh.IDKH);
+            _kh.GIOITINH = kh.GIOITINH;
             _kh.HOTEN = kh.HOTEN;
             _kh.DIENTHOAI = kh.DIENTHOAI;
             _kh.CCCD = kh.CCCD;
@@ -54,10 +55,9 @@ namespace BussinessLayer
 
         }
 
-        public void delete(int idkh)
+        public void delete(string idkh)
         {
             tb_KhachHang _kh = db.tb_KhachHang.FirstOrDefault(x => x.IDKH == idkh);
-            _kh.DISABLED = true;
             try
             {
                 db.SaveChanges();

@@ -22,7 +22,7 @@ namespace DataLayer
         }
     
         public int IDDP { get; set; }
-        public int IDKH { get; set; }
+        public string IDKH { get; set; }
         public Nullable<System.DateTime> NGAYDATPHONG { get; set; }
         public Nullable<System.DateTime> NGAYTRAPHONG { get; set; }
         public Nullable<double> SOTIEN { get; set; }

@@ -60,6 +60,8 @@ namespace THUEPHONG
             this.label2 = new System.Windows.Forms.Label();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtGioiTinh = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
@@ -251,6 +253,8 @@ namespace THUEPHONG
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtGioiTinh);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtMACTY);
             this.groupBox1.Controls.Add(this.chDisabled);
@@ -275,17 +279,17 @@ namespace THUEPHONG
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(40, 64);
+            this.label6.Location = new System.Drawing.Point(44, 32);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 17);
+            this.label6.Size = new System.Drawing.Size(46, 17);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Mã";
+            this.label6.Text = "Mã KH";
             // 
             // txtMACTY
             // 
-            this.txtMACTY.Location = new System.Drawing.Point(109, 64);
+            this.txtMACTY.Location = new System.Drawing.Point(108, 32);
             this.txtMACTY.Name = "txtMACTY";
-            this.txtMACTY.Size = new System.Drawing.Size(187, 23);
+            this.txtMACTY.Size = new System.Drawing.Size(188, 23);
             this.txtMACTY.TabIndex = 11;
             // 
             // chDisabled
@@ -364,19 +368,35 @@ namespace THUEPHONG
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(360, 67);
+            this.txtTen.Location = new System.Drawing.Point(109, 64);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(523, 23);
+            this.txtTen.Size = new System.Drawing.Size(545, 23);
             this.txtTen.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(302, 67);
+            this.label1.Location = new System.Drawing.Point(40, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên";
+            // 
+            // txtGioiTinh
+            // 
+            this.txtGioiTinh.Location = new System.Drawing.Point(725, 65);
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(188, 23);
+            this.txtGioiTinh.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(660, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 17);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Gioi Tính";
             // 
             // frmKhachHang
             // 
@@ -433,5 +453,7 @@ namespace THUEPHONG
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.Columns.GridColumn CCCD;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtGioiTinh;
     }
 }

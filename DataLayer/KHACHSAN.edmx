@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="KHACHSAN.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="KHACHSAN.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -139,7 +139,7 @@
             <PropertyRef Name="IDTB" />
           </Key>
           <Property Name="IDPHONG" Type="int" Nullable="false" />
-          <Property Name="IDTB" Type="int" Nullable="false" />
+          <Property Name="IDTB" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="SOLUONG" Type="int" />
         </EntityType>
         <EntityType Name="tb_SanPham">
@@ -229,10 +229,77 @@
           <Key>
             <PropertyRef Name="IDTB" />
           </Key>
-          <Property Name="IDTB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDTB" Type="nvarchar" MaxLength="50" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="TENTHIETBI" Type="nvarchar" MaxLength="500" />
           <Property Name="DONGIA" Type="float" />
           <Property Name="DISABLED" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HOTELS.dbo.V_FUNC_SYS_RIGHT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_FUNC_SYS_RIGHT">
+          <Key>
+            <PropertyRef Name="FUNC_CODE" />
+            <PropertyRef Name="SORT" />
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="FUNC_CODE" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="200" />
+          <Property Name="ISGROUP" Type="bit" />
+          <Property Name="PARENT" Type="varchar" MaxLength="50" />
+          <Property Name="SORT" Type="int" Nullable="false" />
+          <Property Name="IDUSER" Type="int" Nullable="false" />
+          <Property Name="QUYEN" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HOTELS.dbo.V_REP_SYS_RIGHT_REP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_REP_SYS_RIGHT_REP">
+          <Key>
+            <PropertyRef Name="REP_CODE" />
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="REP_CODE" Type="int" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" />
+          <Property Name="REP_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="VISIBLED" Type="bit" />
+          <Property Name="IDUSER" Type="int" Nullable="false" />
+          <Property Name="QUYEN" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HOTELS.dbo.V_USER_IN_GROUP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_USER_IN_GROUP">
+          <Key>
+            <PropertyRef Name="GROUP" />
+            <PropertyRef Name="MEMBER" />
+          </Key>
+          <Property Name="IDUSER" Type="int" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" />
+          <Property Name="PASSWD" Type="varchar" MaxLength="50" />
+          <Property Name="FULLNAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="MACTY" Type="nvarchar" MaxLength="10" />
+          <Property Name="MADVI" Type="nvarchar" MaxLength="10" />
+          <Property Name="LAST_PWD_CHANGED" Type="datetime" />
+          <Property Name="DISABLED" Type="bit" />
+          <Property Name="ISGROUP" Type="bit" />
+          <Property Name="GROUP" Type="int" Nullable="false" />
+          <Property Name="MEMBER" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HOTELS.dbo.V_USER_NOTIN_GROUP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_USER_NOTIN_GROUP">
+          <Key>
+            <PropertyRef Name="IDUSER" />
+            <PropertyRef Name="MACTY" />
+            <PropertyRef Name="MADVI" />
+          </Key>
+          <Property Name="IDUSER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" />
+          <Property Name="PASSWD" Type="varchar" MaxLength="50" />
+          <Property Name="FULLNAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="MACTY" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MADVI" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="LAST_PWD_CHANGED" Type="datetime" />
+          <Property Name="DISABLED" Type="bit" />
+          <Property Name="ISGROUP" Type="bit" />
         </EntityType>
         <Association Name="FK_tb_DatPhong_CT_tb_DatPhong">
           <End Role="tb_DatPhong" Type="Self.tb_DatPhong" Multiplicity="1" />
@@ -366,6 +433,51 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="PHIEU_DATPHONG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDDP" Type="int" Mode="In" />
+        </Function>
+        <Function Name="REP_DOANHTHU_CONGTY_NGAY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NGAYD" Type="datetime" Mode="In" />
+          <Parameter Name="NGAYC" Type="datetime" Mode="In" />
+          <Parameter Name="MACTY" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="REP_DOANHTHU_DONVI_NGAY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NGAYD" Type="datetime" Mode="In" />
+          <Parameter Name="NGAYC" Type="datetime" Mode="In" />
+          <Parameter Name="MACTY" Type="nvarchar" Mode="In" />
+          <Parameter Name="MADVI" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="KHACHSANStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_CongTy" EntityType="Self.tb_CongTy" Schema="dbo" store:Type="Tables" />
@@ -387,6 +499,55 @@
           <EntitySet Name="tb_SYS_USER" EntityType="Self.tb_SYS_USER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_Tang" EntityType="Self.tb_Tang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_ThietBi" EntityType="Self.tb_ThietBi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_FUNC_SYS_RIGHT" EntityType="Self.V_FUNC_SYS_RIGHT" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_FUNC_SYS_RIGHT].[FUNC_CODE] AS [FUNC_CODE], 
+    [V_FUNC_SYS_RIGHT].[DESCRIPTION] AS [DESCRIPTION], 
+    [V_FUNC_SYS_RIGHT].[ISGROUP] AS [ISGROUP], 
+    [V_FUNC_SYS_RIGHT].[PARENT] AS [PARENT], 
+    [V_FUNC_SYS_RIGHT].[SORT] AS [SORT], 
+    [V_FUNC_SYS_RIGHT].[IDUSER] AS [IDUSER], 
+    [V_FUNC_SYS_RIGHT].[QUYEN] AS [QUYEN]
+    FROM [dbo].[V_FUNC_SYS_RIGHT] AS [V_FUNC_SYS_RIGHT]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_REP_SYS_RIGHT_REP" EntityType="Self.V_REP_SYS_RIGHT_REP" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_REP_SYS_RIGHT_REP].[REP_CODE] AS [REP_CODE], 
+    [V_REP_SYS_RIGHT_REP].[DESCRIPTION] AS [DESCRIPTION], 
+    [V_REP_SYS_RIGHT_REP].[REP_NAME] AS [REP_NAME], 
+    [V_REP_SYS_RIGHT_REP].[VISIBLED] AS [VISIBLED], 
+    [V_REP_SYS_RIGHT_REP].[IDUSER] AS [IDUSER], 
+    [V_REP_SYS_RIGHT_REP].[QUYEN] AS [QUYEN]
+    FROM [dbo].[V_REP_SYS_RIGHT_REP] AS [V_REP_SYS_RIGHT_REP]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_USER_IN_GROUP" EntityType="Self.V_USER_IN_GROUP" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_USER_IN_GROUP].[IDUSER] AS [IDUSER], 
+    [V_USER_IN_GROUP].[USERNAME] AS [USERNAME], 
+    [V_USER_IN_GROUP].[PASSWD] AS [PASSWD], 
+    [V_USER_IN_GROUP].[FULLNAME] AS [FULLNAME], 
+    [V_USER_IN_GROUP].[MACTY] AS [MACTY], 
+    [V_USER_IN_GROUP].[MADVI] AS [MADVI], 
+    [V_USER_IN_GROUP].[LAST_PWD_CHANGED] AS [LAST_PWD_CHANGED], 
+    [V_USER_IN_GROUP].[DISABLED] AS [DISABLED], 
+    [V_USER_IN_GROUP].[ISGROUP] AS [ISGROUP], 
+    [V_USER_IN_GROUP].[GROUP] AS [GROUP], 
+    [V_USER_IN_GROUP].[MEMBER] AS [MEMBER]
+    FROM [dbo].[V_USER_IN_GROUP] AS [V_USER_IN_GROUP]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_USER_NOTIN_GROUP" EntityType="Self.V_USER_NOTIN_GROUP" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_USER_NOTIN_GROUP].[IDUSER] AS [IDUSER], 
+    [V_USER_NOTIN_GROUP].[USERNAME] AS [USERNAME], 
+    [V_USER_NOTIN_GROUP].[PASSWD] AS [PASSWD], 
+    [V_USER_NOTIN_GROUP].[FULLNAME] AS [FULLNAME], 
+    [V_USER_NOTIN_GROUP].[MACTY] AS [MACTY], 
+    [V_USER_NOTIN_GROUP].[MADVI] AS [MADVI], 
+    [V_USER_NOTIN_GROUP].[LAST_PWD_CHANGED] AS [LAST_PWD_CHANGED], 
+    [V_USER_NOTIN_GROUP].[DISABLED] AS [DISABLED], 
+    [V_USER_NOTIN_GROUP].[ISGROUP] AS [ISGROUP]
+    FROM [dbo].[V_USER_NOTIN_GROUP] AS [V_USER_NOTIN_GROUP]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_tb_DatPhong_CT_tb_DatPhong" Association="Self.FK_tb_DatPhong_CT_tb_DatPhong">
             <End Role="tb_DatPhong" EntitySet="tb_DatPhong" />
             <End Role="tb_DatPhong_CT" EntitySet="tb_DatPhong_CT" />
@@ -432,8 +593,7 @@
             <End Role="tb_SYS_RIGHT_REP" EntitySet="tb_SYS_RIGHT_REP" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KHACHSAN" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -586,7 +746,7 @@
             <PropertyRef Name="IDTB" />
           </Key>
           <Property Name="IDPHONG" Type="Int32" Nullable="false" />
-          <Property Name="IDTB" Type="Int32" Nullable="false" />
+          <Property Name="IDTB" Type="String" Nullable="false" />
           <Property Name="SOLUONG" Type="Int32" />
           <NavigationProperty Name="tb_Phong" Relationship="Self.FK_tb_Phong_ThietBi_tb_Phong" FromRole="tb_Phong_ThietBi" ToRole="tb_Phong" />
           <NavigationProperty Name="tb_ThietBi" Relationship="Self.FK_tb_Phong_ThietBi_tb_ThietBi" FromRole="tb_Phong_ThietBi" ToRole="tb_ThietBi" />
@@ -682,7 +842,7 @@
           <Key>
             <PropertyRef Name="IDTB" />
           </Key>
-          <Property Name="IDTB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDTB" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TENTHIETBI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="DONGIA" Type="Double" />
           <Property Name="DISABLED" Type="Boolean" />
@@ -885,7 +1045,150 @@
             <End Role="tb_SYS_REPORT" EntitySet="tb_SYS_REPORT" />
             <End Role="tb_SYS_RIGHT_REP" EntitySet="tb_SYS_RIGHT_REP" />
           </AssociationSet>
+          <EntitySet Name="V_FUNC_SYS_RIGHT" EntityType="KHACHSAN.V_FUNC_SYS_RIGHT" />
+          <EntitySet Name="V_REP_SYS_RIGHT_REP" EntityType="KHACHSAN.V_REP_SYS_RIGHT_REP" />
+          <EntitySet Name="V_USER_IN_GROUP" EntityType="KHACHSAN.V_USER_IN_GROUP" />
+          <EntitySet Name="V_USER_NOTIN_GROUP" EntityType="KHACHSAN.V_USER_NOTIN_GROUP" />
+          <FunctionImport Name="PHIEU_DATPHONG" ReturnType="Collection(KHACHSAN.PHIEU_DATPHONG_Result)">
+          <Parameter Name="IDDP" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="REP_DOANHTHU_CONGTY_NGAY">
+            <Parameter Name="NGAYD" Mode="In" Type="DateTime" />
+            <Parameter Name="NGAYC" Mode="In" Type="DateTime" />
+            <Parameter Name="MACTY" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="REP_DOANHTHU_DONVI_NGAY">
+            <Parameter Name="NGAYD" Mode="In" Type="DateTime" />
+            <Parameter Name="NGAYC" Mode="In" Type="DateTime" />
+            <Parameter Name="MACTY" Mode="In" Type="String" />
+            <Parameter Name="MADVI" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(KHACHSAN.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(KHACHSAN.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
+        <EntityType Name="V_FUNC_SYS_RIGHT">
+          <Key>
+            <PropertyRef Name="FUNC_CODE" />
+            <PropertyRef Name="SORT" />
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="FUNC_CODE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ISGROUP" Type="Boolean" />
+          <Property Name="PARENT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SORT" Type="Int32" Nullable="false" />
+          <Property Name="IDUSER" Type="Int32" Nullable="false" />
+          <Property Name="QUYEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_REP_SYS_RIGHT_REP">
+          <Key>
+            <PropertyRef Name="REP_CODE" />
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="REP_CODE" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REP_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VISIBLED" Type="Boolean" />
+          <Property Name="IDUSER" Type="Int32" Nullable="false" />
+          <Property Name="QUYEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_USER_IN_GROUP">
+          <Key>
+            <PropertyRef Name="GROUP" />
+            <PropertyRef Name="MEMBER" />
+          </Key>
+          <Property Name="IDUSER" Type="Int32" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FULLNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MACTY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MADVI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LAST_PWD_CHANGED" Type="DateTime" Precision="3" />
+          <Property Name="DISABLED" Type="Boolean" />
+          <Property Name="ISGROUP" Type="Boolean" />
+          <Property Name="GROUP" Type="Int32" Nullable="false" />
+          <Property Name="MEMBER" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_USER_NOTIN_GROUP">
+          <Key>
+            <PropertyRef Name="IDUSER" />
+            <PropertyRef Name="MACTY" />
+            <PropertyRef Name="MADVI" />
+          </Key>
+          <Property Name="IDUSER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FULLNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MACTY" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MADVI" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LAST_PWD_CHANGED" Type="DateTime" Precision="3" />
+          <Property Name="DISABLED" Type="Boolean" />
+          <Property Name="ISGROUP" Type="Boolean" />
+        </EntityType>
+        <ComplexType Name="PHIEU_DATPHONG_Result">
+          <Property Type="Int32" Name="IDDP" Nullable="false" />
+          <Property Type="String" Name="IDKH" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="HOTEN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DIENTHOAI" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DIACHI" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="NGAYDATPHONG" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="NGAYTRAPHONG" Nullable="true" Precision="23" />
+          <Property Type="Double" Name="SOTIEN" Nullable="true" />
+          <Property Type="Int32" Name="SONGUOIO" Nullable="true" />
+          <Property Type="String" Name="MACTY" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MADVI" Nullable="false" MaxLength="10" />
+          <Property Type="Boolean" Name="STATUS" Nullable="true" />
+          <Property Type="String" Name="GHICHU" Nullable="true" MaxLength="2000" />
+          <Property Type="Int32" Name="IDPHONG" Nullable="false" />
+          <Property Type="String" Name="TENPHONG" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="SONGAYO" Nullable="true" />
+          <Property Type="Int32" Name="dp_DONGIA" Nullable="true" />
+          <Property Type="Int32" Name="dp_THANHTIEN" Nullable="true" />
+          <Property Type="Int32" Name="IDSP" Nullable="true" />
+          <Property Type="String" Name="TENSP" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="sp_SOLUONG" Nullable="true" />
+          <Property Type="Double" Name="sp_DONGIA" Nullable="true" />
+          <Property Type="Double" Name="sp_THANHTIEN" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1135,6 +1438,118 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="V_FUNC_SYS_RIGHT">
+            <EntityTypeMapping TypeName="KHACHSAN.V_FUNC_SYS_RIGHT">
+              <MappingFragment StoreEntitySet="V_FUNC_SYS_RIGHT">
+                <ScalarProperty Name="QUYEN" ColumnName="QUYEN" />
+                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
+                <ScalarProperty Name="SORT" ColumnName="SORT" />
+                <ScalarProperty Name="PARENT" ColumnName="PARENT" />
+                <ScalarProperty Name="ISGROUP" ColumnName="ISGROUP" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="FUNC_CODE" ColumnName="FUNC_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_REP_SYS_RIGHT_REP">
+            <EntityTypeMapping TypeName="KHACHSAN.V_REP_SYS_RIGHT_REP">
+              <MappingFragment StoreEntitySet="V_REP_SYS_RIGHT_REP">
+                <ScalarProperty Name="QUYEN" ColumnName="QUYEN" />
+                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
+                <ScalarProperty Name="VISIBLED" ColumnName="VISIBLED" />
+                <ScalarProperty Name="REP_NAME" ColumnName="REP_NAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="REP_CODE" ColumnName="REP_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_USER_IN_GROUP">
+            <EntityTypeMapping TypeName="KHACHSAN.V_USER_IN_GROUP">
+              <MappingFragment StoreEntitySet="V_USER_IN_GROUP">
+                <ScalarProperty Name="MEMBER" ColumnName="MEMBER" />
+                <ScalarProperty Name="GROUP" ColumnName="GROUP" />
+                <ScalarProperty Name="ISGROUP" ColumnName="ISGROUP" />
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="LAST_PWD_CHANGED" ColumnName="LAST_PWD_CHANGED" />
+                <ScalarProperty Name="MADVI" ColumnName="MADVI" />
+                <ScalarProperty Name="MACTY" ColumnName="MACTY" />
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="PASSWD" ColumnName="PASSWD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_USER_NOTIN_GROUP">
+            <EntityTypeMapping TypeName="KHACHSAN.V_USER_NOTIN_GROUP">
+              <MappingFragment StoreEntitySet="V_USER_NOTIN_GROUP">
+                <ScalarProperty Name="ISGROUP" ColumnName="ISGROUP" />
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="LAST_PWD_CHANGED" ColumnName="LAST_PWD_CHANGED" />
+                <ScalarProperty Name="MADVI" ColumnName="MADVI" />
+                <ScalarProperty Name="MACTY" ColumnName="MACTY" />
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="PASSWD" ColumnName="PASSWD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PHIEU_DATPHONG" FunctionName="KHACHSAN.Store.PHIEU_DATPHONG">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KHACHSAN.PHIEU_DATPHONG_Result">
+                <ScalarProperty Name="IDDP" ColumnName="IDDP" />
+                <ScalarProperty Name="IDKH" ColumnName="IDKH" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="NGAYDATPHONG" ColumnName="NGAYDATPHONG" />
+                <ScalarProperty Name="NGAYTRAPHONG" ColumnName="NGAYTRAPHONG" />
+                <ScalarProperty Name="SOTIEN" ColumnName="SOTIEN" />
+                <ScalarProperty Name="SONGUOIO" ColumnName="SONGUOIO" />
+                <ScalarProperty Name="MACTY" ColumnName="MACTY" />
+                <ScalarProperty Name="MADVI" ColumnName="MADVI" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="IDPHONG" ColumnName="IDPHONG" />
+                <ScalarProperty Name="TENPHONG" ColumnName="TENPHONG" />
+                <ScalarProperty Name="SONGAYO" ColumnName="SONGAYO" />
+                <ScalarProperty Name="dp_DONGIA" ColumnName="dp_DONGIA" />
+                <ScalarProperty Name="dp_THANHTIEN" ColumnName="dp_THANHTIEN" />
+                <ScalarProperty Name="IDSP" ColumnName="IDSP" />
+                <ScalarProperty Name="TENSP" ColumnName="TENSP" />
+                <ScalarProperty Name="sp_SOLUONG" ColumnName="sp_SOLUONG" />
+                <ScalarProperty Name="sp_DONGIA" ColumnName="sp_DONGIA" />
+                <ScalarProperty Name="sp_THANHTIEN" ColumnName="sp_THANHTIEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="REP_DOANHTHU_CONGTY_NGAY" FunctionName="KHACHSAN.Store.REP_DOANHTHU_CONGTY_NGAY" />
+          <FunctionImportMapping FunctionImportName="REP_DOANHTHU_DONVI_NGAY" FunctionName="KHACHSAN.Store.REP_DOANHTHU_DONVI_NGAY" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="KHACHSAN.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="KHACHSAN.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="KHACHSAN.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="KHACHSAN.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KHACHSAN.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="KHACHSAN.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KHACHSAN.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="KHACHSAN.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="KHACHSAN.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

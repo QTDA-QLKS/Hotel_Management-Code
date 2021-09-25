@@ -27,6 +27,7 @@ namespace THUEPHONG
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
             _khachhang = new KHACHHANG();
+            txtMACTY.Enabled = false;
             loadData();
             _enabled(true);
             showHideControl(true);

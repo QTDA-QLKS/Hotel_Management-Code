@@ -51,7 +51,7 @@ namespace THUEPHONG
         void _reset()
         {
             txtTenSP.Text = "";
-            txtDonGia.Text = "";
+            txtDonGia.Text = "0.1";
             chDisabled.Checked = false;
         }
 
@@ -92,19 +92,19 @@ namespace THUEPHONG
         {
             if (_them)
             {
-                tb_SanPham kh = new tb_SanPham();
-                kh.TENSP = txtTenSP.Text;
-                kh.DISABLED = chDisabled.Checked;
-               // kh.DONGIA = txtDonGia.Text;
-                _sanpham.add(kh);
+                tb_SanPham sp = new tb_SanPham();
+                sp.TENSP = txtTenSP.Text;
+                sp.DISABLED = chDisabled.Checked;
+                sp.DONGIA = int.Parse(txtDonGia.Text);
+                _sanpham.add(sp);
             }
             else
             {
-                tb_SanPham kh = new tb_SanPham();
-                kh.TENSP = txtTenSP.Text;
-                kh.DISABLED = chDisabled.Checked;
-                //kh.DONGIA = txtDonGia.Text;
-                _sanpham.update(kh);
+                tb_SanPham sp = new tb_SanPham();
+                sp.TENSP = txtTenSP.Text;
+                sp.DISABLED = chDisabled.Checked;
+                sp.DONGIA = int.Parse(txtDonGia.Text);
+                _sanpham.update(sp);
             }
             _them = false;
             loadData();

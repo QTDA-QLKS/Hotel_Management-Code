@@ -65,7 +65,7 @@ namespace THUEPHONG
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(768, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(714, 47);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -135,7 +135,7 @@ namespace THUEPHONG
             this.gcDanhSach.Location = new System.Drawing.Point(0, 47);
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(768, 200);
+            this.gcDanhSach.Size = new System.Drawing.Size(714, 200);
             this.gcDanhSach.TabIndex = 3;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -159,7 +159,7 @@ namespace THUEPHONG
             this.DISABLED.Name = "DISABLED";
             this.DISABLED.Visible = true;
             this.DISABLED.VisibleIndex = 0;
-            this.DISABLED.Width = 25;
+            this.DISABLED.Width = 37;
             // 
             // TENSP
             // 
@@ -169,7 +169,7 @@ namespace THUEPHONG
             this.TENSP.Name = "TENSP";
             this.TENSP.Visible = true;
             this.TENSP.VisibleIndex = 1;
-            this.TENSP.Width = 357;
+            this.TENSP.Width = 100;
             // 
             // DONGIA
             // 
@@ -179,7 +179,7 @@ namespace THUEPHONG
             this.DONGIA.Name = "DONGIA";
             this.DONGIA.Visible = true;
             this.DONGIA.VisibleIndex = 2;
-            this.DONGIA.Width = 356;
+            this.DONGIA.Width = 80;
             // 
             // groupBox1
             // 
@@ -193,7 +193,7 @@ namespace THUEPHONG
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(768, 120);
+            this.groupBox1.Size = new System.Drawing.Size(714, 120);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -218,7 +218,7 @@ namespace THUEPHONG
             // chDisabled
             // 
             this.chDisabled.AutoSize = true;
-            this.chDisabled.Location = new System.Drawing.Point(680, 37);
+            this.chDisabled.Location = new System.Drawing.Point(389, 50);
             this.chDisabled.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chDisabled.Name = "chDisabled";
             this.chDisabled.Size = new System.Drawing.Size(80, 21);
@@ -228,7 +228,7 @@ namespace THUEPHONG
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(391, 35);
+            this.txtDonGia.Location = new System.Drawing.Point(107, 80);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(212, 23);
@@ -237,7 +237,7 @@ namespace THUEPHONG
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(300, 38);
+            this.label1.Location = new System.Drawing.Point(29, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 0;
@@ -247,7 +247,7 @@ namespace THUEPHONG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 367);
+            this.ClientSize = new System.Drawing.Size(714, 367);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);

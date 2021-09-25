@@ -15,7 +15,7 @@ namespace DataLayer
     public partial class tb_Phong_ThietBi
     {
         public int IDPHONG { get; set; }
-        public int IDTB { get; set; }
+        public string IDTB { get; set; }
         public Nullable<int> SOLUONG { get; set; }
     
         public virtual tb_Phong tb_Phong { get; set; }

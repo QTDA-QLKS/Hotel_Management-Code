@@ -147,6 +147,18 @@ namespace THUEPHONG
                         frm.ShowDialog();
                         break;
                     }
+                case "THIETBI":
+                    {
+                        frmThietBi frm = new frmThietBi();
+                        frm.ShowDialog();
+                        break;
+                    }
+                case "PHONG_TB":
+                    {
+                        frmPThietBi frm = new frmPThietBi();
+                        frm.ShowDialog();
+                        break;
+                    }
             }
         }
 

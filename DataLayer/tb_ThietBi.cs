@@ -20,7 +20,7 @@ namespace DataLayer
             this.tb_Phong_ThietBi = new HashSet<tb_Phong_ThietBi>();
         }
     
-        public int IDTB { get; set; }
+        public string IDTB { get; set; }
         public string TENTHIETBI { get; set; }
         public Nullable<double> DONGIA { get; set; }
         public Nullable<bool> DISABLED { get; set; }

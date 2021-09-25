@@ -50,6 +50,7 @@ namespace THUEPHONG
         void _reset()
         {
             txtTen.Text = "";
+            textBox1.Text = "0";
             chDisabled.Checked = false;
         }
 
@@ -99,6 +100,7 @@ namespace THUEPHONG
             if (_them)
             {
                 tb_Tang kh = new tb_Tang();
+                kh.IDTANG = int.Parse(textBox1.Text);
                 kh.TENTANG = txtTen.Text;
                 kh.DISABLED = chDisabled.Checked;
                 _tang.add(kh);
@@ -129,6 +131,7 @@ namespace THUEPHONG
         {
             if (gvDanhSach.RowCount > 0)
             {
+                textBox1.Text = gvDanhSach.GetFocusedRowCellValue("IDTANG").ToString();
                 txtTen.Text = gvDanhSach.GetFocusedRowCellValue("TENTANG").ToString();
                 chDisabled.Checked = bool.Parse(gvDanhSach.GetFocusedRowCellValue("DISABLED").ToString());
             }

@@ -36,6 +36,10 @@
         <AssociationConnector Association="KHACHSAN.FK_tb_Phong_ThietBi_tb_Phong" ManuallyRouted="false" />
         <AssociationConnector Association="KHACHSAN.FK_tb_Phong_ThietBi_tb_ThietBi" ManuallyRouted="false" />
         <AssociationConnector Association="KHACHSAN.FK_tb_SYS_RIGHT_REP_tb_SYS_REPORT" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KHACHSAN.V_FUNC_SYS_RIGHT" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="KHACHSAN.V_REP_SYS_RIGHT_REP" Width="1.5" PointX="2.75" PointY="13.75" />
+        <EntityTypeShape EntityType="KHACHSAN.V_USER_IN_GROUP" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KHACHSAN.V_USER_NOTIN_GROUP" Width="1.5" PointX="15.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

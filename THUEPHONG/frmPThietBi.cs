@@ -1,0 +1,97 @@
+﻿using DevExpress.XtraEditors;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using DataLayer;
+using BussinessLayer;
+namespace THUEPHONG
+{
+    public partial class frmPThietBi : DevExpress.XtraEditors.XtraForm
+    {
+        public frmPThietBi()
+        {
+            InitializeComponent();
+        }
+
+        PTHietBi _pthietbi;
+        PHONG _phong;
+        ThietBi _thietbi;
+        bool _them;
+        string _madvi;
+
+        private void frmPThietBi_Load(object sender, EventArgs e)
+        {
+            _phong = new PHONG();
+            _pthietbi = new PTHietBi();
+            _thietbi = new ThietBi();
+            loadThietBi();
+            loadPhong();
+            showHideControl(true);
+            _enabled(false);
+            cboTB.SelectedIndexChanged += cboCty_SelectedIndexChanged;
+            cboTPhong.SelectedIndexChanged += cboCty_SelectedIndexChanged;
+            loadDVIByCty();
+        }
+
+        private void cboCty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadDVIByCty();
+        }
+
+        void showHideControl(bool t)
+        {
+            btnThem.Visible = t;
+            btnSua.Visible = t;
+            btnXoa.Visible = t;
+            btnLuu.Visible = !t;
+            btnBoQua.Visible = !t;
+        }
+
+        void _enabled(bool t)
+        {
+            cboTPhong.Enabled = t;
+            cboTB.Enabled = t;
+            cboSL.Enabled = t;
+        }
+
+        void _reset()
+        {
+            cboTPhong.Text = "";
+            cboTB.Text = "";
+            cboSL.Text = "0";
+        }
+
+
+        void loadThietBi()
+        {
+            cboTB.DataSource = _thietbi.getByThietBi();
+            cboTB.DisplayMember = "TENTHIETBI";
+            cboTB.ValueMember = "IDTB";
+        }
+
+        void loadPhong()
+        {
+            cboTPhong.DataSource = _phong.getAll();
+            cboTPhong.DisplayMember = "TENPHONG";
+            cboTPhong.ValueMember = "IDPHONG";
+        }
+
+        void loadData()
+        {
+            gcDanhSach.DataSource = _pthietbi.getAll();
+            gvDanhSach.OptionsBehavior.Editable = false;
+        }
+        void loadDVIByCty()
+        {
+            gcDanhSach.DataSource = _pthietbi.getByPhong(int.Parse(cboTPhong.SelectedValue.ToString()));
+            gcDanhSach.DataSource = _pthietbi.getAll(cboTB.SelectedValue.ToString());
+            gvDanhSach.OptionsBehavior.Editable = false;
+        }
+    }
+}

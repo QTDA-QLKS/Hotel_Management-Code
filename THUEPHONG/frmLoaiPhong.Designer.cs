@@ -40,24 +40,19 @@ namespace THUEPHONG
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.DISABLED = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENLOAIPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.EMAIL = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.FAX = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SONGUOITOIDA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SOGIUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtMACTY = new System.Windows.Forms.TextBox();
+            this.txtTenLoaiPhong = new System.Windows.Forms.TextBox();
             this.chDisabled = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtFax = new System.Windows.Forms.TextBox();
+            this.txtSoGiuong = new System.Windows.Forms.TextBox();
+            this.txtSoNguoi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtDienThoai = new System.Windows.Forms.TextBox();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTen = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
@@ -76,7 +71,7 @@ namespace THUEPHONG
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1002, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(830, 47);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -88,6 +83,7 @@ namespace THUEPHONG
             this.btnThem.Size = new System.Drawing.Size(50, 44);
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -97,6 +93,7 @@ namespace THUEPHONG
             this.btnSua.Size = new System.Drawing.Size(38, 44);
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -106,6 +103,7 @@ namespace THUEPHONG
             this.btnXoa.Size = new System.Drawing.Size(39, 44);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -115,6 +113,7 @@ namespace THUEPHONG
             this.btnLuu.Size = new System.Drawing.Size(37, 44);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnBoQua
             // 
@@ -124,6 +123,7 @@ namespace THUEPHONG
             this.btnBoQua.Size = new System.Drawing.Size(60, 44);
             this.btnBoQua.Text = "Bỏ qua";
             this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
             // 
             // btnThoat
             // 
@@ -133,6 +133,7 @@ namespace THUEPHONG
             this.btnThoat.Size = new System.Drawing.Size(51, 44);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // gcDanhSach
             // 
@@ -140,7 +141,7 @@ namespace THUEPHONG
             this.gcDanhSach.Location = new System.Drawing.Point(0, 47);
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(1002, 200);
+            this.gcDanhSach.Size = new System.Drawing.Size(830, 200);
             this.gcDanhSach.TabIndex = 2;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -150,13 +151,13 @@ namespace THUEPHONG
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.DISABLED,
             this.TENLOAIPHONG,
-            this.DIENTHOAI,
-            this.EMAIL,
-            this.FAX,
-            this.DIACHI});
+            this.DONGIA,
+            this.SONGUOITOIDA,
+            this.SOGIUONG});
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
             this.gvDanhSach.OptionsView.ShowGroupPanel = false;
+            this.gvDanhSach.Click += new System.EventHandler(this.gvDanhSach_Click);
             // 
             // DISABLED
             // 
@@ -178,65 +179,51 @@ namespace THUEPHONG
             this.TENLOAIPHONG.VisibleIndex = 1;
             this.TENLOAIPHONG.Width = 49;
             // 
-            // DIENTHOAI
+            // DONGIA
             // 
-            this.DIENTHOAI.Caption = "ĐIỆN THOẠI";
-            this.DIENTHOAI.FieldName = "DIENTHOAI";
-            this.DIENTHOAI.MinWidth = 25;
-            this.DIENTHOAI.Name = "DIENTHOAI";
-            this.DIENTHOAI.Visible = true;
-            this.DIENTHOAI.VisibleIndex = 2;
-            this.DIENTHOAI.Width = 98;
+            this.DONGIA.Caption = "ĐƠN GIÁ";
+            this.DONGIA.FieldName = "DONGIA";
+            this.DONGIA.MinWidth = 25;
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.Visible = true;
+            this.DONGIA.VisibleIndex = 2;
+            this.DONGIA.Width = 98;
             // 
-            // EMAIL
+            // SONGUOITOIDA
             // 
-            this.EMAIL.Caption = "EMAIL";
-            this.EMAIL.FieldName = "EMAIL";
-            this.EMAIL.MinWidth = 25;
-            this.EMAIL.Name = "EMAIL";
-            this.EMAIL.Visible = true;
-            this.EMAIL.VisibleIndex = 3;
-            this.EMAIL.Width = 172;
+            this.SONGUOITOIDA.Caption = "SỐ NGƯỜI";
+            this.SONGUOITOIDA.FieldName = "SONGUOITOIDA";
+            this.SONGUOITOIDA.MinWidth = 25;
+            this.SONGUOITOIDA.Name = "SONGUOITOIDA";
+            this.SONGUOITOIDA.Visible = true;
+            this.SONGUOITOIDA.VisibleIndex = 3;
+            this.SONGUOITOIDA.Width = 172;
             // 
-            // FAX
+            // SOGIUONG
             // 
-            this.FAX.Caption = "FAX";
-            this.FAX.FieldName = "FAX";
-            this.FAX.MinWidth = 25;
-            this.FAX.Name = "FAX";
-            this.FAX.Visible = true;
-            this.FAX.VisibleIndex = 4;
-            this.FAX.Width = 98;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.Caption = "ĐỊA CHỈ";
-            this.DIACHI.FieldName = "DIACHI";
-            this.DIACHI.MinWidth = 25;
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.Visible = true;
-            this.DIACHI.VisibleIndex = 5;
-            this.DIACHI.Width = 220;
+            this.SOGIUONG.Caption = "SỐ GIƯỜNG";
+            this.SOGIUONG.FieldName = "SOGIUONG";
+            this.SOGIUONG.MinWidth = 25;
+            this.SOGIUONG.Name = "SOGIUONG";
+            this.SOGIUONG.Visible = true;
+            this.SOGIUONG.VisibleIndex = 4;
+            this.SOGIUONG.Width = 98;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtMACTY);
+            this.groupBox1.Controls.Add(this.txtTenLoaiPhong);
             this.groupBox1.Controls.Add(this.chDisabled);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.txtDiaChi);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtFax);
+            this.groupBox1.Controls.Add(this.txtSoGiuong);
+            this.groupBox1.Controls.Add(this.txtSoNguoi);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtDienThoai);
+            this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtTen);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 247);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1002, 207);
+            this.groupBox1.Size = new System.Drawing.Size(830, 170);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -246,21 +233,21 @@ namespace THUEPHONG
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(13, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 17);
+            this.label6.Size = new System.Drawing.Size(103, 17);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Mã";
+            this.label6.Text = "Tên Loại Phòng";
             // 
-            // txtMACTY
+            // txtTenLoaiPhong
             // 
-            this.txtMACTY.Location = new System.Drawing.Point(91, 46);
-            this.txtMACTY.Name = "txtMACTY";
-            this.txtMACTY.Size = new System.Drawing.Size(187, 23);
-            this.txtMACTY.TabIndex = 11;
+            this.txtTenLoaiPhong.Location = new System.Drawing.Point(127, 47);
+            this.txtTenLoaiPhong.Name = "txtTenLoaiPhong";
+            this.txtTenLoaiPhong.Size = new System.Drawing.Size(187, 23);
+            this.txtTenLoaiPhong.TabIndex = 11;
             // 
             // chDisabled
             // 
             this.chDisabled.AutoSize = true;
-            this.chDisabled.Location = new System.Drawing.Point(902, 49);
+            this.chDisabled.Location = new System.Drawing.Point(667, 46);
             this.chDisabled.Name = "chDisabled";
             this.chDisabled.Size = new System.Drawing.Size(80, 21);
             this.chDisabled.TabIndex = 10;
@@ -270,93 +257,62 @@ namespace THUEPHONG
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(584, 85);
+            this.label5.Location = new System.Drawing.Point(361, 94);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 17);
+            this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Email";
+            this.label5.Text = "Số Giuong";
             // 
-            // txtEmail
+            // txtSoGiuong
             // 
-            this.txtEmail.Location = new System.Drawing.Point(629, 82);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(353, 23);
-            this.txtEmail.TabIndex = 8;
+            this.txtSoGiuong.Location = new System.Drawing.Point(435, 94);
+            this.txtSoGiuong.Name = "txtSoGiuong";
+            this.txtSoGiuong.Size = new System.Drawing.Size(188, 23);
+            this.txtSoGiuong.TabIndex = 8;
             // 
-            // txtDiaChi
+            // txtSoNguoi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(91, 126);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(891, 23);
-            this.txtDiaChi.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(284, 85);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Fax";
-            // 
-            // txtFax
-            // 
-            this.txtFax.Location = new System.Drawing.Point(320, 82);
-            this.txtFax.Name = "txtFax";
-            this.txtFax.Size = new System.Drawing.Size(258, 23);
-            this.txtFax.TabIndex = 5;
+            this.txtSoNguoi.Location = new System.Drawing.Point(127, 94);
+            this.txtSoNguoi.Name = "txtSoNguoi";
+            this.txtSoNguoi.Size = new System.Drawing.Size(187, 23);
+            this.txtSoNguoi.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 85);
+            this.label3.Location = new System.Drawing.Point(361, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 17);
+            this.label3.Size = new System.Drawing.Size(56, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Điện Thoại";
+            this.label3.Text = "Đơn Gía";
             // 
-            // txtDienThoai
+            // txtDonGia
             // 
-            this.txtDienThoai.Location = new System.Drawing.Point(90, 82);
-            this.txtDienThoai.Name = "txtDienThoai";
-            this.txtDienThoai.Size = new System.Drawing.Size(188, 23);
-            this.txtDienThoai.TabIndex = 3;
+            this.txtDonGia.Location = new System.Drawing.Point(435, 44);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(188, 23);
+            this.txtDonGia.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 132);
+            this.label2.Location = new System.Drawing.Point(13, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Địa Chỉ";
-            // 
-            // txtTen
-            // 
-            this.txtTen.Location = new System.Drawing.Point(342, 49);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(523, 23);
-            this.txtTen.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(284, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên";
+            this.label2.Text = "Số Người";
             // 
             // frmLoaiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 454);
+            this.ClientSize = new System.Drawing.Size(830, 417);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmLoaiPhong";
             this.Text = "Danh Mục Loại phòng";
+            this.Load += new System.EventHandler(this.frmLoaiPhong_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).EndInit();
@@ -381,23 +337,18 @@ namespace THUEPHONG
         private DevExpress.XtraGrid.Views.Grid.GridView gvDanhSach;
         private DevExpress.XtraGrid.Columns.GridColumn DISABLED;
         private DevExpress.XtraGrid.Columns.GridColumn TENLOAIPHONG;
-        private DevExpress.XtraGrid.Columns.GridColumn DIENTHOAI;
-        private DevExpress.XtraGrid.Columns.GridColumn EMAIL;
-        private DevExpress.XtraGrid.Columns.GridColumn FAX;
-        private DevExpress.XtraGrid.Columns.GridColumn DIACHI;
+        private DevExpress.XtraGrid.Columns.GridColumn DONGIA;
+        private DevExpress.XtraGrid.Columns.GridColumn SONGUOITOIDA;
+        private DevExpress.XtraGrid.Columns.GridColumn SOGIUONG;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtMACTY;
+        private System.Windows.Forms.TextBox txtTenLoaiPhong;
         private System.Windows.Forms.CheckBox chDisabled;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtDiaChi;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtFax;
+        private System.Windows.Forms.TextBox txtSoGiuong;
+        private System.Windows.Forms.TextBox txtSoNguoi;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDienThoai;
+        private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTen;
-        private System.Windows.Forms.Label label1;
     }
 }

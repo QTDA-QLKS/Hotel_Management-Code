@@ -42,12 +42,12 @@ namespace THUEPHONG
             this.TENTHIETBI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboSL = new System.Windows.Forms.ComboBox();
+            this.cboTB = new System.Windows.Forms.ComboBox();
+            this.cboTPhong = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cboTPhong = new System.Windows.Forms.ComboBox();
-            this.cboTB = new System.Windows.Forms.ComboBox();
-            this.cboSL = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
@@ -78,6 +78,7 @@ namespace THUEPHONG
             this.btnThem.Size = new System.Drawing.Size(50, 44);
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -87,6 +88,7 @@ namespace THUEPHONG
             this.btnSua.Size = new System.Drawing.Size(38, 44);
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -96,6 +98,7 @@ namespace THUEPHONG
             this.btnXoa.Size = new System.Drawing.Size(39, 44);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -105,6 +108,7 @@ namespace THUEPHONG
             this.btnLuu.Size = new System.Drawing.Size(37, 44);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnBoQua
             // 
@@ -114,6 +118,7 @@ namespace THUEPHONG
             this.btnBoQua.Size = new System.Drawing.Size(60, 44);
             this.btnBoQua.Text = "Bỏ qua";
             this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
             // 
             // btnThoat
             // 
@@ -123,6 +128,7 @@ namespace THUEPHONG
             this.btnThoat.Size = new System.Drawing.Size(51, 44);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // gcDanhSach
             // 
@@ -193,6 +199,42 @@ namespace THUEPHONG
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // cboSL
+            // 
+            this.cboSL.FormattingEnabled = true;
+            this.cboSL.Location = new System.Drawing.Point(441, 46);
+            this.cboSL.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboSL.Name = "cboSL";
+            this.cboSL.Size = new System.Drawing.Size(184, 24);
+            this.cboSL.TabIndex = 17;
+            // 
+            // cboTB
+            // 
+            this.cboTB.FormattingEnabled = true;
+            this.cboTB.Location = new System.Drawing.Point(140, 99);
+            this.cboTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboTB.Name = "cboTB";
+            this.cboTB.Size = new System.Drawing.Size(184, 24);
+            this.cboTB.TabIndex = 16;
+            // 
+            // cboTPhong
+            // 
+            this.cboTPhong.FormattingEnabled = true;
+            this.cboTPhong.Location = new System.Drawing.Point(140, 45);
+            this.cboTPhong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboTPhong.Name = "cboTPhong";
+            this.cboTPhong.Size = new System.Drawing.Size(184, 24);
+            this.cboTPhong.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 17);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Tên Phòng";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -210,42 +252,6 @@ namespace THUEPHONG
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Số Lượng";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 17);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Tên Phòng";
-            // 
-            // cboTPhong
-            // 
-            this.cboTPhong.FormattingEnabled = true;
-            this.cboTPhong.Location = new System.Drawing.Point(140, 45);
-            this.cboTPhong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cboTPhong.Name = "cboTPhong";
-            this.cboTPhong.Size = new System.Drawing.Size(184, 24);
-            this.cboTPhong.TabIndex = 15;
-            // 
-            // cboTB
-            // 
-            this.cboTB.FormattingEnabled = true;
-            this.cboTB.Location = new System.Drawing.Point(140, 99);
-            this.cboTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cboTB.Name = "cboTB";
-            this.cboTB.Size = new System.Drawing.Size(184, 24);
-            this.cboTB.TabIndex = 16;
-            // 
-            // cboSL
-            // 
-            this.cboSL.FormattingEnabled = true;
-            this.cboSL.Location = new System.Drawing.Point(441, 46);
-            this.cboSL.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cboSL.Name = "cboSL";
-            this.cboSL.Size = new System.Drawing.Size(184, 24);
-            this.cboSL.TabIndex = 17;
             // 
             // frmPThietBi
             // 

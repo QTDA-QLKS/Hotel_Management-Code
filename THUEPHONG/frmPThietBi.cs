@@ -93,5 +93,35 @@ namespace THUEPHONG
             gcDanhSach.DataSource = _pthietbi.getAll(cboTB.SelectedValue.ToString());
             gvDanhSach.OptionsBehavior.Editable = false;
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBoQua_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

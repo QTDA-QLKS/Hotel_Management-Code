@@ -44,14 +44,14 @@ namespace THUEPHONG
             this.TENTANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENLOAIPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboCty = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cboTang = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtMACTY = new System.Windows.Forms.TextBox();
             this.chDisabled = new System.Windows.Forms.CheckBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
@@ -82,6 +82,7 @@ namespace THUEPHONG
             this.btnThem.Size = new System.Drawing.Size(50, 44);
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -91,6 +92,7 @@ namespace THUEPHONG
             this.btnSua.Size = new System.Drawing.Size(38, 44);
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -100,6 +102,7 @@ namespace THUEPHONG
             this.btnXoa.Size = new System.Drawing.Size(39, 44);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -109,6 +112,7 @@ namespace THUEPHONG
             this.btnLuu.Size = new System.Drawing.Size(37, 44);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnBoQua
             // 
@@ -118,6 +122,7 @@ namespace THUEPHONG
             this.btnBoQua.Size = new System.Drawing.Size(60, 44);
             this.btnBoQua.Text = "Bỏ qua";
             this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
             // 
             // btnThoat
             // 
@@ -127,6 +132,7 @@ namespace THUEPHONG
             this.btnThoat.Size = new System.Drawing.Size(51, 44);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // gcDanhSach
             // 
@@ -193,7 +199,7 @@ namespace THUEPHONG
             // 
             // TENLOAIPHONG
             // 
-            this.TENLOAIPHONG.Caption = "TÊN LOẠI PHÒNG";
+            this.TENLOAIPHONG.Caption = "LOẠI PHÒNG";
             this.TENLOAIPHONG.FieldName = "TENLOAIPHONG";
             this.TENLOAIPHONG.MinWidth = 25;
             this.TENLOAIPHONG.Name = "TENLOAIPHONG";
@@ -204,7 +210,7 @@ namespace THUEPHONG
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.cboCty);
+            this.groupBox1.Controls.Add(this.cboTang);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtMACTY);
@@ -221,14 +227,26 @@ namespace THUEPHONG
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
-            // cboCty
+            // checkBox1
             // 
-            this.cboCty.FormattingEnabled = true;
-            this.cboCty.Location = new System.Drawing.Point(107, 78);
-            this.cboCty.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cboCty.Name = "cboCty";
-            this.cboCty.Size = new System.Drawing.Size(187, 24);
-            this.cboCty.TabIndex = 14;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(391, 78);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 21);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.Text = "Disabled";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // cboTang
+            // 
+            this.cboTang.FormattingEnabled = true;
+            this.cboTang.Location = new System.Drawing.Point(107, 78);
+            this.cboTang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboTang.Name = "cboTang";
+            this.cboTang.Size = new System.Drawing.Size(187, 24);
+            this.cboTang.TabIndex = 14;
             // 
             // label7
             // 
@@ -284,18 +302,6 @@ namespace THUEPHONG
             this.label1.TabIndex = 0;
             this.label1.Text = "Loại Phòng";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(391, 78);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 21);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Disabled";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // frmPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -305,7 +311,8 @@ namespace THUEPHONG
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmPhong";
-            this.Text = "frmPhong";
+            this.Text = "Danh Mục Phòng";
+            this.Load += new System.EventHandler(this.frmPhong_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).EndInit();
@@ -335,7 +342,7 @@ namespace THUEPHONG
         private DevExpress.XtraGrid.Columns.GridColumn TENLOAIPHONG;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ComboBox cboCty;
+        private System.Windows.Forms.ComboBox cboTang;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtMACTY;

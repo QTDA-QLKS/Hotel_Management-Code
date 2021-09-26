@@ -22,6 +22,7 @@ namespace BussinessLayer
             return db.tb_Phong.Where(x => x.IDTANG == idTang).ToList();
         }
 
+
         public void add(tb_Phong phong)
         {
             try

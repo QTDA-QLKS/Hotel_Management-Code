@@ -99,6 +99,7 @@ C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\THUEPHONG\bin\Debug\ja\DevExpr
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\THUEPHONG\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\THUEPHONG\obj\Debug\THUEPHONG.csproj.AssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\THUEPHONG\obj\Debug\THUEPHONG.frmCongTy.resources
+C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\THUEPHONG\obj\Debug\THUEPHONG.frmDatPhong.resources
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\THUEPHONG\obj\Debug\THUEPHONG.frmKetNoiDB.resources
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\THUEPHONG\obj\Debug\THUEPHONG.frmKhachHang.resources
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\THUEPHONG\obj\Debug\THUEPHONG.frmLoaiPhong.resources

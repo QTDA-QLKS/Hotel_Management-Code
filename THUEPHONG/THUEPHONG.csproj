@@ -72,12 +72,6 @@
     <Compile Include="frmCongTy.Designer.cs">
       <DependentUpon>frmCongTy.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDatPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDatPhong.Designer.cs">
-      <DependentUpon>frmDatPhong.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmKetNoiDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +126,7 @@
     <Compile Include="frmThietBi.Designer.cs">
       <DependentUpon>frmThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="myFunctions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmDonVi.cs">
@@ -140,11 +135,14 @@
     <Compile Include="frmDonVi.Designer.cs">
       <DependentUpon>frmDonVi.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatPhong.Designer.cs">
+      <DependentUpon>frmDatPhong.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmCongTy.resx">
       <DependentUpon>frmCongTy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDatPhong.resx">
-      <DependentUpon>frmDatPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKetNoiDB.resx">
       <DependentUpon>frmKetNoiDB.cs</DependentUpon>
@@ -181,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDonVi.resx">
       <DependentUpon>frmDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatPhong.resx">
+      <DependentUpon>frmDatPhong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -250,6 +251,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

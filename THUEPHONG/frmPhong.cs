@@ -77,7 +77,7 @@ namespace THUEPHONG
 
         void loadTang()
         {
-            cboTang.DataSource = _tang.getAll();
+            cboTang.DataSource = _phong.getAll();
             cboTang.DisplayMember = "TENTANG";
             cboTang.ValueMember = "IDTANG";
         }

@@ -55,6 +55,13 @@ namespace BussinessLayer
 
         }
 
+        public void updateStatus(int id,bool status)
+        {
+            tb_Phong p = db.tb_Phong.FirstOrDefault(x => x.IDPHONG == id);
+            p.STATUS = status;
+            db.SaveChanges();
+        }
+
         public void delete(int idphong)
         {
             tb_Phong _kh = db.tb_Phong.FirstOrDefault(x => x.IDPHONG == idphong);

@@ -71,8 +71,10 @@ namespace THUEPHONG
             Application.Exit();
         }
 
-        void showRoom()
+        public void showRoom()
         {
+            _tang = new TANG();
+            _phong = new PHONG();
             var lsTang = _tang.getAll();
             gControl.Gallery.ItemImageLayout = ImageLayoutMode.ZoomInside;
             gControl.Gallery.ImageSize = new Size(64, 64);

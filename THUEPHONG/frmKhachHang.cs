@@ -20,6 +20,7 @@ namespace THUEPHONG
             InitializeComponent();
         }
 
+        frmDatPhong objDP = (frmDatPhong)Application.OpenForms["frmDatPhong"];
         KHACHHANG _khachhang;
         bool _them;
         string _idkh;
@@ -158,6 +159,23 @@ namespace THUEPHONG
                 txtEmail.Text = gvDanhSach.GetFocusedRowCellValue("EMAIL").ToString();
                 txtDiaChi.Text = gvDanhSach.GetFocusedRowCellValue("DIACHI").ToString();
                 chDisabled.Checked = bool.Parse(gvDanhSach.GetFocusedRowCellValue("DISABLED").ToString());
+            }
+
+            if (gvDanhSach.GetFocusedRowCellValue("IDKH") != null)
+            {
+                objDP.loadKH();
+                objDP.setKhachHang(gvDanhSach.GetFocusedRowCellValue("IDKH").ToString());
+                this.Close();
+            }
+        }
+
+        private void gvDanhSach_DoubleClick(object sender, EventArgs e)
+        {
+            if (gvDanhSach.GetFocusedRowCellValue("IDKH") != null)
+            {
+                objDP.loadKH();
+                objDP.setKhachHang(gvDanhSach.GetFocusedRowCellValue("IDKH").ToString());
+                this.Close();
             }
         }
     }

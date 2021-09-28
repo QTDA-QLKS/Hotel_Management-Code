@@ -22,19 +22,49 @@ namespace BussinessLayer
         {
             return db.tb_DatPhong.ToList();
         }
-        public void add(tb_DatPhong kh)
+
+        public List<OBJ_DATPHONG> getAll(DateTime tungay,DateTime denngay,string madvi, string macty)
+        {
+            var listDP= db.tb_DatPhong.Where(x => x.NGAYDATPHONG >= tungay && x.NGAYDATPHONG < denngay && x.MACTY == macty && x.MADVI ==madvi).ToList();
+            List<OBJ_DATPHONG> lstDP = new List<OBJ_DATPHONG>();
+            OBJ_DATPHONG dp;
+            foreach(var item in listDP)
+            {
+                dp = new OBJ_DATPHONG();
+                dp.IDDP = item.IDDP;
+                dp.IDKH = item.IDKH;
+                var kh = db.tb_KhachHang.FirstOrDefault(x => x.IDKH == item.IDKH);
+                dp.HOTEN = kh.HOTEN;
+                dp.IDUSER = item.IDUSER;
+                dp.NGAYDATPHONG = item.NGAYDATPHONG;
+                dp.NGAYTRAPHONG = item.NGAYTRAPHONG;
+                dp.MACTY = item.MACTY;
+                dp.MADVI = item.MADVI;
+                dp.SONGUOIO = item.SONGUOIO;
+                dp.STATUS = item.STATUS;
+                dp.THEODOAN = item.THEODOAN;
+                dp.DISABLED = item.DISABLED;
+                dp.GHICHU = item.GHICHU;
+                dp.SOTIEN = item.SOTIEN;
+                lstDP.Add(dp);
+            }
+            return lstDP;
+        }
+
+        public tb_DatPhong add(tb_DatPhong kh)
         {
             try
             {
                 db.tb_DatPhong.Add(kh);
                 db.SaveChanges();
+                return kh;
             }
             catch (Exception ex)
             {
                 throw new Exception("Có lỗi" + ex.Message);
             }
         }
-        public void update(tb_DatPhong kh)
+        public tb_DatPhong update(tb_DatPhong kh)
         {
             tb_DatPhong _kh = db.tb_DatPhong.FirstOrDefault(x => x.IDDP == kh.IDDP);
             _kh.IDKH = kh.IDKH;
@@ -52,6 +82,7 @@ namespace BussinessLayer
             try
             {
                 db.SaveChanges();
+                return kh;
 
             }
             catch (Exception ex)
@@ -64,6 +95,7 @@ namespace BussinessLayer
         public void delete(int id)
         {
             tb_DatPhong _kh = db.tb_DatPhong.FirstOrDefault(x => x.IDDP == id);
+            _kh.DISABLED = true;
             try
             {
                 db.SaveChanges();

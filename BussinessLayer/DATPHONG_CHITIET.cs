@@ -22,12 +22,13 @@ namespace BussinessLayer
         {
             return db.tb_DatPhong_CT.Where(x => x.IDDP== _idDP).ToList();
         }
-        public void add(tb_DatPhong_CT kh)
+        public tb_DatPhong_CT add(tb_DatPhong_CT kh)
         {
             try
             {
                 db.tb_DatPhong_CT.Add(kh);
                 db.SaveChanges();
+                return kh;
             }
             catch (Exception ex)
             {
@@ -39,6 +40,7 @@ namespace BussinessLayer
             tb_DatPhong_CT _kh = db.tb_DatPhong_CT.FirstOrDefault(x => x.IDDPCT == kh.IDDPCT);
             _kh.IDDP = kh.IDDP;
             _kh.IDPHONG = kh.IDPHONG;
+            _kh.IDDPCT = kh.IDDPCT;
             _kh.NGAY = kh.NGAY;
             _kh.DONGIA = kh.DONGIA;
             _kh.SONGAYO = kh.SONGAYO;
@@ -65,6 +67,20 @@ namespace BussinessLayer
             catch (Exception ex)
             {
                 throw new Exception("Lỗi rồi bạn ơi" + ex.Message);
+            }
+        }
+
+        public void deleteAll(int idDP)
+        {
+            List<tb_DatPhong_CT> lstDPCT = db.tb_DatPhong_CT.Where(x => x.IDDP == idDP).ToList();
+            try
+            {
+                db.tb_DatPhong_CT.RemoveRange(lstDPCT);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Có lỗi dữ liệu" + ex.Message);
             }
         }
     }

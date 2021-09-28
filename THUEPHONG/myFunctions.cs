@@ -20,7 +20,10 @@ namespace THUEPHONG
             con.ConnectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=HOTELS;Persist Security Info=True;User ID=sa;Password=12345678";
             try
             {
-                con.Open();
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Open();
+                }
             }
             catch (Exception)
             {
@@ -29,7 +32,11 @@ namespace THUEPHONG
         }
         public static void dongketnoi()
         {
-            con.Close();
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            //con.Close();
         }
 
         public static DataTable laydulieu (string qr)

@@ -23,12 +23,45 @@ namespace BussinessLayer
             return db.tb_DatPhong.ToList();
         }
 
-        public List<OBJ_DATPHONG> getAll(DateTime tungay,DateTime denngay,string madvi, string macty)
+        //public List<tb_DatPhong> getAll(DateTime tungay, DateTime denngay, string madvi, string macty)
+        //{
+        //    return db.tb_DatPhong.Where(x => x.NGAYDATPHONG >= tungay && x.NGAYDATPHONG < denngay && x.MACTY == macty && x.MADVI == madvi).ToList(); 
+        //}
+
+        //public List<OBJ_DATPHONG> getAll(DateTime tungay, DateTime denngay, string madvi, string macty)
+        //{
+        //    var listDP = db.tb_DatPhong.Where(x => x.NGAYDATPHONG >= tungay && x.NGAYDATPHONG < denngay && x.MACTY == macty && x.MADVI == madvi).ToList();
+        //    List<OBJ_DATPHONG> lstDP = new List<OBJ_DATPHONG>();
+        //    OBJ_DATPHONG dp;
+        //    foreach (var item in listDP)
+        //    {
+        //        dp = new OBJ_DATPHONG();
+        //        dp.IDDP = item.IDDP;
+        //        dp.IDKH = item.IDKH;
+        //        var kh = db.tb_KhachHang.FirstOrDefault(x => x.IDKH == item.IDKH);
+        //        dp.HOTEN = kh.HOTEN;
+        //        dp.IDUSER = item.IDUSER;
+        //        dp.NGAYDATPHONG = item.NGAYDATPHONG;
+        //        dp.NGAYTRAPHONG = item.NGAYTRAPHONG;
+        //        dp.MACTY = item.MACTY;
+        //        dp.MADVI = item.MADVI;
+        //        dp.SONGUOIO = item.SONGUOIO;
+        //        dp.SOTIEN = item.SOTIEN;
+        //        dp.STATUS = item.STATUS;
+        //        dp.THEODOAN = item.THEODOAN;
+        //        dp.DISABLED = item.DISABLED;
+        //        dp.GHICHU = item.GHICHU;
+        //        lstDP.Add(dp);
+        //    }
+        //    return lstDP;
+        //}
+
+        public List<OBJ_DATPHONG> getAll(DateTime tungay, DateTime denngay)
         {
-            var listDP= db.tb_DatPhong.Where(x => x.NGAYDATPHONG >= tungay && x.NGAYDATPHONG < denngay && x.MACTY == macty && x.MADVI ==madvi).ToList();
+            var listDP = db.tb_DatPhong.Where(x => x.NGAYDATPHONG >= tungay && x.NGAYDATPHONG < denngay).ToList();
             List<OBJ_DATPHONG> lstDP = new List<OBJ_DATPHONG>();
             OBJ_DATPHONG dp;
-            foreach(var item in listDP)
+            foreach (var item in listDP)
             {
                 dp = new OBJ_DATPHONG();
                 dp.IDDP = item.IDDP;
@@ -41,11 +74,11 @@ namespace BussinessLayer
                 dp.MACTY = item.MACTY;
                 dp.MADVI = item.MADVI;
                 dp.SONGUOIO = item.SONGUOIO;
+                dp.SOTIEN = item.SOTIEN;
                 dp.STATUS = item.STATUS;
                 dp.THEODOAN = item.THEODOAN;
                 dp.DISABLED = item.DISABLED;
                 dp.GHICHU = item.GHICHU;
-                dp.SOTIEN = item.SOTIEN;
                 lstDP.Add(dp);
             }
             return lstDP;

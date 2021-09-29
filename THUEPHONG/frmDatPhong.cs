@@ -86,6 +86,7 @@ namespace THUEPHONG
             _datphong = new DATPHONG();
             _datphongsanpham = new DATPHONG_SANPHAM();
             _datphongchititet = new DATPHONG_CHITITET();
+
             lstDPSP = new List<OBJ_DPSP>();
             dtTuNgay.Value = myFunctions.GetFirstDayInMont(DateTime.Now.Year, DateTime.Now.Month);
             dtDenNgay.Value = DateTime.Now;
@@ -111,7 +112,8 @@ namespace THUEPHONG
         void loadDanhSach()
         {
             _datphong = new DATPHONG();
-            gcDanhSach.DataSource = _datphong.getAll(dtTuNgay.Value, dtDenNgay.Value, _macty, _madvi);
+            //gcDanhSach.DataSource = _datphong.getAll(dtTuNgay.Value, dtDenNgay.Value, _macty, _madvi);
+            gcDanhSach.DataSource = _datphong.getAll(dtTuNgay.Value, dtDenNgay.Value);
             gvDanhSach.OptionsBehavior.Editable = false;
         }
 
@@ -245,7 +247,7 @@ namespace THUEPHONG
                 dp.IDUSER = 1;
                 dp.UPDATE_BY = 1;
                 dp.UPDATE_DATE = DateTime.Now;
-                
+
                 var _dp = _datphong.update(dp);
                 _idDP = _dp.IDDP;
                 _datphongchititet.deleteAll(_dp.IDDP);
@@ -259,7 +261,7 @@ namespace THUEPHONG
                     dpct.DONGIA = int.Parse(gvDatPhong.GetRowCellValue(i, "DONGIA").ToString());
                     dpct.THANHTIEN = dpct.SONGAYO = dpct.DONGIA;
                     dpct.NGAY = DateTime.Now;
-                    var _dpct=_datphongchititet.add(dpct);
+                    var _dpct = _datphongchititet.add(dpct);
                     _phong.updateStatus(dpct.IDPHONG, true);
                     if (gvSPDV.RowCount > 0)
                     {
@@ -526,7 +528,7 @@ namespace THUEPHONG
         {
             if (gvDanhSach.RowCount > 0)
             {
-                _idDP = int.Parse(gvDanhSach.GetFocusedRowCellValue("IDPHONG").ToString());
+                _idDP = int.Parse(gvDanhSach.GetFocusedRowCellValue("IDDP").ToString());
                 var dp = _datphong.getItem(_idDP);
                 cbKhachHang.SelectedValue = dp.IDKH;
                 dtNgayDat.Value = dp.NGAYDATPHONG.Value;
@@ -610,7 +612,7 @@ namespace THUEPHONG
         {
             if (gvDanhSach.RowCount > 0)
             {
-                _idDP = int.Parse(gvDanhSach.GetFocusedRowCellValue("IDPHONG").ToString());
+                _idDP = int.Parse(gvDanhSach.GetFocusedRowCellValue("IDDP").ToString());
                 var dp = _datphong.getItem(_idDP);
                 cbKhachHang.SelectedValue = dp.IDKH;
                 dtNgayDat.Value = dp.NGAYDATPHONG.Value;
@@ -621,7 +623,6 @@ namespace THUEPHONG
                 txtThanhTien.Text = dp.SOTIEN.Value.ToString();
                 loadDP();
                 loadSPDV();
-                //chkDoan.Checked=dp.the
             }
             tabDanhSach.SelectedTabPage = pageChiTiet;
         }
@@ -659,12 +660,12 @@ namespace THUEPHONG
 
         private void gvDanhSach_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-        //    if (e.Column.Name == "DISABLED" && bool.Parse(e.CellValue.ToString()) == true)
-        //    {
-        //        Image img = Properties.Resources.cancel;
-        //        e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
-        //        e.Handled = true;
-        //    }
+            //if (e.Column.Name == "DISABLED" && bool.Parse(e.CellValue.ToString()) == true)
+            //{
+            //    Image img = Properties.Resources.cancel;
+            //    e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
+            //    e.Handled = true;
+            //}
         }
     }
 }

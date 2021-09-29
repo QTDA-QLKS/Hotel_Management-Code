@@ -16,8 +16,6 @@ namespace BussinessLayer
         public double? SOTIEN { set; get; }
         public int? SONGUOIO { set; get; }
         public int IDUSER { set; get;}
-        public string FULLNAME { set; get; }
-        public string TENPHONG { set; get; }
         public string MACTY { set; get; }
         public string MADVI { set; get; }
         public bool? STATUS { set; get; }
@@ -25,7 +23,8 @@ namespace BussinessLayer
         public bool? DISABLED { set; get; }
         public string GHICHU { set; get; }
 
-
+        public string FULLNAME { set; get; }
+        public string TENPHONG { set; get; }
         public double DONGIA { set; get; }
         
         public int IDTANG { set; get; }

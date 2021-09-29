@@ -255,6 +255,13 @@
   <ItemGroup>
     <None Include="Resources\printer.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\132192_delete_icon.png" />
+    <None Include="Resources\1398919_close_cross_incorrect_invalid_x_icon.png" />
+    <Content Include="Resources\clear.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\clear1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

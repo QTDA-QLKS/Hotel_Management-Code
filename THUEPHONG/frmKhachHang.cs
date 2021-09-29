@@ -178,5 +178,15 @@ namespace THUEPHONG
                 this.Close();
             }
         }
+
+        private void gvDanhSach_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.Name == "DISABLED" && bool.Parse(e.CellValue.ToString()) == true)
+            {
+                Image img = Properties.Resources._132192_delete_icon;
+                e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
+                e.Handled = true;
+            }
+        }
     }
 }

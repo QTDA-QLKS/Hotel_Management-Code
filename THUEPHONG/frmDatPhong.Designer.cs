@@ -60,6 +60,7 @@ namespace THUEPHONG
             this.IDKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HOTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDUSER = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pageChiTiet = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -112,7 +113,6 @@ namespace THUEPHONG
             this.dpTENPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dpDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dpTENTANG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IDUSER = new DevExpress.XtraGrid.Columns.GridColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabDanhSach)).BeginInit();
             this.tabDanhSach.SuspendLayout();
@@ -363,11 +363,12 @@ namespace THUEPHONG
             this.DISABLED.AppearanceHeader.Options.UseFont = true;
             this.DISABLED.Caption = "DIS";
             this.DISABLED.FieldName = "DISABLED";
+            this.DISABLED.MaxWidth = 80;
             this.DISABLED.MinWidth = 24;
             this.DISABLED.Name = "DISABLED";
             this.DISABLED.Visible = true;
             this.DISABLED.VisibleIndex = 0;
-            this.DISABLED.Width = 94;
+            this.DISABLED.Width = 60;
             // 
             // IDDP
             // 
@@ -389,7 +390,7 @@ namespace THUEPHONG
             this.NGAYDATPHONG.Name = "NGAYDATPHONG";
             this.NGAYDATPHONG.Visible = true;
             this.NGAYDATPHONG.VisibleIndex = 1;
-            this.NGAYDATPHONG.Width = 94;
+            this.NGAYDATPHONG.Width = 161;
             // 
             // NGAYTRAPHONG
             // 
@@ -401,7 +402,7 @@ namespace THUEPHONG
             this.NGAYTRAPHONG.Name = "NGAYTRAPHONG";
             this.NGAYTRAPHONG.Visible = true;
             this.NGAYTRAPHONG.VisibleIndex = 2;
-            this.NGAYTRAPHONG.Width = 94;
+            this.NGAYTRAPHONG.Width = 161;
             // 
             // SOTIEN
             // 
@@ -413,7 +414,7 @@ namespace THUEPHONG
             this.SOTIEN.Name = "SOTIEN";
             this.SOTIEN.Visible = true;
             this.SOTIEN.VisibleIndex = 3;
-            this.SOTIEN.Width = 94;
+            this.SOTIEN.Width = 161;
             // 
             // SONGUOIO
             // 
@@ -425,7 +426,7 @@ namespace THUEPHONG
             this.SONGUOIO.Name = "SONGUOIO";
             this.SONGUOIO.Visible = true;
             this.SONGUOIO.VisibleIndex = 4;
-            this.SONGUOIO.Width = 94;
+            this.SONGUOIO.Width = 161;
             // 
             // MACTY
             // 
@@ -457,7 +458,7 @@ namespace THUEPHONG
             this.STATUS.Name = "STATUS";
             this.STATUS.Visible = true;
             this.STATUS.VisibleIndex = 5;
-            this.STATUS.Width = 94;
+            this.STATUS.Width = 161;
             // 
             // THEODOAN
             // 
@@ -469,7 +470,7 @@ namespace THUEPHONG
             this.THEODOAN.Name = "THEODOAN";
             this.THEODOAN.Visible = true;
             this.THEODOAN.VisibleIndex = 6;
-            this.THEODOAN.Width = 94;
+            this.THEODOAN.Width = 161;
             // 
             // IDKH
             // 
@@ -491,7 +492,7 @@ namespace THUEPHONG
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.Visible = true;
             this.HOTEN.VisibleIndex = 7;
-            this.HOTEN.Width = 94;
+            this.HOTEN.Width = 161;
             // 
             // GHICHU
             // 
@@ -503,14 +504,22 @@ namespace THUEPHONG
             this.GHICHU.Name = "GHICHU";
             this.GHICHU.Visible = true;
             this.GHICHU.VisibleIndex = 8;
-            this.GHICHU.Width = 94;
+            this.GHICHU.Width = 165;
+            // 
+            // IDUSER
+            // 
+            this.IDUSER.Caption = "IDUSER";
+            this.IDUSER.FieldName = "IDUSER";
+            this.IDUSER.MinWidth = 25;
+            this.IDUSER.Name = "IDUSER";
+            this.IDUSER.Width = 87;
             // 
             // pageChiTiet
             // 
             this.pageChiTiet.Controls.Add(this.tableLayoutPanel1);
             this.pageChiTiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pageChiTiet.Name = "pageChiTiet";
-            this.pageChiTiet.Size = new System.Drawing.Size(1382, 657);
+            this.pageChiTiet.Size = new System.Drawing.Size(1382, 662);
             this.pageChiTiet.Text = "Chi Tiết";
             // 
             // tableLayoutPanel1
@@ -528,7 +537,7 @@ namespace THUEPHONG
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1382, 657);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1382, 662);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl2
@@ -538,7 +547,7 @@ namespace THUEPHONG
             this.groupControl2.Location = new System.Drawing.Point(1038, 2);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(341, 653);
+            this.groupControl2.Size = new System.Drawing.Size(341, 658);
             this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "Danh sách Sản Phẩm-Dịch Vụ";
             this.groupControl2.UseWaitCursor = true;
@@ -552,7 +561,7 @@ namespace THUEPHONG
             this.gcSanPham.MainView = this.gvSanPham;
             this.gcSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcSanPham.Name = "gcSanPham";
-            this.gcSanPham.Size = new System.Drawing.Size(337, 623);
+            this.gcSanPham.Size = new System.Drawing.Size(337, 628);
             this.gcSanPham.TabIndex = 0;
             this.gcSanPham.UseWaitCursor = true;
             this.gcSanPham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -610,7 +619,7 @@ namespace THUEPHONG
             this.groupControl1.Location = new System.Drawing.Point(3, 2);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(408, 653);
+            this.groupControl1.Size = new System.Drawing.Size(408, 658);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Danh sách phòng trống";
             this.groupControl1.UseWaitCursor = true;
@@ -625,7 +634,7 @@ namespace THUEPHONG
             this.gcPhong.MainView = this.gvPhong;
             this.gcPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcPhong.Name = "gcPhong";
-            this.gcPhong.Size = new System.Drawing.Size(404, 623);
+            this.gcPhong.Size = new System.Drawing.Size(404, 628);
             this.gcPhong.TabIndex = 0;
             this.gcPhong.UseWaitCursor = true;
             this.gcPhong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -731,7 +740,7 @@ namespace THUEPHONG
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl4);
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl3);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(615, 653);
+            this.splitContainerControl2.Size = new System.Drawing.Size(615, 658);
             this.splitContainerControl2.SplitterPosition = 130;
             this.splitContainerControl2.TabIndex = 3;
             // 
@@ -900,7 +909,7 @@ namespace THUEPHONG
             this.groupControl5.Location = new System.Drawing.Point(0, 431);
             this.groupControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(615, 80);
+            this.groupControl5.Size = new System.Drawing.Size(615, 85);
             this.groupControl5.TabIndex = 3;
             this.groupControl5.Text = "TỔNG THANH TOÁN";
             this.groupControl5.UseWaitCursor = true;
@@ -1146,14 +1155,6 @@ namespace THUEPHONG
             this.dpTENTANG.Visible = true;
             this.dpTENTANG.VisibleIndex = 2;
             this.dpTENTANG.Width = 94;
-            // 
-            // IDUSER
-            // 
-            this.IDUSER.Caption = "IDUSER";
-            this.IDUSER.FieldName = "IDUSER";
-            this.IDUSER.MinWidth = 25;
-            this.IDUSER.Name = "IDUSER";
-            this.IDUSER.Width = 87;
             // 
             // frmDatPhong
             // 

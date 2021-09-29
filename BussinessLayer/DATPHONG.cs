@@ -23,11 +23,6 @@ namespace BussinessLayer
             return db.tb_DatPhong.ToList();
         }
 
-        //public List<tb_DatPhong> getAll(DateTime tungay, DateTime denngay, string madvi, string macty)
-        //{
-        //    return db.tb_DatPhong.Where(x => x.NGAYDATPHONG >= tungay && x.NGAYDATPHONG < denngay && x.MACTY == macty && x.MADVI == madvi).ToList(); 
-        //}
-
         //public List<OBJ_DATPHONG> getAll(DateTime tungay, DateTime denngay, string madvi, string macty)
         //{
         //    var listDP = db.tb_DatPhong.Where(x => x.NGAYDATPHONG >= tungay && x.NGAYDATPHONG < denngay && x.MACTY == macty && x.MADVI == madvi).ToList();

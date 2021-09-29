@@ -160,13 +160,6 @@ namespace THUEPHONG
                 txtDiaChi.Text = gvDanhSach.GetFocusedRowCellValue("DIACHI").ToString();
                 chDisabled.Checked = bool.Parse(gvDanhSach.GetFocusedRowCellValue("DISABLED").ToString());
             }
-
-            if (gvDanhSach.GetFocusedRowCellValue("IDKH") != null)
-            {
-                objDP.loadKH();
-                objDP.setKhachHang(gvDanhSach.GetFocusedRowCellValue("IDKH").ToString());
-                this.Close();
-            }
         }
 
         private void gvDanhSach_DoubleClick(object sender, EventArgs e)

@@ -35,6 +35,7 @@ namespace THUEPHONG
         string _macty;
         string _madvi;
         int _idDP = 0;
+        int _rowDatPhong=0;
         SYS_PARAM _param;
         List<OBJ_DPSP> lstDPSP;
         DATPHONG _datphong;
@@ -63,6 +64,10 @@ namespace THUEPHONG
             chkDoan.Checked = true;
             spSoNguoi.Enabled = t;
             txtGhiChu.Enabled = t;
+            gcPhong.Enabled = t;
+            gcDatPhong.Enabled = t;
+            gcSanPham.Enabled = t;
+            gcSPDV.Enabled = t;
         }
 
         void _reset()
@@ -99,7 +104,7 @@ namespace THUEPHONG
             cbTrangThai.DataSource = TRANGTHAI.getList();
             cbTrangThai.ValueMember = "_value";
             cbTrangThai.DisplayMember = "_display";
-            _enabled(true);
+            _enabled(false);
             showHideControl(true);
             gvPhong.ExpandAllGroups();
             tabDanhSach.SelectedTabPage = pageDanhSach;
@@ -120,7 +125,6 @@ namespace THUEPHONG
         public void loadKH()
         {
             _khachhang = new KHACHHANG();
-            _datphong = new DATPHONG();
             cbKhachHang.DataSource = _khachhang.getAll();
             cbKhachHang.DisplayMember = "HOTEN";
             cbKhachHang.ValueMember = "IDKH";
@@ -132,12 +136,23 @@ namespace THUEPHONG
             gvSanPham.OptionsBehavior.Editable = false;
         }
 
+        void addReset()
+        {
+            DataTable tb = myFunctions.laydulieu("SELECT A.IDPHONG, A.TENPHONG, C.DONGIA, A.IDTANG, B.TENTANG FROM tb_Phong A,tb_Tang B,tb_LoaiPhong C WHERE A.IDTANG=B.IDTANG AND A.STATUS=0 AND A.IDLOAIPHONG =C.IDLOAIPHONG ");
+            gcPhong.DataSource = tb;
+            gcDatPhong.DataSource = tb.Clone();
+            gvPhong.ExpandAllGroups();
+            gcSPDV.DataSource = _datphongsanpham.getAllByDatPhong(0);
+            txtThanhTien.Text = "0";
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             _them = true;
             showHideControl(false);
             _enabled(true);
             _reset();
+            addReset();
             tabDanhSach.SelectedTabPage = pageChiTiet;
         }
 
@@ -157,7 +172,7 @@ namespace THUEPHONG
                 var lstDPCT = _datphongchititet.getAllByDatPhong(_idDP);
                 foreach (var item in lstDPCT)
                 {
-                    _phong.updateStatus(item.IDDP, false);
+                    _phong.updateStatus(item.IDPHONG, false);
                 }
             }
             loadDanhSach();
@@ -167,12 +182,10 @@ namespace THUEPHONG
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            
-            _them = false;
             saveData();
-            loadDanhSach();
             objMain.gControl.Gallery.Groups.Clear();
             objMain.showRoom();
+            loadDanhSach();
             _enabled(false);
             showHideControl(true);
 
@@ -504,6 +517,15 @@ namespace THUEPHONG
 
         private void gvDatPhong_RowCountChanged(object sender, EventArgs e)
         {
+            if (gvDatPhong.RowCount < _rowDatPhong && _them == false)
+            {
+                _phong.updateStatus(_idPhong, false);
+                _datphongchititet.delete(_idDP,_idPhong);
+                _datphongsanpham.deleteByDatPhong(_idDP, _idPhong);
+                objMain.gControl.Gallery.Groups.Clear();
+                objMain.showRoom();
+            }
+
             double t = 0;
             if (gvSPDV.Columns["THANHTIEN"].SummaryItem.SummaryValue == null)
                 t = 0;
@@ -544,7 +566,9 @@ namespace THUEPHONG
 
         void loadDP()
         {
+            _rowDatPhong = 0;
             gcDatPhong.DataSource = myFunctions.laydulieu("SELECT A.IDPHONG, A.TENPHONG, C.DONGIA, A.IDTANG, B.TENTANG FROM tb_Phong A,tb_Tang B,tb_LoaiPhong C ,tb_DatPhong_CT D WHERE A.IDTANG = B.IDTANG AND A.IDLOAIPHONG = C.IDLOAIPHONG AND A.IDPHONG = D.IDPHONG AND D.IDDP = '"+_idDP+"'");
+            _rowDatPhong = gvDatPhong.RowCount;
         }
 
         void loadSPDV()

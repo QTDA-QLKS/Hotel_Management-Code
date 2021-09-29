@@ -50,6 +50,20 @@ namespace BussinessLayer
                 throw new Exception("Có lỗi dữ liệu" + ex.Message);
             }
         }
+
+        public void deleteByDatPhong(int _idDP,int _idPhong)
+        {
+            List<tb_DatPhong_SanPham> lstDP = db.tb_DatPhong_SanPham.Where(x => x.IDDP == _idDP && x.IDPHONG==_idPhong).ToList();
+            try
+            {
+                db.tb_DatPhong_SanPham.RemoveRange(lstDP);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Có lỗi dữ liệu" + ex.Message);
+            }
+        }
         public void deleteAll(int idDP)
         {
             List<tb_DatPhong_SanPham> lstDP = db.tb_DatPhong_SanPham.Where(x => x.IDDP == idDP).ToList();

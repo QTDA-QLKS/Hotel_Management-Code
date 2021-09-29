@@ -57,11 +57,12 @@ namespace BussinessLayer
 
         }
 
-        public void delete(int id)
+        public void delete(int _idDP,int _idPhong)
         {
-            tb_DatPhong_CT _kh = db.tb_DatPhong_CT.FirstOrDefault(x => x.IDDPCT == id);
+            tb_DatPhong_CT _kh = db.tb_DatPhong_CT.FirstOrDefault(x => x.IDDP == _idDP &&x.IDPHONG==_idPhong);
             try
             {
+                db.tb_DatPhong_CT.Remove(_kh);
                 db.SaveChanges();
             }
             catch (Exception ex)

@@ -563,6 +563,7 @@ namespace THUEPHONG
             this.gcSanPham.Name = "gcSanPham";
             this.gcSanPham.Size = new System.Drawing.Size(337, 628);
             this.gcSanPham.TabIndex = 0;
+            this.gcSanPham.UseDisabledStatePainter = false;
             this.gcSanPham.UseWaitCursor = true;
             this.gcSanPham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSanPham});
@@ -636,6 +637,7 @@ namespace THUEPHONG
             this.gcPhong.Name = "gcPhong";
             this.gcPhong.Size = new System.Drawing.Size(404, 628);
             this.gcPhong.TabIndex = 0;
+            this.gcPhong.UseDisabledStatePainter = false;
             this.gcPhong.UseWaitCursor = true;
             this.gcPhong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPhong});
@@ -959,6 +961,7 @@ namespace THUEPHONG
             this.gcSPDV.Name = "gcSPDV";
             this.gcSPDV.Size = new System.Drawing.Size(611, 209);
             this.gcSPDV.TabIndex = 0;
+            this.gcSPDV.UseDisabledStatePainter = false;
             this.gcSPDV.UseWaitCursor = true;
             this.gcSPDV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSPDV});
@@ -1090,6 +1093,7 @@ namespace THUEPHONG
             this.gcDatPhong.Name = "gcDatPhong";
             this.gcDatPhong.Size = new System.Drawing.Size(611, 162);
             this.gcDatPhong.TabIndex = 0;
+            this.gcDatPhong.UseDisabledStatePainter = false;
             this.gcDatPhong.UseWaitCursor = true;
             this.gcDatPhong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDatPhong});

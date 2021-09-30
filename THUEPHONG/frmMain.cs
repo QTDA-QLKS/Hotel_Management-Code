@@ -180,9 +180,24 @@ namespace THUEPHONG
 
         private void btnDatPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var gc_item = new GalleryItem();
-            string id = item.Value.ToString();
-            MessageBox.Show(id);
+            frmDatPhongDon frm = new frmDatPhongDon();
+            frm._idPhong = int.Parse(item.Value.ToString());
+            frm.ShowDialog();
+        }
+
+        private void btnChuyenPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnSPDV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnThanhToan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

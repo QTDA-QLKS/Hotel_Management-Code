@@ -17,6 +17,7 @@ C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\bin\Debug\EntityFram
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\bin\Debug\EntityFramework.xml
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\obj\Debug\DataLayer.csproj.AssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\obj\Debug\DataLayer.dll

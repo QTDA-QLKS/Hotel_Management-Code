@@ -56,6 +56,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,6 +72,12 @@
     </Compile>
     <Compile Include="frmCongTy.Designer.cs">
       <DependentUpon>frmCongTy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatPhongDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatPhongDon.Designer.cs">
+      <DependentUpon>frmDatPhongDon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmKetNoiDB.cs">
       <SubType>Form</SubType>
@@ -143,6 +150,9 @@
     </Compile>
     <EmbeddedResource Include="frmCongTy.resx">
       <DependentUpon>frmCongTy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatPhongDon.resx">
+      <DependentUpon>frmDatPhongDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKetNoiDB.resx">
       <DependentUpon>frmKetNoiDB.cs</DependentUpon>

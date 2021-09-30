@@ -54,6 +54,7 @@ namespace THUEPHONG
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btnChuyenPhong = new DevExpress.XtraBars.BarButtonItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
@@ -75,7 +76,7 @@ namespace THUEPHONG
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(859, 42);
+            this.toolStrip1.Size = new System.Drawing.Size(1002, 47);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -84,7 +85,7 @@ namespace THUEPHONG
             this.btnHeThong.Image = global::THUEPHONG.Properties.Resources._1208658_configure_gear_gears_mechanic_mechanical_icon1;
             this.btnHeThong.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnHeThong.Name = "btnHeThong";
-            this.btnHeThong.Size = new System.Drawing.Size(61, 39);
+            this.btnHeThong.Size = new System.Drawing.Size(75, 44);
             this.btnHeThong.Text = "Hệ thống";
             this.btnHeThong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHeThong.Click += new System.EventHandler(this.toolStripButton1_Click);
@@ -92,28 +93,28 @@ namespace THUEPHONG
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 42);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 47);
             // 
             // btnBaoCao
             // 
             this.btnBaoCao.Image = global::THUEPHONG.Properties.Resources.analytics;
             this.btnBaoCao.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBaoCao.Name = "btnBaoCao";
-            this.btnBaoCao.Size = new System.Drawing.Size(53, 39);
+            this.btnBaoCao.Size = new System.Drawing.Size(67, 44);
             this.btnBaoCao.Text = "Báo cáo";
             this.btnBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 42);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 47);
             // 
             // btnThoat
             // 
             this.btnThoat.Image = global::THUEPHONG.Properties.Resources._619539_close_delete_dismiss_exit_cancel_icon;
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(41, 39);
+            this.btnThoat.Size = new System.Drawing.Size(51, 44);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -121,14 +122,15 @@ namespace THUEPHONG
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 42);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 47);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.navBarMain);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gControl);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(859, 440);
-            this.splitContainerControl1.SplitterPosition = 183;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1002, 546);
+            this.splitContainerControl1.SplitterPosition = 213;
             this.splitContainerControl1.TabIndex = 1;
             // 
             // navBarMain
@@ -138,8 +140,8 @@ namespace THUEPHONG
             this.navBarMain.Location = new System.Drawing.Point(0, 0);
             this.navBarMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.navBarMain.Name = "navBarMain";
-            this.navBarMain.OptionsNavPane.ExpandedWidth = 183;
-            this.navBarMain.Size = new System.Drawing.Size(183, 440);
+            this.navBarMain.OptionsNavPane.ExpandedWidth = 213;
+            this.navBarMain.Size = new System.Drawing.Size(213, 546);
             this.navBarMain.SmallImages = this.imageList2;
             this.navBarMain.TabIndex = 0;
             this.navBarMain.Text = "navBarControl1";
@@ -165,7 +167,7 @@ namespace THUEPHONG
             this.gControl.Location = new System.Drawing.Point(0, 0);
             this.gControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gControl.Name = "gControl";
-            this.gControl.Size = new System.Drawing.Size(666, 440);
+            this.gControl.Size = new System.Drawing.Size(777, 546);
             this.gControl.TabIndex = 0;
             this.gControl.Text = "galleryControl1";
             // 
@@ -174,7 +176,7 @@ namespace THUEPHONG
             this.galleryControlClient1.GalleryControl = this.gControl;
             this.galleryControlClient1.Location = new System.Drawing.Point(2, 2);
             this.galleryControlClient1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.galleryControlClient1.Size = new System.Drawing.Size(645, 436);
+            this.galleryControlClient1.Size = new System.Drawing.Size(752, 542);
             // 
             // navMain
             // 
@@ -194,7 +196,8 @@ namespace THUEPHONG
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDatPhong),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSPDV),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnThanhToan)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnThanhToan),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnChuyenPhong)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Popup += new System.EventHandler(this.popupMenu1_Popup);
@@ -203,6 +206,8 @@ namespace THUEPHONG
             // 
             this.btnDatPhong.Caption = "Đặt Phòng";
             this.btnDatPhong.Id = 0;
+            this.btnDatPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDatPhong.ImageOptions.Image")));
+            this.btnDatPhong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDatPhong.ImageOptions.LargeImage")));
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDatPhong_ItemClick);
             // 
@@ -210,13 +215,19 @@ namespace THUEPHONG
             // 
             this.btnSPDV.Caption = "Cập Nhật Sản Phẩm - Dịch Vụ";
             this.btnSPDV.Id = 1;
+            this.btnSPDV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSPDV.ImageOptions.Image")));
+            this.btnSPDV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSPDV.ImageOptions.LargeImage")));
             this.btnSPDV.Name = "btnSPDV";
+            this.btnSPDV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSPDV_ItemClick);
             // 
             // btnThanhToan
             // 
             this.btnThanhToan.Caption = "Thanh Toán";
             this.btnThanhToan.Id = 2;
+            this.btnThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.ImageOptions.Image")));
+            this.btnThanhToan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.ImageOptions.LargeImage")));
             this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThanhToan_ItemClick);
             // 
             // barManager1
             // 
@@ -228,8 +239,9 @@ namespace THUEPHONG
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btnDatPhong,
             this.btnSPDV,
-            this.btnThanhToan});
-            this.barManager1.MaxItemId = 3;
+            this.btnThanhToan,
+            this.btnChuyenPhong});
+            this.barManager1.MaxItemId = 4;
             // 
             // barDockControlTop
             // 
@@ -238,16 +250,16 @@ namespace THUEPHONG
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(859, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1002, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 482);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 593);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(859, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1002, 0);
             // 
             // barDockControlLeft
             // 
@@ -256,28 +268,38 @@ namespace THUEPHONG
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 482);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 593);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(859, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1002, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 482);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 593);
+            // 
+            // btnChuyenPhong
+            // 
+            this.btnChuyenPhong.Caption = "Chuyển Phòng";
+            this.btnChuyenPhong.Id = 3;
+            this.btnChuyenPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyenPhong.ImageOptions.Image")));
+            this.btnChuyenPhong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChuyenPhong.ImageOptions.LargeImage")));
+            this.btnChuyenPhong.Name = "btnChuyenPhong";
+            this.btnChuyenPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChuyenPhong_ItemClick);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 482);
+            this.ClientSize = new System.Drawing.Size(1002, 593);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.barManager1.SetPopupContextMenu(this, this.popupMenu1);
             this.Text = "Quản lý khách sạn";
@@ -322,6 +344,7 @@ namespace THUEPHONG
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         public DevExpress.XtraBars.Ribbon.GalleryControl gControl;
+        private DevExpress.XtraBars.BarButtonItem btnChuyenPhong;
     }
 }
 

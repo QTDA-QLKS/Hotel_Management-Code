@@ -23,9 +23,21 @@ namespace BussinessLayer
             return db.tb_Phong_ThietBi.ToList();
         }
 
-        public List<tb_Phong_ThietBi> getAll(string phong)
+        public List<tb_Phong> getAll(int macty)
         {
-            return db.tb_Phong_ThietBi.Where(x => x.IDTB == phong).ToList();
+            return db.tb_Phong.Where(x => x.IDPHONG == macty).ToList();
+        }
+
+        public List<tb_Phong> getByTPhong(int idPhong)
+        {
+            return db.tb_Phong.Where(x => x.IDPHONG == idPhong).ToList();
+            //tb_Phong _kh = db.tb_Phong.FirstOrDefault(x => x.IDPHONG == idPhong);
+            //tb_ThietBi _h = db.tb_ThietBi.FirstOrDefault(x => x.IDTB == id);
+        }
+
+        public List<tb_ThietBi> getByTB(string idtp)
+        {
+            return db.tb_ThietBi.Where(x => x.IDTB == idtp).ToList();
         }
 
         public List<tb_Phong_ThietBi> getByPhong(int tb)

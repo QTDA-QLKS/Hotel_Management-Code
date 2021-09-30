@@ -17,11 +17,47 @@ namespace BussinessLayer
         {
             return db.tb_Phong.ToList();
         }
+
+        public List<tb_Tang> getByTenTang()
+        {
+            return db.tb_Tang.ToList();
+        }
+        
+        public List<tb_Phong> getByTenTangLoad()
+        {
+            return db.tb_Phong.ToList() ;
+        }
+
+        public List<tb_Phong> getByTenTangLoad(int idtang)
+        {
+            return db.tb_Phong.Where(x => x.IDTANG == idtang).ToList();
+
+        }
+
+        public List<tb_LoaiPhong> getByLoaiPhong(int _loaiphong)
+        {
+            return db.tb_LoaiPhong.Where(x => x.IDLOAIPHONG == _loaiphong).ToList();
+        }
+
         public List<tb_Phong> getByTang(int idTang)
         {
             return db.tb_Phong.Where(x => x.IDTANG == idTang).ToList();
         }
 
+
+        public  OBJ_PHONG getItemFull(int _idPhong)
+        {
+            var lst = db.tb_Phong.Where(x => x.IDPHONG == _idPhong).ToList();
+            OBJ_PHONG lstDPSP = new OBJ_PHONG();
+            OBJ_PHONG sp;
+            foreach (var item in lst)
+            {
+                sp = new OBJ_PHONG();
+                var p = db.tb_Phong.FirstOrDefault(x => x.IDPHONG == item.IDPHONG);
+                sp.TENPHONG = p.TENPHONG;
+            }
+            return lstDPSP;
+        }
 
         public void add(tb_Phong phong)
         {

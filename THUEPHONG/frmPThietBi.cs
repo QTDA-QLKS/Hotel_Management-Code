@@ -24,6 +24,7 @@ namespace THUEPHONG
         ThietBi _thietbi;
         bool _them;
         string _madvi;
+        int idPhong=0;
 
         private void frmPThietBi_Load(object sender, EventArgs e)
         {
@@ -33,15 +34,17 @@ namespace THUEPHONG
             loadThietBi();
             loadPhong();
             showHideControl(true);
-            _enabled(false);
+            _enabled(true);
             cboTB.SelectedIndexChanged += cboCty_SelectedIndexChanged;
             cboTPhong.SelectedIndexChanged += cboCty_SelectedIndexChanged;
-            loadDVIByCty();
+            loadTenThietBi();
+            loadTenPhong();
         }
 
         private void cboCty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadDVIByCty();
+            loadTenThietBi();
+            loadTenPhong();
         }
 
         void showHideControl(bool t)
@@ -87,10 +90,15 @@ namespace THUEPHONG
             gcDanhSach.DataSource = _pthietbi.getAll();
             gvDanhSach.OptionsBehavior.Editable = false;
         }
-        void loadDVIByCty()
+        void loadTenPhong()
         {
-            gcDanhSach.DataSource = _pthietbi.getByPhong(int.Parse(cboTPhong.SelectedValue.ToString()));
-            gcDanhSach.DataSource = _pthietbi.getAll(cboTB.SelectedValue.ToString());
+
+            gcDanhSach.DataSource = _pthietbi.getAll();
+            gvDanhSach.OptionsBehavior.Editable = false;
+        }
+        void loadTenThietBi()
+        {
+            gcDanhSach.DataSource = _phong.getAll();
             gvDanhSach.OptionsBehavior.Editable = false;
         }
 

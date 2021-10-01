@@ -1,15 +1,3 @@
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\DataLayer.dll.config
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\DataLayer.dll
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\DataLayer.pdb
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\EntityFramework.dll
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\EntityFramework.xml
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.dll
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.pdb
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\bin\Debug\DataLayer.dll.config
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\bin\Debug\DataLayer.dll
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\bin\Debug\DataLayer.pdb
@@ -21,3 +9,14 @@ C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\obj\Debug\DataLayer.
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\obj\Debug\DataLayer.dll
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\obj\Debug\DataLayer.pdb
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\DataLayer.dll.config
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\DataLayer.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\DataLayer.pdb
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\EntityFramework.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\EntityFramework.xml
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.pdb

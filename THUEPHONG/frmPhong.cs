@@ -82,11 +82,11 @@ namespace THUEPHONG
             cboTang.ValueMember = "IDTANG";
         }
 
-        void loadData()
-        {
-            gcDanhSach.DataSource = _phong.getAll();
-            gvDanhSach.OptionsBehavior.Editable = false;
-        }
+        //void loadData()
+        //{
+        //    gcDanhSach.DataSource = _phong.getAll();
+        //    gvDanhSach.OptionsBehavior.Editable = false;
+        //}
 
         void loadDVIByCty()
         {

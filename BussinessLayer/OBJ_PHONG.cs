@@ -18,7 +18,7 @@ namespace BussinessLayer
         public bool? DISABLED { set; get; }
         public int IDTANG { set; get; }
         public string TENTANG { set; get; }
-        public int IDLOAIPHONG { set; get; }
+        public int? IDLOAIPHONG { set; get; }
         public string TENLOAIPHONG { set; get; }
     }
 }

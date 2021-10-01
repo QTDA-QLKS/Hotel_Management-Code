@@ -1,18 +1,3 @@
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\BussinessLayer.dll.config
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\BussinessLayer.dll
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\BussinessLayer.pdb
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\DataLayer.dll
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\EntityFramework.dll
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\EntityFramework.SqlServer.dll
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\DataLayer.pdb
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\DataLayer.dll.config
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\EntityFramework.xml
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\EntityFramework.SqlServer.xml
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Debug\BussinessLayer.csprojAssemblyReference.cache
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Debug\BussinessLayer.csproj.CoreCompileInputs.cache
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Debug\BussinessLayer.csproj.CopyComplete
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Debug\BussinessLayer.dll
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Debug\BussinessLayer.pdb
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\BussinessLayer\bin\Debug\BussinessLayer.dll.config
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\BussinessLayer\bin\Debug\BussinessLayer.dll
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\BussinessLayer\bin\Debug\BussinessLayer.pdb
@@ -28,3 +13,18 @@ C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\BussinessLayer\obj\Debug\Bussi
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\BussinessLayer\obj\Debug\BussinessLayer.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\BussinessLayer\obj\Debug\BussinessLayer.dll
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\BussinessLayer\obj\Debug\BussinessLayer.pdb
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\BussinessLayer.dll.config
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\BussinessLayer.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\BussinessLayer.pdb
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\DataLayer.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\EntityFramework.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\DataLayer.pdb
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\DataLayer.dll.config
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\EntityFramework.xml
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Debug\BussinessLayer.csprojAssemblyReference.cache
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Debug\BussinessLayer.csproj.CoreCompileInputs.cache
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Debug\BussinessLayer.csproj.CopyComplete
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Debug\BussinessLayer.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Debug\BussinessLayer.pdb

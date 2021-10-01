@@ -49,7 +49,7 @@ namespace THUEPHONG
             lstDPSP = new List<OBJ_DPSP>();
             _phongHienTai = _phong.getItemFull(_idPhong);
 
-            lblPhong.Text = _phongHienTai.TENPHONG+ "Đơn giá :"+_phongHienTai.DONGIA.ToString();
+            lblPhong.Text = _phongHienTai.TENPHONG+ " "+ "Đơn giá :"+_phongHienTai.DONGIA.ToString();
             dtNgayDat.Value = DateTime.Now;
             dtNgayTra.Value = DateTime.Now.AddDays(1);
             cbTrangThai.DataSource = TRANGTHAI.getList();

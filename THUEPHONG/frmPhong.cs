@@ -60,15 +60,38 @@ namespace THUEPHONG
         bool _them;
         int _idsp;
         int _idPhong = 0;
+        void showHideControl(bool t)
+        {
+            btnThem.Visible = t;
+            btnSua.Visible = t;
+            btnXoa.Visible = t;
+            btnLuu.Visible = !t;
+            btnBoQua.Visible = !t;
+        }
 
+        void _enabled(bool t)
+        {
+            txtTenPhong.Enabled = t;
+            txtLoaiPhong.Enabled = t;
+            chbDaThue.Visible = !t;
+            chDisabled.Visible = !t;
+        }
+
+        void _reset()
+        {
+            txtTenPhong.Text = "";
+            txtLoaiPhong.Text = "";
+            chDisabled.Checked = false;
+            chbDaThue.Checked = false;
+        }
         private void frmPhong_Load(object sender, EventArgs e)
         {
             _phong = new PHONG();
             _tang = new TANG();
             loadTang();
-            //loadLoaiPhong();
             cboTang.SelectedIndexChanged += cboCty_SelectedIndexChanged;
-            //cboTPhong.SelectedIndexChanged += cboCty_SelectedIndexChanged;
+            showHideControl(true);
+            _enabled(false);
             loadDVIByCty();
         }
 
@@ -94,6 +117,17 @@ namespace THUEPHONG
         {
              gcDanhSach.DataSource = _phong.getAllByPhong(int.Parse(cboTang.SelectedValue.ToString()));
             gvDanhSach.OptionsBehavior.Editable = false;
+        }
+
+        private void gvDanhSach_Click(object sender, EventArgs e)
+        {
+            if (gvDanhSach.RowCount > 0)
+            {
+                txtTenPhong.Text = gvDanhSach.GetFocusedRowCellValue("TENPHONG").ToString();
+                txtLoaiPhong.Text = gvDanhSach.GetFocusedRowCellValue("TENLOAIPHONG").ToString();
+                chDisabled.Checked = bool.Parse(gvDanhSach.GetFocusedRowCellValue("DISABLED").ToString());
+                chbDaThue.Checked = bool.Parse(gvDanhSach.GetFocusedRowCellValue("STATUS").ToString());
+            }
         }
     }
 }

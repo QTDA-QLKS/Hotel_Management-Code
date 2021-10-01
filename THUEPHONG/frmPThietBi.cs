@@ -24,26 +24,21 @@ namespace THUEPHONG
         ThietBi _thietbi;
         bool _them;
         string _madvi;
-        int idPhong=0;
+        string _idPhong;
+        string idphong;
 
         private void frmPThietBi_Load(object sender, EventArgs e)
         {
             _phong = new PHONG();
             _pthietbi = new PTHietBi();
             _thietbi = new ThietBi();
-            loadThietBi();
-            loadPhong();
             showHideControl(true);
-            _enabled(true);
-            cboTB.SelectedIndexChanged += cboCty_SelectedIndexChanged;
-            cboTPhong.SelectedIndexChanged += cboCty_SelectedIndexChanged;
-            loadTenThietBi();
+            _enabled(false);
             loadTenPhong();
         }
 
         private void cboCty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadTenThietBi();
             loadTenPhong();
         }
 
@@ -58,31 +53,16 @@ namespace THUEPHONG
 
         void _enabled(bool t)
         {
-            cboTPhong.Enabled = t;
-            cboTB.Enabled = t;
-            cboSL.Enabled = t;
+            txtTenPhong.Enabled = t;
+            txtTenTB.Enabled = t;
+            txtSL.Enabled = t;
         }
 
         void _reset()
         {
-            cboTPhong.Text = "";
-            cboTB.Text = "";
-            cboSL.Text = "0";
-        }
-
-
-        void loadThietBi()
-        {
-            cboTB.DataSource = _thietbi.getByThietBi();
-            cboTB.DisplayMember = "TENTHIETBI";
-            cboTB.ValueMember = "IDTB";
-        }
-
-        void loadPhong()
-        {
-            cboTPhong.DataSource = _phong.getAll();
-            cboTPhong.DisplayMember = "TENPHONG";
-            cboTPhong.ValueMember = "IDPHONG";
+            txtTenPhong.Text = "";
+            txtTenTB.Text = "";
+            txtSL.Text = "0";
         }
 
         void loadData()
@@ -93,12 +73,7 @@ namespace THUEPHONG
         void loadTenPhong()
         {
 
-            gcDanhSach.DataSource = _pthietbi.getAll();
-            gvDanhSach.OptionsBehavior.Editable = false;
-        }
-        void loadTenThietBi()
-        {
-            gcDanhSach.DataSource = _phong.getAll();
+            gcDanhSach.DataSource = _pthietbi.getAllByPTB(_idPhong);
             gvDanhSach.OptionsBehavior.Editable = false;
         }
 
@@ -109,27 +84,68 @@ namespace THUEPHONG
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            _them = true;
+            showHideControl(false);
+            _enabled(true);
+            _reset();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            _them = false;
+            _enabled(true);
+            showHideControl(false);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Bạn muốn xóa không hử", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                _pthietbi.delete(idphong);
+            }
+            loadData();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (_them)
+            //{
 
+            //    tb_Phong_ThietBi sp = new tb_Phong_ThietBi();
+            //    sp.TEN = txtTenSP.Text;
+            //    sp.DISABLED = chDisabled.Checked;
+            //    sp.DONGIA = int.Parse(txtDonGia.Text);
+            //    _pthietbi.add(sp);
+            //}
+            //else
+            //{
+            //    tb_Phong_ThietBi sp = new tb_Phong_ThietBi();
+            //    sp.TENSP = txtTenSP.Text;
+            //    sp.DISABLED = chDisabled.Checked;
+            //    sp.DONGIA = int.Parse(txtDonGia.Text);
+            //    _pthietbi.update(sp);
+            //}
+            _them = false;
+            loadData();
+            _enabled(false);
+            showHideControl(true);
         }
 
         private void btnBoQua_Click(object sender, EventArgs e)
         {
+            _them = false;
+            _enabled(false);
+            showHideControl(true);
+        }
 
+        private void gvDanhSach_Click(object sender, EventArgs e)
+        {
+            if (gvDanhSach.RowCount > 0)
+            {
+                txtTenTB.Text = gvDanhSach.GetFocusedRowCellValue("TENTHIETBI").ToString();
+                txtSL.Text = gvDanhSach.GetFocusedRowCellValue("SOLUONG").ToString();
+                txtTenPhong.Text = gvDanhSach.GetFocusedRowCellValue("TENPHONG").ToString();
+            }
         }
     }
 }

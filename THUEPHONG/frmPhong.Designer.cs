@@ -39,22 +39,22 @@ namespace THUEPHONG
             this.gcDanhSach = new DevExpress.XtraGrid.GridControl();
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.DISABLED = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.STATUS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDTANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENTANG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDLOAIPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENLOAIPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chbDaThue = new System.Windows.Forms.CheckBox();
             this.cboTang = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtMACTY = new System.Windows.Forms.TextBox();
+            this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.chDisabled = new System.Windows.Forms.CheckBox();
-            this.txtTen = new System.Windows.Forms.TextBox();
+            this.txtLoaiPhong = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.IDPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IDTANG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IDLOAIPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
@@ -165,6 +165,7 @@ namespace THUEPHONG
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
             this.gvDanhSach.OptionsView.ShowGroupPanel = false;
+            this.gvDanhSach.Click += new System.EventHandler(this.gvDanhSach_Click);
             // 
             // DISABLED
             // 
@@ -175,6 +176,13 @@ namespace THUEPHONG
             this.DISABLED.Visible = true;
             this.DISABLED.VisibleIndex = 0;
             this.DISABLED.Width = 31;
+            // 
+            // IDPHONG
+            // 
+            this.IDPHONG.Caption = "IDPHONG";
+            this.IDPHONG.FieldName = "IDPHONG";
+            this.IDPHONG.Name = "IDPHONG";
+            this.IDPHONG.Width = 64;
             // 
             // TENPHONG
             // 
@@ -196,6 +204,13 @@ namespace THUEPHONG
             this.STATUS.VisibleIndex = 2;
             this.STATUS.Width = 84;
             // 
+            // IDTANG
+            // 
+            this.IDTANG.Caption = "IDTANG";
+            this.IDTANG.FieldName = "IDTANG";
+            this.IDTANG.Name = "IDTANG";
+            this.IDTANG.Width = 64;
+            // 
             // TENTANG
             // 
             this.TENTANG.Caption = "TÊN TẦNG";
@@ -205,6 +220,13 @@ namespace THUEPHONG
             this.TENTANG.Visible = true;
             this.TENTANG.VisibleIndex = 3;
             this.TENTANG.Width = 147;
+            // 
+            // IDLOAIPHONG
+            // 
+            this.IDLOAIPHONG.Caption = "IDLOAIPHONG";
+            this.IDLOAIPHONG.FieldName = "IDLOAIPHONG";
+            this.IDLOAIPHONG.Name = "IDLOAIPHONG";
+            this.IDLOAIPHONG.Width = 64;
             // 
             // TENLOAIPHONG
             // 
@@ -218,13 +240,13 @@ namespace THUEPHONG
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.chbDaThue);
             this.groupBox1.Controls.Add(this.cboTang);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtMACTY);
+            this.groupBox1.Controls.Add(this.txtTenPhong);
             this.groupBox1.Controls.Add(this.chDisabled);
-            this.groupBox1.Controls.Add(this.txtTen);
+            this.groupBox1.Controls.Add(this.txtLoaiPhong);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 204);
@@ -236,17 +258,17 @@ namespace THUEPHONG
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
-            // checkBox1
+            // chbDaThue
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(335, 63);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(66, 17);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Disabled";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.chbDaThue.AutoSize = true;
+            this.chbDaThue.Location = new System.Drawing.Point(335, 63);
+            this.chbDaThue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chbDaThue.Name = "chbDaThue";
+            this.chbDaThue.Size = new System.Drawing.Size(65, 17);
+            this.chbDaThue.TabIndex = 15;
+            this.chbDaThue.Text = "Đã thuê";
+            this.chbDaThue.UseVisualStyleBackColor = true;
+            this.chbDaThue.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // cboTang
             // 
@@ -274,13 +296,13 @@ namespace THUEPHONG
             this.label6.TabIndex = 12;
             this.label6.Text = "Tên Phòng";
             // 
-            // txtMACTY
+            // txtTenPhong
             // 
-            this.txtMACTY.Location = new System.Drawing.Point(92, 28);
-            this.txtMACTY.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMACTY.Name = "txtMACTY";
-            this.txtMACTY.Size = new System.Drawing.Size(161, 21);
-            this.txtMACTY.TabIndex = 11;
+            this.txtTenPhong.Location = new System.Drawing.Point(92, 28);
+            this.txtTenPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTenPhong.Name = "txtTenPhong";
+            this.txtTenPhong.Size = new System.Drawing.Size(161, 21);
+            this.txtTenPhong.TabIndex = 11;
             // 
             // chDisabled
             // 
@@ -293,13 +315,13 @@ namespace THUEPHONG
             this.chDisabled.Text = "Disabled";
             this.chDisabled.UseVisualStyleBackColor = true;
             // 
-            // txtTen
+            // txtLoaiPhong
             // 
-            this.txtTen.Location = new System.Drawing.Point(335, 28);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(214, 21);
-            this.txtTen.TabIndex = 1;
+            this.txtLoaiPhong.Location = new System.Drawing.Point(335, 28);
+            this.txtLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLoaiPhong.Name = "txtLoaiPhong";
+            this.txtLoaiPhong.Size = new System.Drawing.Size(214, 21);
+            this.txtLoaiPhong.TabIndex = 1;
             // 
             // label1
             // 
@@ -309,27 +331,6 @@ namespace THUEPHONG
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Loại Phòng";
-            // 
-            // IDPHONG
-            // 
-            this.IDPHONG.Caption = "IDPHONG";
-            this.IDPHONG.FieldName = "IDPHONG";
-            this.IDPHONG.Name = "IDPHONG";
-            this.IDPHONG.Width = 64;
-            // 
-            // IDTANG
-            // 
-            this.IDTANG.Caption = "IDTANG";
-            this.IDTANG.FieldName = "IDTANG";
-            this.IDTANG.Name = "IDTANG";
-            this.IDTANG.Width = 64;
-            // 
-            // IDLOAIPHONG
-            // 
-            this.IDLOAIPHONG.Caption = "IDLOAIPHONG";
-            this.IDLOAIPHONG.FieldName = "IDLOAIPHONG";
-            this.IDLOAIPHONG.Name = "IDLOAIPHONG";
-            this.IDLOAIPHONG.Width = 64;
             // 
             // frmPhong
             // 
@@ -371,13 +372,13 @@ namespace THUEPHONG
         private DevExpress.XtraGrid.Columns.GridColumn TENTANG;
         private DevExpress.XtraGrid.Columns.GridColumn TENLOAIPHONG;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chbDaThue;
         private System.Windows.Forms.ComboBox cboTang;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtMACTY;
+        private System.Windows.Forms.TextBox txtTenPhong;
         private System.Windows.Forms.CheckBox chDisabled;
-        private System.Windows.Forms.TextBox txtTen;
+        private System.Windows.Forms.TextBox txtLoaiPhong;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.Columns.GridColumn IDPHONG;
         private DevExpress.XtraGrid.Columns.GridColumn IDTANG;

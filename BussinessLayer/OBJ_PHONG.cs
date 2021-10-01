@@ -20,5 +20,7 @@ namespace BussinessLayer
         public string TENTANG { set; get; }
         public int? IDLOAIPHONG { set; get; }
         public string TENLOAIPHONG { set; get; }
+        public string IDTB { set; get; }
+        public string TENTHIETBI { set; get; }
     }
 }

@@ -56,13 +56,15 @@ namespace THUEPHONG
 
         PHONG _phong;
         TANG _tang;
+        List<OBJ_PHONG> obj_phong;
         bool _them;
         int _idsp;
-        int _idLoaiPhong = 0;
+        int _idPhong = 0;
 
         private void frmPhong_Load(object sender, EventArgs e)
         {
             _phong = new PHONG();
+            _tang = new TANG();
             loadTang();
             //loadLoaiPhong();
             cboTang.SelectedIndexChanged += cboCty_SelectedIndexChanged;
@@ -90,7 +92,7 @@ namespace THUEPHONG
 
         void loadDVIByCty()
         {
-            gcDanhSach.DataSource = _phong.getByTenTangLoad(int.Parse(cboTang.SelectedValue.ToString()));
+             gcDanhSach.DataSource = _phong.getAllByPhong(int.Parse(cboTang.SelectedValue.ToString()));
             gvDanhSach.OptionsBehavior.Editable = false;
         }
     }

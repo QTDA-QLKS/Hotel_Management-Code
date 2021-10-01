@@ -50,6 +50,30 @@ namespace BussinessLayer
             List<OBJ_PHONG> lstDP = new List<OBJ_PHONG>();
             return lstDP;
         }
+
+        public List<OBJ_PHONG> getAllByPhong(int _idPhong)
+        {
+            //var listDP = db.tb_Phong.Where(x => x.NGAYDATPHONG >= tungay && x.NGAYDATPHONG < denngay).ToList();
+            var lst = db.tb_Phong.Where(x => x.IDTANG == _idPhong).ToList();
+            List<OBJ_PHONG> lstDPSP = new List<OBJ_PHONG>();
+            OBJ_PHONG sp;
+            foreach (var item in lst)
+            {
+                sp = new OBJ_PHONG();
+                sp.IDPHONG = item.IDPHONG;
+                sp.TENPHONG = item.TENPHONG;
+                sp.IDTANG = item.IDTANG;
+                var s = db.tb_Tang.FirstOrDefault(x => x.IDTANG == item.IDTANG);
+                sp.TENTANG = s.TENTANG;
+                sp.DISABLED = item.DISABLED;
+                sp.STATUS = item.STATUS;
+                var l = db.tb_LoaiPhong.FirstOrDefault(x => x.IDLOAIPHONG == item.IDLOAIPHONG);
+                sp.TENLOAIPHONG = l.TENLOAIPHONG;
+                lstDPSP.Add(sp);
+            }
+            return lstDPSP;
+        }
+
         public  OBJ_PHONG getItemFull(int _idPhong)
         {
             var _p = db.tb_Phong.FirstOrDefault(x => x.IDPHONG == _idPhong);

@@ -11,7 +11,7 @@ namespace BussinessLayer
     {
         public int? IDPHONG { set; get; }
         public string TENPHONG { set; get; }
-        public double? DONGIA { set; get; }
+        public double DONGIA { set; get; }
         public string TENSP { set; get; }
         public int? SOLUONG { set; get; }
         public bool? STATUS { set; get; }

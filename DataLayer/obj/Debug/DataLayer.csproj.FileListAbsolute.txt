@@ -16,6 +16,7 @@ D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\EntityFramework.dll
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\EntityFramework.xml
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.dll

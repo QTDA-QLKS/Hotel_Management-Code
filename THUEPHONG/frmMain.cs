@@ -182,22 +182,32 @@ namespace THUEPHONG
         {
             frmDatPhongDon frm = new frmDatPhongDon();
             frm._idPhong = int.Parse(item.Value.ToString());
+            frm._them = true;
             frm.ShowDialog();
         }
 
         private void btnChuyenPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmDatPhongDon frm = new frmDatPhongDon();
+            frm._idPhong = int.Parse(item.Value.ToString());
+            frm._them = false;
+            frm.ShowDialog();
         }
 
         private void btnSPDV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmDatPhongDon frm = new frmDatPhongDon();
+            frm._idPhong = int.Parse(item.Value.ToString());
+            frm._them = false;
+            frm.ShowDialog();
         }
 
         private void btnThanhToan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmDatPhongDon frm = new frmDatPhongDon();
+            frm._idPhong = int.Parse(item.Value.ToString());
+            frm._them = false;
+            frm.ShowDialog();
         }
     }
 }

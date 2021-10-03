@@ -86,6 +86,9 @@ namespace THUEPHONG
                 var dp = _datphong.getItem(_idDP);
                 searchKH.EditValue = dp.IDKH;
                 dtNgayDat.Value = dp.NGAYDATPHONG.Value;
+                if (dp.NGAYDATPHONG.Value.ToShortDateString() == DateTime.Now.ToShortDateString())
+                    dtNgayTra.Value = dp.NGAYDATPHONG.Value.AddDays(1);
+                else
                 dtNgayTra.Value = DateTime.Now;
                 cbTrangThai.SelectedValue = dp.STATUS;
                 spSoNguoi.Text = dp.SONGUOIO.ToString();

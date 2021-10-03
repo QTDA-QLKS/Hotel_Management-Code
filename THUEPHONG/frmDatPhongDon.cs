@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataLayer;
 using BussinessLayer;
+using CrystalDecisions.Windows.Forms;
+using CrystalDecisions.Shared;
+using CrystalDecisions.CrystalReports.Engine;
+
 namespace THUEPHONG
 {
     public partial class frmDatPhongDon : DevExpress.XtraEditors.XtraForm
@@ -80,7 +84,7 @@ namespace THUEPHONG
                 cbTrangThai.SelectedValue = dp.STATUS;
                 spSoNguoi.Text = dp.SONGUOIO.ToString();
                 txtGhiChu.Text = dp.GHICHU.ToString();
-                txtThanhTien.Text = dp.SOTIEN.Value.ToString();
+                txtThanhTien1.Text = dp.SOTIEN.Value.ToString();
             }
             loadSPDV();
             searchKH.EditValue = 1;
@@ -148,7 +152,7 @@ namespace THUEPHONG
                 lstDPSP.Add(sp);
             }
             loadDPSP();
-            txtThanhTien.Text = (double.Parse(gvSPDV.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString()) + _phongHienTai.DONGIA).ToString("N0");
+            txtThanhTien1.Text = (double.Parse(gvSPDV.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString()) + _phongHienTai.DONGIA).ToString("N0");
         }
 
         void loadDPSP()
@@ -177,7 +181,7 @@ namespace THUEPHONG
                 }
             }
             gvSPDV.UpdateTotalSummary();
-            txtThanhTien.Text = (double.Parse(gvSPDV.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString())+_phongHienTai.DONGIA).ToString("N0");
+            txtThanhTien1.Text = (double.Parse(gvSPDV.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString())+_phongHienTai.DONGIA).ToString("N0");
         }
 
         private void gvSPDV_HiddenEditor(object sender, EventArgs e)
@@ -199,7 +203,7 @@ namespace THUEPHONG
                 dp.THEODOAN = false;
                 dp.DISABLED = false;
                 dp.IDKH = searchKH.EditValue.ToString();
-                dp.SOTIEN = double.Parse(txtThanhTien.Text);
+                dp.SOTIEN = double.Parse(txtThanhTien1.Text);
                 dp.GHICHU = txtGhiChu.Text;
                 dp.IDUSER = 1;
                 dp.MACTY = _macty;
@@ -246,7 +250,7 @@ namespace THUEPHONG
                 dp.SONGUOIO = int.Parse(spSoNguoi.EditValue.ToString());
                 dp.STATUS = bool.Parse(cbTrangThai.SelectedValue.ToString());
                 dp.IDKH = searchKH.EditValue.ToString();
-                dp.SOTIEN = double.Parse(txtThanhTien.Text);
+                dp.SOTIEN = double.Parse(txtThanhTien1.Text);
                 dp.GHICHU = txtGhiChu.Text;
                 dp.IDUSER = 1;
                 dp.UPDATE_BY = 1;
@@ -286,5 +290,45 @@ namespace THUEPHONG
             }
         }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            XuatReport("PHIEU_DATPHONGDON", "Phiếu phòng chi tiết");
+        }
+
+        private void XuatReport(string _reportName, string _tieude)
+        {
+            if (_idDP != 0)
+            {
+                Form frm = new Form();
+                CrystalReportViewer Crv = new CrystalReportViewer();
+                Crv.ShowGroupTreeButton = false;
+                Crv.ShowParameterPanelButton = false;
+                Crv.ToolPanelView = ToolPanelViewType.None;
+                TableLogOnInfo Thongtin;
+                ReportDocument doc = new ReportDocument();
+                doc.Load(System.Windows.Forms.Application.StartupPath + "\\Report\\" + _reportName + @".rpt");
+                Thongtin = doc.Database.Tables[0].LogOnInfo;
+                Thongtin.ConnectionInfo.ServerName = myFunctions._srv;
+                Thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
+                //Thongtin.ConnectionInfo.UserID = myFunctions._us;
+                //Thongtin.ConnectionInfo.Password = myFunctions._pw;
+                doc.Database.Tables[0].ApplyLogOnInfo(Thongtin);
+                try
+                {
+                    doc.SetParameterValue("@IDDP", _idDP.ToString());
+                    Crv.Dock = DockStyle.Fill;
+                    Crv.ReportSource = doc;
+                    frm.Controls.Add(Crv);
+                    Crv.Refresh();
+                    frm.Text = _tieude;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.ToString());
+                }
+            }
+        }
     }
 }

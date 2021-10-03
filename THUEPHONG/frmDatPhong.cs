@@ -313,7 +313,11 @@ namespace THUEPHONG
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            XuatReport("PHIEU_DATPHONG", "Phiếu phòng chi tiết");
+            if (!_them)
+            {
+                saveData();
+                XuatReport("PHIEU_DATPHONG", "Phiếu phòng chi tiết");
+            }
 
         }
 
@@ -500,6 +504,12 @@ namespace THUEPHONG
                 MessageBox.Show("Vui lòng chọn phòng?", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+            if (bool.Parse(cbTrangThai.SelectedValue.ToString()) == true)
+            {
+                MessageBox.Show("Phòng đã hoàn tất không dc chỉnh sửa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (gvSanPham.GetFocusedRowCellValue("IDSP")!=null)
             {
                 OBJ_DPSP sp = new OBJ_DPSP();
@@ -595,6 +605,7 @@ namespace THUEPHONG
                 var dp = _datphong.getItem(_idDP);
                 cbKhachHang.SelectedValue = dp.IDKH;
                 dtNgayDat.Value = dp.NGAYDATPHONG.Value;
+                //dtNgayTra.Value = DateTime.Now;
                 dtNgayTra.Value = dp.NGAYTRAPHONG.Value;
                 spSoNguoi.Text = dp.SONGUOIO.ToString();
                 cbTrangThai.SelectedValue = dp.STATUS;

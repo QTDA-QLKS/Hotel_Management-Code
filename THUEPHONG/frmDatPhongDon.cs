@@ -35,6 +35,8 @@ namespace THUEPHONG
         SANPHAM _sanpham;
         PHONG _phong;
         List<OBJ_DPSP> lstDPSP;
+        double _tongtien = 0;
+        frmMain objMain = (frmMain)Application.OpenForms["frmMain"];
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if(searchKH.EditValue==null|| searchKH.EditValue.ToString() == "")
@@ -43,6 +45,10 @@ namespace THUEPHONG
                 return;
             }
             saveData();
+            _tongtien = double.Parse(gvSPDV.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString()) + _phong.getItemFull(_idPhong).DONGIA * (dtNgayTra.Value.Day - dtNgayDat.Value.Day);
+            var dp = _datphong.getItem(_idDP);
+                dp.SOTIEN = _tongtien;
+                _datphong.update(dp);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -80,7 +86,7 @@ namespace THUEPHONG
                 var dp = _datphong.getItem(_idDP);
                 searchKH.EditValue = dp.IDKH;
                 dtNgayDat.Value = dp.NGAYDATPHONG.Value;
-                dtNgayTra.Value = dp.NGAYTRAPHONG.Value;
+                dtNgayTra.Value = DateTime.Now;
                 cbTrangThai.SelectedValue = dp.STATUS;
                 spSoNguoi.Text = dp.SONGUOIO.ToString();
                 txtGhiChu.Text = dp.GHICHU.ToString();
@@ -128,13 +134,18 @@ namespace THUEPHONG
                 MessageBox.Show("Vui lòng chọn phòng?", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            if (bool.Parse(cbTrangThai.SelectedValue.ToString())== true)
+            {
+                MessageBox.Show("Phòng đã hoàn tất không dc chỉnh sửa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (gvSanPham.GetFocusedRowCellValue("IDSP") != null)
             {
                 OBJ_DPSP sp = new OBJ_DPSP();
                 sp.IDSP = int.Parse(gvSanPham.GetFocusedRowCellValue("IDSP").ToString());
                 sp.TENSP = gvSanPham.GetFocusedRowCellValue("TENSP").ToString();
                 sp.IDPHONG = _idPhong;
-                sp.TENPHONG = _phongHienTai.TENPHONG; ;
+                sp.TENPHONG = _phongHienTai.TENPHONG;
                 sp.SOLUONG = 1;
                 sp.DONGIA = float.Parse(gvSanPham.GetFocusedRowCellValue("DONGIA").ToString());
                 sp.THANHTIEN = sp.DONGIA * sp.SOLUONG;
@@ -152,7 +163,7 @@ namespace THUEPHONG
                 lstDPSP.Add(sp);
             }
             loadDPSP();
-            txtThanhTien1.Text = (double.Parse(gvSPDV.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString()) + _phongHienTai.DONGIA).ToString("N0");
+            txtThanhTien1.Text = (double.Parse(gvSPDV.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString()) + _phongHienTai.DONGIA * (dtNgayTra.Value.Day - dtNgayDat.Value.Day)).ToString("N0");
         }
 
         void loadDPSP()
@@ -181,7 +192,7 @@ namespace THUEPHONG
                 }
             }
             gvSPDV.UpdateTotalSummary();
-            txtThanhTien1.Text = (double.Parse(gvSPDV.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString())+_phongHienTai.DONGIA).ToString("N0");
+            txtThanhTien1.Text = (double.Parse(gvSPDV.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString())+_phongHienTai.DONGIA*(dtNgayTra.Value.Day-dtNgayDat.Value.Day)).ToString("N0");
         }
 
         private void gvSPDV_HiddenEditor(object sender, EventArgs e)
@@ -292,7 +303,21 @@ namespace THUEPHONG
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            XuatReport("PHIEU_DATPHONGDON", "Phiếu phòng chi tiết");
+            if (!_them)
+            {
+                saveData();
+                _tongtien = double.Parse(gvSPDV.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString()) + _phong.getItemFull(_idPhong).DONGIA * (dtNgayTra.Value.Day-dtNgayDat.Value.Day);
+                var dp = _datphong.getItem(_idDP);
+                dp.SOTIEN = _tongtien;
+                _datphong.update(dp);
+                _datphong.updateStatus(_idDP);
+                _phong.updateStatus(_idPhong, false);
+                XuatReport("PHIEU_DATPHONGDON", "Phiếu phòng chi tiết");
+                cbTrangThai.SelectedValue = true;
+                objMain.gControl.Gallery.Groups.Clear();
+                objMain.showRoom();
+            }
+            
         }
 
         private void XuatReport(string _reportName, string _tieude)

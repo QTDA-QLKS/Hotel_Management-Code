@@ -23,6 +23,21 @@ namespace BussinessLayer
             return db.tb_DatPhong.ToList();
         }
 
+        public void updateStatus (int idDP)
+        {
+            tb_DatPhong dp = db.tb_DatPhong.FirstOrDefault(x => x.IDDP == idDP);
+            dp.STATUS = true;
+            try
+            {
+                db.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Có lỗi xảy ra " + ex.Message);
+            }
+        }
+
         //public List<OBJ_DATPHONG> getAll(DateTime tungay, DateTime denngay, string madvi, string macty)
         //{
         //    var listDP = db.tb_DatPhong.Where(x => x.NGAYDATPHONG >= tungay && x.NGAYDATPHONG < denngay && x.MACTY == macty && x.MADVI == madvi).ToList();

@@ -11,8 +11,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports;
+using CrystalDecisions.CrystalReports.Engine;
 using BussinessLayer;
 using DataLayer;
+using CrystalDecisions.Windows.Forms;
+using CrystalDecisions.Shared;
+
 namespace THUEPHONG
 {
     public partial class frmDatPhong : DevExpress.XtraEditors.XtraForm
@@ -308,8 +313,44 @@ namespace THUEPHONG
 
         private void btnIn_Click(object sender, EventArgs e)
         {
+            XuatReport("PHIEU_DATPHONG", "Phiếu phòng chi tiết");
 
+        }
 
+        private void XuatReport(string _reportName, string _tieude)
+        {
+            if (_idDP != 0)
+            {
+                Form frm = new Form();
+                CrystalReportViewer Crv = new CrystalReportViewer();
+                Crv.ShowGroupTreeButton = false;
+                Crv.ShowParameterPanelButton = false;
+                Crv.ToolPanelView = ToolPanelViewType.None;
+                TableLogOnInfo Thongtin;
+                ReportDocument doc = new ReportDocument();
+                doc.Load(System.Windows.Forms.Application.StartupPath + "\\Report\\" + _reportName + @".rpt");
+                Thongtin = doc.Database.Tables[0].LogOnInfo;
+                Thongtin.ConnectionInfo.ServerName = myFunctions._srv;
+                Thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
+                //Thongtin.ConnectionInfo.UserID = myFunctions._us;
+                //Thongtin.ConnectionInfo.Password = myFunctions._pw;
+                doc.Database.Tables[0].ApplyLogOnInfo(Thongtin);
+                try
+                {
+                    doc.SetParameterValue("@IDDP", _idDP.ToString());
+                    Crv.Dock = DockStyle.Fill;
+                    Crv.ReportSource = doc;
+                    frm.Controls.Add(Crv);
+                    Crv.Refresh();
+                    frm.Text = _tieude;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.ToString());
+                }
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

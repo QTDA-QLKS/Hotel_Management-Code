@@ -74,7 +74,7 @@ namespace THUEPHONG
             txtTenPhong.Enabled = t;
             txtLoaiPhong.Enabled = t;
             chbDaThue.Visible = !t;
-            chDisabled.Visible = !t;
+            chDisabled.Visible = t;
         }
 
         void _reset()

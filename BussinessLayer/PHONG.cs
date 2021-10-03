@@ -47,8 +47,23 @@ namespace BussinessLayer
         public List<OBJ_PHONG> getListFull()
         {
             var lsPhong = db.tb_Phong.ToList();
-            List<OBJ_PHONG> lstDP = new List<OBJ_PHONG>();
-            return lstDP;
+            List<OBJ_PHONG> lsPhongOBJ = new List<OBJ_PHONG>();
+            OBJ_PHONG phong;
+            foreach (var _p in lsPhong)
+            {
+                phong = new OBJ_PHONG();
+                phong.TENPHONG = _p.TENPHONG;
+                phong.STATUS = bool.Parse(_p.STATUS.ToString());
+                phong.DISABLED = bool.Parse(_p.DISABLED.ToString());
+                phong.IDLOAIPHONG = _p.IDLOAIPHONG;
+                phong.IDTANG = _p.IDTANG;
+                var tang = db.tb_Tang.FirstOrDefault(t => t.IDTANG == _p.IDTANG);
+                phong.TENTANG = tang.TENTANG;
+                var lp = db.tb_LoaiPhong.FirstOrDefault(l => l.IDLOAIPHONG == _p.IDLOAIPHONG);
+                phong.TENLOAIPHONG = lp.TENLOAIPHONG;
+                phong.DONGIA = double.Parse(lp.DONGIA.ToString());
+            }
+            return lsPhongOBJ;
         }
 
         public List<OBJ_PHONG> getAllByPhong(int _idPhong)
@@ -142,6 +157,14 @@ namespace BussinessLayer
             {
                 throw new Exception("Lỗi rồi bạn ơi" + ex.Message);
             }
+        }
+        public bool checkEmpty(int idPhong)
+        {
+            var p = db.tb_Phong.FirstOrDefault(x => x.IDPHONG == idPhong);
+            if (p.STATUS == true)
+                return true;
+            else
+                return false;
         }
     }
 }

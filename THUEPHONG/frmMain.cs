@@ -180,6 +180,11 @@ namespace THUEPHONG
 
         private void btnDatPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (_phong.checkEmpty(int.Parse(item.Value.ToString())))
+            {
+                MessageBox.Show("Phòng đã được đặt .Vui lòng chọn phòng khác","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
             frmDatPhongDon frm = new frmDatPhongDon();
             frm._idPhong = int.Parse(item.Value.ToString());
             frm._them = true;
@@ -196,6 +201,11 @@ namespace THUEPHONG
 
         private void btnSPDV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!_phong.checkEmpty(int.Parse(item.Value.ToString())))
+            {
+                MessageBox.Show("Phòng chưa được đặt .Vui lòng chọn phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             frmDatPhongDon frm = new frmDatPhongDon();
             frm._idPhong = int.Parse(item.Value.ToString());
             frm._them = false;
@@ -204,6 +214,11 @@ namespace THUEPHONG
 
         private void btnThanhToan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!_phong.checkEmpty(int.Parse(item.Value.ToString())))
+            {
+                MessageBox.Show("Phòng chưa được đặt nên không thể thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             frmDatPhongDon frm = new frmDatPhongDon();
             frm._idPhong = int.Parse(item.Value.ToString());
             frm._them = false;

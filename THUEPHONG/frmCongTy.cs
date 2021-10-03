@@ -1,4 +1,7 @@
 ﻿using BussinessLayer;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using CrystalDecisions.Windows.Forms;
 using DataLayer;
 using DevExpress.XtraEditors;
 using System;
@@ -142,6 +145,42 @@ namespace THUEPHONG
             this.Close();
         }
 
+        private void XuatReport(string _reportName, string _tieude)
+        {
+            if (_macty != null)
+            {
+                Form frm = new Form();
+                CrystalReportViewer Crv = new CrystalReportViewer();
+                Crv.ShowGroupTreeButton = false;
+                Crv.ShowParameterPanelButton = false;
+                Crv.ToolPanelView = ToolPanelViewType.None;
+                TableLogOnInfo Thongtin;
+                ReportDocument doc = new ReportDocument();
+                doc.Load(System.Windows.Forms.Application.StartupPath + "\\Report\\" + _reportName + @".rpt");
+                Thongtin = doc.Database.Tables[0].LogOnInfo;
+                Thongtin.ConnectionInfo.ServerName = myFunctions._srv;
+                Thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
+                //Thongtin.ConnectionInfo.UserID = myFunctions._us;
+                //Thongtin.ConnectionInfo.Password = myFunctions._pw;
+                doc.Database.Tables[0].ApplyLogOnInfo(Thongtin);
+                try
+                {
+                    doc.SetParameterValue("macty", _macty.ToString());
+                    Crv.Dock = DockStyle.Fill;
+                    Crv.ReportSource = doc;
+                    frm.Controls.Add(Crv);
+                    Crv.Refresh();
+                    frm.Text = _tieude;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.ToString());
+                }
+            }
+        }
+
         private void gvDanhSach_Click(object sender, EventArgs e)
         {
             if (gvDanhSach.RowCount > 0)
@@ -160,6 +199,11 @@ namespace THUEPHONG
         private void gvDanhSach_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             
+        }
+
+        private void btnIn_Click_1(object sender, EventArgs e)
+        {
+            XuatReport("DM_CONGTY", "Phiếu phòng chi tiết");
         }
     }
 }

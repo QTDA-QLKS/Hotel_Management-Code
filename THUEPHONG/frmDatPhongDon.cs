@@ -69,7 +69,27 @@ namespace THUEPHONG
             spSoNguoi.Text = "1";
             loadKH();
             loadSP();
+            var dpct = _datphongct.getIDDPByPhong(_idPhong);
+            if (!_them && dpct!=null)
+            {
+                _idDP = dpct.IDDP;
+                var dp = _datphong.getItem(_idDP);
+                searchKH.EditValue = dp.IDKH;
+                dtNgayDat.Value = dp.NGAYDATPHONG.Value;
+                dtNgayTra.Value = dp.NGAYTRAPHONG.Value;
+                cbTrangThai.SelectedValue = dp.STATUS;
+                spSoNguoi.Text = dp.SONGUOIO.ToString();
+                txtGhiChu.Text = dp.GHICHU.ToString();
+                txtThanhTien.Text = dp.SOTIEN.Value.ToString();
+            }
+            loadSPDV();
             searchKH.EditValue = 1;
+        }
+
+        void loadSPDV()
+        {
+            gcSPDV.DataSource = _datphongsp.getAllByDatPhong(_idDP);
+            lstDPSP = _datphongsp.getAllByDatPhong(_idDP);
         }
 
         void loadSP()

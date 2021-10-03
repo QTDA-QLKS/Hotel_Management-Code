@@ -1,0 +1,15 @@
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Release\BussinessLayer.dll.config
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Release\BussinessLayer.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Release\BussinessLayer.pdb
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Release\DataLayer.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Release\EntityFramework.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Release\EntityFramework.SqlServer.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Release\DataLayer.pdb
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Release\DataLayer.dll.config
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Release\EntityFramework.xml
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Release\EntityFramework.SqlServer.xml
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Release\BussinessLayer.csprojAssemblyReference.cache
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Release\BussinessLayer.csproj.CoreCompileInputs.cache
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Release\BussinessLayer.csproj.CopyComplete
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Release\BussinessLayer.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\obj\Release\BussinessLayer.pdb

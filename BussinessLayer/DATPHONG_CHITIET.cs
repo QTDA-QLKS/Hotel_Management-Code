@@ -22,6 +22,12 @@ namespace BussinessLayer
         {
             return db.tb_DatPhong_CT.Where(x => x.IDDP== _idDP).ToList();
         }
+
+        public tb_DatPhong_CT getIDDPByPhong(int idPhong)
+        {
+            //Sắp xếp giảm dần theo ngày
+            return db.tb_DatPhong_CT.OrderByDescending(x => x.NGAY).FirstOrDefault(x => x.IDPHONG == idPhong);
+        }
         public tb_DatPhong_CT add(tb_DatPhong_CT kh)
         {
             try

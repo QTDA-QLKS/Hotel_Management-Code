@@ -5,6 +5,10 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using CrystalDecisions.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace THUEPHONG
 {
@@ -13,7 +17,7 @@ namespace THUEPHONG
         public static string _srv;
         public static string _us;
         public static string _pw;
-        public static string _sb;
+        public static string _db;
         static SqlConnection con = new SqlConnection();
         public static void taoketnoi()
         {
@@ -32,11 +36,7 @@ namespace THUEPHONG
         }
         public static void dongketnoi()
         {
-            if (con.State == ConnectionState.Open)
-            {
-                con.Close();
-            }
-            //con.Close();
+            con.Close();
         }
 
         public static DataTable laydulieu (string qr)
@@ -46,6 +46,7 @@ namespace THUEPHONG
             SqlDataAdapter dap = new SqlDataAdapter();
             dap.SelectCommand = new SqlCommand(qr, con);
             dap.Fill(databl);
+            dongketnoi();
             return databl;
         }
 
@@ -53,5 +54,8 @@ namespace THUEPHONG
         {
             return new DateTime(year, month, 1);
         }
+
+        
+
     }
 }

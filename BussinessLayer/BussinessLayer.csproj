@@ -67,6 +67,7 @@
     <Compile Include="PThietBi.cs" />
     <Compile Include="SANPHAM.cs" />
     <Compile Include="SYS_PARAM.cs" />
+    <Compile Include="SYS_USER.cs" />
     <Compile Include="TANG.cs" />
     <Compile Include="ThietBi.cs" />
     <Compile Include="TRANGTHAI.cs" />

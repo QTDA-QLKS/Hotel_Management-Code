@@ -16,9 +16,7 @@ namespace THUEPHONG
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (File.Exists("connectdb.dba"))
-            {
-                Application.Run(new frmMain());
+                Application.Run(new frmLogin());
                 //string conStr = "";
                 //Doc file connect
                 //BinaryFormatter bf = new BinaryFormatter();
@@ -32,11 +30,10 @@ namespace THUEPHONG
                 //string database = Encryptor.Decrypt(cp.database, "qwertyuiop", true);
                 //conStr += "Data Source=LAPTOP-3RPHFDAK\\SQLEXPRESS;Initial Catalog=HOTELS;Persist Security Info=True;User ID=sa;Password=12345678;MultipleActiveResultSets=True;Application Name=EntityFramework";
                 //connoi = conStr;
-            }
-            else
-            {
-                Application.Run(new frmKetNoiDB());
-            }    
+            //else
+            //{
+            //    Application.Run(new frmKetNoiDB());
+            //}    
                
         }
     }

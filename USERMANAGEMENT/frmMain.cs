@@ -21,6 +21,7 @@ namespace USERMANAGEMENT
         MyTreeViewCombo _treeView;
         CONGTY _conty;
         DONVI _donvi;
+        SYS_USER _sysUser;
         bool _isRoot;
         string _macty;
         string _madvi;
@@ -29,7 +30,14 @@ namespace USERMANAGEMENT
             _conty = new CONGTY();
             _donvi = new DONVI();
             _isRoot = true;
-            loadTreeView();
+            _sysUser = new SYS_USER();
+            loadUser();
+        }
+
+        void loadUser()
+        {
+            gcUser.DataSource = _sysUser.getAll();
+            gvUser.OptionsBehavior.Editable = false;
         }
 
         void loadTreeView()

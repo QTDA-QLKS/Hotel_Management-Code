@@ -22,6 +22,14 @@ namespace THUEPHONG
             InitializeComponent();
         }
 
+        public frmMain(tb_SYS_USER user)
+        {
+            InitializeComponent();
+            this._user = user;
+            this.Text = "PHẦN MỀM QUẢN LÍ KHÁCH SẠN - " + _user.FULLNAME;
+        }
+
+        tb_SYS_USER _user;
         TANG _tang;
         PHONG _phong;
         FUNC _func;

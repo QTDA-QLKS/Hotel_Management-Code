@@ -276,3 +276,6 @@ C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\THUEPHONG\bin\Debug\CrystalDec
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\THUEPHONG\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\THUEPHONG\bin\Debug\stdole.dll
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\THUEPHONG\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\THUEPHONG\obj\Debug\THUEPHONG.frmBaoCao.resources
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\THUEPHONG\obj\Debug\THUEPHONG.MyControls.ucCongTy.resources
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\THUEPHONG\obj\Debug\THUEPHONG.frmLogin.resources

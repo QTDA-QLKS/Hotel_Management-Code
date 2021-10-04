@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BussinessLayer", "Bussiness
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THUEPHONG", "THUEPHONG\THUEPHONG.csproj", "{11309618-15DF-4161-8D98-1CD03CA2FC94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USERMANAGEMENT", "USERMANAGEMENT\USERMANAGEMENT.csproj", "{EFBF3DC8-60B7-4574-AE10-070C508AF3CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{11309618-15DF-4161-8D98-1CD03CA2FC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11309618-15DF-4161-8D98-1CD03CA2FC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11309618-15DF-4161-8D98-1CD03CA2FC94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFBF3DC8-60B7-4574-AE10-070C508AF3CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFBF3DC8-60B7-4574-AE10-070C508AF3CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFBF3DC8-60B7-4574-AE10-070C508AF3CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFBF3DC8-60B7-4574-AE10-070C508AF3CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

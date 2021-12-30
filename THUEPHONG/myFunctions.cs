@@ -23,7 +23,7 @@ namespace THUEPHONG
         static SqlConnection con = new SqlConnection();
         public static void taoketnoi()
         {
-            con.ConnectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=HOTELS;Persist Security Info=True;User ID=sa;Password=12345678";
+            con.ConnectionString = "Data Source=DESKTOP-O4T8056\\SQLEXPRESS;Initial Catalog=HOTELS;Persist Security Info=True;User ID=sa;Password=12345678";
             try
             {
                 if (con.State == ConnectionState.Open)

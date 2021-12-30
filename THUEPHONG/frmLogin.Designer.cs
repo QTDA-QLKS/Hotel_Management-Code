@@ -36,12 +36,13 @@ namespace THUEPHONG
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.nhomatkhau = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnDangNhap
             // 
             this.btnDangNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.Image")));
-            this.btnDangNhap.Location = new System.Drawing.Point(30, 96);
+            this.btnDangNhap.Location = new System.Drawing.Point(33, 134);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(116, 33);
             this.btnDangNhap.TabIndex = 0;
@@ -51,7 +52,7 @@ namespace THUEPHONG
             // btnThoat
             // 
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(197, 96);
+            this.btnThoat.Location = new System.Drawing.Point(196, 134);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(116, 33);
             this.btnThoat.TabIndex = 1;
@@ -69,6 +70,7 @@ namespace THUEPHONG
             // 
             this.txtPassword.Location = new System.Drawing.Point(111, 57);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(202, 21);
             this.txtPassword.TabIndex = 3;
             // 
@@ -90,11 +92,26 @@ namespace THUEPHONG
             this.label2.TabIndex = 5;
             this.label2.Text = "Password";
             // 
+            // nhomatkhau
+            // 
+            this.nhomatkhau.AutoSize = true;
+            this.nhomatkhau.Checked = true;
+            this.nhomatkhau.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.nhomatkhau.Location = new System.Drawing.Point(33, 99);
+            this.nhomatkhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nhomatkhau.Name = "nhomatkhau";
+            this.nhomatkhau.Size = new System.Drawing.Size(92, 17);
+            this.nhomatkhau.TabIndex = 7;
+            this.nhomatkhau.Text = "Nhớ mật khẩu";
+            this.nhomatkhau.UseVisualStyleBackColor = true;
+            this.nhomatkhau.CheckedChanged += new System.EventHandler(this.nhomatkhau_CheckedChanged);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 149);
+            this.ClientSize = new System.Drawing.Size(387, 185);
+            this.Controls.Add(this.nhomatkhau);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
@@ -102,6 +119,7 @@ namespace THUEPHONG
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập hệ thống";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
@@ -117,5 +135,6 @@ namespace THUEPHONG
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox nhomatkhau;
     }
 }

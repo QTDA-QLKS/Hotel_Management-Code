@@ -9,6 +9,18 @@ C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\obj\Debug\DataLayer.
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\obj\Debug\DataLayer.dll
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\DataLayer\obj\Debug\DataLayer.pdb
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\bin\Debug\DataLayer.dll.config
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\bin\Debug\DataLayer.dll
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\bin\Debug\DataLayer.pdb
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\obj\Debug\DataLayer.dll
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\obj\Debug\DataLayer.pdb
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\DataLayer.dll.config
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\DataLayer.dll
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\bin\Debug\DataLayer.pdb
@@ -20,4 +32,3 @@ D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csproj.Co
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.dll
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.pdb
-D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache

@@ -76,5 +76,10 @@ namespace THUEPHONG
             cn.SaveFile();
             MessageBox.Show("Lưu file thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void frmKetNoiDB_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

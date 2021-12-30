@@ -102,6 +102,7 @@ namespace THUEPHONG
             this.btnBaoCao.Size = new System.Drawing.Size(67, 44);
             this.btnBaoCao.Text = "Báo cáo";
             this.btnBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             // 
             // toolStripSeparator1
             // 

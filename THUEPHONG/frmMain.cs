@@ -25,8 +25,6 @@ namespace THUEPHONG
         public frmMain(tb_SYS_USER user)
         {
             InitializeComponent();
-            this._user = user;
-            this.Text = "PHẦN MỀM QUẢN LÍ KHÁCH SẠN - " + _user.FULLNAME;
         }
 
         tb_SYS_USER _user;
@@ -223,6 +221,12 @@ namespace THUEPHONG
             frm._idPhong = int.Parse(item.Value.ToString());
             frm._them = false;
             frm.ShowDialog();
+        }
+
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            frmBaoCao frmbc = new frmBaoCao(_user);
+            frmbc.ShowDialog();
         }
     }
 }

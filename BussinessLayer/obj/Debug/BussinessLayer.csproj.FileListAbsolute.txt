@@ -13,6 +13,36 @@ C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\BussinessLayer\obj\Debug\Bussi
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\BussinessLayer\obj\Debug\BussinessLayer.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\BussinessLayer\obj\Debug\BussinessLayer.dll
 C:\Users\Admin\Documents\GitHub\QuanLyKhachSan-C-\BussinessLayer\obj\Debug\BussinessLayer.pdb
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\BussinessLayer.dll.config
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\BussinessLayer.dll
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\BussinessLayer.pdb
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\DataLayer.dll
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\EntityFramework.dll
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\DataLayer.pdb
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\DataLayer.dll.config
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\EntityFramework.xml
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\obj\Debug\BussinessLayer.csproj.AssemblyReference.cache
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\obj\Debug\BussinessLayer.csproj.CoreCompileInputs.cache
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\obj\Debug\BussinessLayer.csproj.CopyComplete
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\obj\Debug\BussinessLayer.dll
+D:\Bao cao chuyen de khoa(CNTT)\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\obj\Debug\BussinessLayer.pdb
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\BussinessLayer.dll.config
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\BussinessLayer.dll
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\BussinessLayer.pdb
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\DataLayer.dll
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\DataLayer.dll.config
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\obj\Debug\BussinessLayer.csprojAssemblyReference.cache
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\obj\Debug\BussinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\obj\Debug\BussinessLayer.csproj.CopyComplete
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\obj\Debug\BussinessLayer.dll
+C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\BussinessLayer\obj\Debug\BussinessLayer.pdb
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\BussinessLayer.dll.config
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\BussinessLayer.dll
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\BussinessLayer\bin\Debug\BussinessLayer.pdb

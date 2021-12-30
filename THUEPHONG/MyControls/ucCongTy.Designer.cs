@@ -40,27 +40,32 @@ namespace THUEPHONG.MyControls
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(432, 55);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(576, 68);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Công Ty/Chi Nhánh";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cboCongTy
             // 
             this.cboCongTy.FormattingEnabled = true;
-            this.cboCongTy.Location = new System.Drawing.Point(6, 25);
+            this.cboCongTy.Location = new System.Drawing.Point(8, 31);
+            this.cboCongTy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboCongTy.Name = "cboCongTy";
-            this.cboCongTy.Size = new System.Drawing.Size(389, 24);
+            this.cboCongTy.Size = new System.Drawing.Size(517, 28);
             this.cboCongTy.TabIndex = 0;
             // 
             // ucCongTy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ucCongTy";
-            this.Size = new System.Drawing.Size(432, 71);
+            this.Size = new System.Drawing.Size(576, 87);
             this.Load += new System.EventHandler(this.ucCongTy_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

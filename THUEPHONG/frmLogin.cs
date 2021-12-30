@@ -62,5 +62,25 @@ namespace THUEPHONG
         {
             Application.Exit();
         }
+
+        private void nhomatkhau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtUsername.Text != "" && txtPassword.Text != "")
+            {
+                if (nhomatkhau.Checked == true)
+                {
+                    string tk = txtUsername.Text;
+                    string mk = txtPassword.Text;
+
+                  
+                    Properties.Settings.Default.Save();
+
+                }
+                else
+                {
+                    Properties.Settings.Default.Reset();
+                }
+            }
+        }
     }
 }

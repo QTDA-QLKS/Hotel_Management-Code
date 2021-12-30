@@ -20,10 +20,15 @@ namespace THUEPHONG.MyControls
 
         private void ucCongTy_Load(object sender, EventArgs e)
         {
-            CONGTY _conty = new CONGTY();
+            CONGTY _congty = new CONGTY();
             cboCongTy.DisplayMember = "TENCY";
             cboCongTy.ValueMember = "MACTY";
             cboCongTy.SelectedValue = myFunctions._macty;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

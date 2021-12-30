@@ -149,7 +149,7 @@
       <PropertyRef Name="IDTB" />
     </Key>
     <Property Name="IDPHONG" Type="Int32" Nullable="false" />
-    <Property Name="IDTB" Type="String" Nullable="false" />
+    <Property Name="IDTB" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="SOLUONG" Type="Int32" />
     <NavigationProperty Name="tb_Phong" Relationship="Self.FK_tb_Phong_ThietBi_tb_Phong" FromRole="tb_Phong_ThietBi" ToRole="tb_Phong" />
     <NavigationProperty Name="tb_ThietBi" Relationship="Self.FK_tb_Phong_ThietBi_tb_ThietBi" FromRole="tb_Phong_ThietBi" ToRole="tb_ThietBi" />
@@ -245,7 +245,7 @@
     <Key>
       <PropertyRef Name="IDTB" />
     </Key>
-    <Property Name="IDTB" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDTB" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="TENTHIETBI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="DONGIA" Type="Double" />
     <Property Name="DISABLED" Type="Boolean" />

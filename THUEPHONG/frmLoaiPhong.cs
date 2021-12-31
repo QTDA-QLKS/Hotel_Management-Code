@@ -76,7 +76,11 @@ namespace THUEPHONG
         private void btnSua_Click(object sender, EventArgs e)
         {
             _them = false;
-            _enabled(true);
+            txtTenLoaiPhong.Enabled = true;
+            txtSoNguoi.Enabled = true;
+            txtSoGiuong.Enabled = true;
+            txtDonGia.Enabled = true;
+            chDisabled.Visible = true;
             showHideControl(false);
         }
 
@@ -103,7 +107,7 @@ namespace THUEPHONG
             }
             else
             {
-                tb_LoaiPhong sp = new tb_LoaiPhong();
+                tb_LoaiPhong sp = _loaiphong.getItem(_idsp);
                 sp.TENLOAIPHONG = txtTenLoaiPhong.Text;
                 sp.SOGIUONG = int.Parse(txtSoGiuong.Text);
                 sp.SONGUOITOIDA = int.Parse(txtSoNguoi.Text);
@@ -133,11 +137,23 @@ namespace THUEPHONG
         {
             if (gvDanhSach.RowCount > 0)
             {
+                _idsp = int.Parse(gvDanhSach.GetFocusedRowCellValue("IDLOAIPHONG").ToString());
+                //txtIDSP.Text = gvDanhSach.GetFocusedRowCellValue("IDSP").ToString();
                 txtTenLoaiPhong.Text = gvDanhSach.GetFocusedRowCellValue("TENLOAIPHONG").ToString();
                 txtSoNguoi.Text = gvDanhSach.GetFocusedRowCellValue("SONGUOITOIDA").ToString();
                 txtSoGiuong.Text = gvDanhSach.GetFocusedRowCellValue("SOGIUONG").ToString();
                 txtDonGia.Text = gvDanhSach.GetFocusedRowCellValue("DONGIA").ToString();
                 chDisabled.Checked = bool.Parse(gvDanhSach.GetFocusedRowCellValue("DISABLED").ToString());
+            }
+        }
+
+        private void gvDanhSach_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.Name == "DISABLED" && bool.Parse(e.CellValue.ToString()) == true)
+            {
+                Image img = Properties.Resources._132192_delete_icon;
+                e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
+                e.Handled = true;
             }
         }
     }

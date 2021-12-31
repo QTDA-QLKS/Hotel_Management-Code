@@ -32,3 +32,4 @@ D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csproj.Co
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.dll
 D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.pdb
+D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache

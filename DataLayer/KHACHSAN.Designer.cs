@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\phand\Downloads\Đồ án .Net-20211230T105959Z-001\Đồ án .Net\QuanLyKhachSan-C-master\DataLayer\KHACHSAN.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Hưng Phan\Project C#\QUANLITHUEPHONG\DataLayer\KHACHSAN.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

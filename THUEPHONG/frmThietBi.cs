@@ -50,19 +50,20 @@ namespace THUEPHONG
         {
             if (_them)
             {
-                tb_ThietBi sp = new tb_ThietBi();
-                sp.TENTHIETBI = txtTenSP.Text;
-                sp.DISABLED = chDisabled.Checked;
-                sp.DONGIA = int.Parse(txtDonGia.Text);
-                _thietbi.add(sp);
+                tb_ThietBi tp = new tb_ThietBi();
+                //sp.IDTB = txtIDTB.Text;
+                tp.TENTHIETBI = txtTenSP.Text;
+                tp.DISABLED = chDisabled.Checked;
+                tp.DONGIA = int.Parse(txtDonGia.Text);
+                _thietbi.add(tp);
             }
             else
             {
-                tb_ThietBi sp = new tb_ThietBi();
-                sp.TENTHIETBI = txtTenSP.Text;
-                sp.DISABLED = chDisabled.Checked;
-                sp.DONGIA = int.Parse(txtDonGia.Text);
-                _thietbi.update(sp);
+                tb_ThietBi tp = _thietbi.getItem(_idtp);
+                tp.TENTHIETBI = txtTenSP.Text;
+                tp.DISABLED = chDisabled.Checked;
+                tp.DONGIA = int.Parse(txtDonGia.Text);
+                _thietbi.add(tp);
             }
             _them = false;
             loadData();
@@ -130,6 +131,8 @@ namespace THUEPHONG
         {
             if (gvDanhSach.RowCount > 0)
             {
+                _idtp = gvDanhSach.GetFocusedRowCellValue("IDTB").ToString();
+                //txtIDTB.Text = gvDanhSach.GetFocusedRowCellValue("IDTB").ToString();
                 txtTenSP.Text = gvDanhSach.GetFocusedRowCellValue("TENTHIETBI").ToString();
                 txtDonGia.Text = gvDanhSach.GetFocusedRowCellValue("DONGIA").ToString();
                 chDisabled.Checked = bool.Parse(gvDanhSach.GetFocusedRowCellValue("DISABLED").ToString());

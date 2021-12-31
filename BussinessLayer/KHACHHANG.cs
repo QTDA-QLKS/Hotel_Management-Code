@@ -58,6 +58,7 @@ namespace BussinessLayer
         public void delete(string idkh)
         {
             tb_KhachHang _kh = db.tb_KhachHang.FirstOrDefault(x => x.IDKH == idkh);
+            _kh.DISABLED = true;
             try
             {
                 db.SaveChanges();

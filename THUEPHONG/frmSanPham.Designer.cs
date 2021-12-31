@@ -39,9 +39,12 @@ namespace THUEPHONG
             this.gcDanhSach = new DevExpress.XtraGrid.GridControl();
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.DISABLED = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDSP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENSP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtIDSP = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.chDisabled = new System.Windows.Forms.CheckBox();
@@ -65,7 +68,7 @@ namespace THUEPHONG
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(714, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(612, 42);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -74,7 +77,7 @@ namespace THUEPHONG
             this.btnThem.Image = global::THUEPHONG.Properties.Resources.add;
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(50, 44);
+            this.btnThem.Size = new System.Drawing.Size(41, 39);
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -84,7 +87,7 @@ namespace THUEPHONG
             this.btnSua.Image = global::THUEPHONG.Properties.Resources.edit;
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(38, 44);
+            this.btnSua.Size = new System.Drawing.Size(30, 39);
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -94,7 +97,7 @@ namespace THUEPHONG
             this.btnXoa.Image = global::THUEPHONG.Properties.Resources._46839_trash_icon;
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(39, 44);
+            this.btnXoa.Size = new System.Drawing.Size(31, 39);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -104,7 +107,7 @@ namespace THUEPHONG
             this.btnLuu.Image = global::THUEPHONG.Properties.Resources._285657_floppy_guardar_save_icon;
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(37, 44);
+            this.btnLuu.Size = new System.Drawing.Size(31, 39);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -114,7 +117,7 @@ namespace THUEPHONG
             this.btnBoQua.Image = global::THUEPHONG.Properties.Resources._32739_refresh_icon;
             this.btnBoQua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBoQua.Name = "btnBoQua";
-            this.btnBoQua.Size = new System.Drawing.Size(60, 44);
+            this.btnBoQua.Size = new System.Drawing.Size(48, 39);
             this.btnBoQua.Text = "Bỏ qua";
             this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
@@ -124,7 +127,7 @@ namespace THUEPHONG
             this.btnThoat.Image = global::THUEPHONG.Properties.Resources.log_out;
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(51, 44);
+            this.btnThoat.Size = new System.Drawing.Size(41, 39);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -132,10 +135,12 @@ namespace THUEPHONG
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDanhSach.Location = new System.Drawing.Point(0, 47);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcDanhSach.Location = new System.Drawing.Point(0, 42);
             this.gcDanhSach.MainView = this.gvDanhSach;
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(714, 200);
+            this.gcDanhSach.Size = new System.Drawing.Size(612, 162);
             this.gcDanhSach.TabIndex = 3;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -144,113 +149,145 @@ namespace THUEPHONG
             // 
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.DISABLED,
+            this.IDSP,
             this.TENSP,
             this.DONGIA});
+            this.gvDanhSach.DetailHeight = 284;
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
             this.gvDanhSach.OptionsView.ShowGroupPanel = false;
+            this.gvDanhSach.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvDanhSach_CustomDrawCell);
             this.gvDanhSach.Click += new System.EventHandler(this.gvDanhSach_Click);
             // 
             // DISABLED
             // 
             this.DISABLED.Caption = "DIS";
             this.DISABLED.FieldName = "DISABLED";
-            this.DISABLED.MinWidth = 25;
+            this.DISABLED.MinWidth = 21;
             this.DISABLED.Name = "DISABLED";
             this.DISABLED.Visible = true;
             this.DISABLED.VisibleIndex = 0;
-            this.DISABLED.Width = 37;
+            this.DISABLED.Width = 32;
+            // 
+            // IDSP
+            // 
+            this.IDSP.Caption = "IDSP";
+            this.IDSP.FieldName = "IDSP";
+            this.IDSP.Name = "IDSP";
+            this.IDSP.Visible = true;
+            this.IDSP.VisibleIndex = 1;
+            this.IDSP.Width = 64;
             // 
             // TENSP
             // 
             this.TENSP.Caption = "TÊN SP";
             this.TENSP.FieldName = "TENSP";
-            this.TENSP.MinWidth = 25;
+            this.TENSP.MinWidth = 21;
             this.TENSP.Name = "TENSP";
             this.TENSP.Visible = true;
-            this.TENSP.VisibleIndex = 1;
-            this.TENSP.Width = 100;
+            this.TENSP.VisibleIndex = 2;
+            this.TENSP.Width = 86;
             // 
             // DONGIA
             // 
             this.DONGIA.Caption = "ĐƠN GIÁ";
             this.DONGIA.FieldName = "DONGIA";
-            this.DONGIA.MinWidth = 25;
+            this.DONGIA.MinWidth = 21;
             this.DONGIA.Name = "DONGIA";
             this.DONGIA.Visible = true;
-            this.DONGIA.VisibleIndex = 2;
-            this.DONGIA.Width = 80;
+            this.DONGIA.VisibleIndex = 3;
+            this.DONGIA.Width = 69;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtIDSP);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtTenSP);
             this.groupBox1.Controls.Add(this.chDisabled);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 247);
+            this.groupBox1.Location = new System.Drawing.Point(0, 204);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(714, 120);
+            this.groupBox1.Size = new System.Drawing.Size(612, 94);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(278, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "IDSP";
+            // 
+            // txtIDSP
+            // 
+            this.txtIDSP.Location = new System.Drawing.Point(345, 28);
+            this.txtIDSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIDSP.Name = "txtIDSP";
+            this.txtIDSP.Size = new System.Drawing.Size(161, 21);
+            this.txtIDSP.TabIndex = 13;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 39);
+            this.label6.Location = new System.Drawing.Point(25, 32);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 17);
+            this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Tên SP";
             // 
             // txtTenSP
             // 
-            this.txtTenSP.Location = new System.Drawing.Point(107, 34);
+            this.txtTenSP.Location = new System.Drawing.Point(92, 28);
             this.txtTenSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(187, 23);
+            this.txtTenSP.Size = new System.Drawing.Size(161, 21);
             this.txtTenSP.TabIndex = 11;
             // 
             // chDisabled
             // 
             this.chDisabled.AutoSize = true;
-            this.chDisabled.Location = new System.Drawing.Point(389, 50);
+            this.chDisabled.Location = new System.Drawing.Point(399, 61);
             this.chDisabled.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chDisabled.Name = "chDisabled";
-            this.chDisabled.Size = new System.Drawing.Size(80, 21);
+            this.chDisabled.Size = new System.Drawing.Size(66, 17);
             this.chDisabled.TabIndex = 10;
             this.chDisabled.Text = "Disabled";
             this.chDisabled.UseVisualStyleBackColor = true;
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(107, 80);
+            this.txtDonGia.Location = new System.Drawing.Point(92, 65);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(212, 23);
+            this.txtDonGia.Size = new System.Drawing.Size(182, 21);
             this.txtDonGia.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 80);
+            this.label1.Location = new System.Drawing.Point(25, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đơn Giá";
             // 
             // frmSanPham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 367);
+            this.ClientSize = new System.Drawing.Size(612, 298);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sản Phẩm -Dịch Vụ";
@@ -286,5 +323,8 @@ namespace THUEPHONG
         private System.Windows.Forms.CheckBox chDisabled;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.Columns.GridColumn IDSP;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtIDSP;
     }
 }

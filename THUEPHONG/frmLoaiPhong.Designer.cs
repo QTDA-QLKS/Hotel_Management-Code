@@ -71,7 +71,7 @@ namespace THUEPHONG
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(830, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(711, 42);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -80,7 +80,7 @@ namespace THUEPHONG
             this.btnThem.Image = global::THUEPHONG.Properties.Resources.add;
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(50, 44);
+            this.btnThem.Size = new System.Drawing.Size(41, 39);
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -90,7 +90,7 @@ namespace THUEPHONG
             this.btnSua.Image = global::THUEPHONG.Properties.Resources.edit;
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(38, 44);
+            this.btnSua.Size = new System.Drawing.Size(30, 39);
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -100,7 +100,7 @@ namespace THUEPHONG
             this.btnXoa.Image = global::THUEPHONG.Properties.Resources._46839_trash_icon;
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(39, 44);
+            this.btnXoa.Size = new System.Drawing.Size(31, 39);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -110,7 +110,7 @@ namespace THUEPHONG
             this.btnLuu.Image = global::THUEPHONG.Properties.Resources._285657_floppy_guardar_save_icon;
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(37, 44);
+            this.btnLuu.Size = new System.Drawing.Size(31, 39);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -120,7 +120,7 @@ namespace THUEPHONG
             this.btnBoQua.Image = global::THUEPHONG.Properties.Resources._32739_refresh_icon;
             this.btnBoQua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBoQua.Name = "btnBoQua";
-            this.btnBoQua.Size = new System.Drawing.Size(60, 44);
+            this.btnBoQua.Size = new System.Drawing.Size(48, 39);
             this.btnBoQua.Text = "Bỏ qua";
             this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
@@ -130,7 +130,7 @@ namespace THUEPHONG
             this.btnThoat.Image = global::THUEPHONG.Properties.Resources.log_out;
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(51, 44);
+            this.btnThoat.Size = new System.Drawing.Size(41, 39);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -138,10 +138,12 @@ namespace THUEPHONG
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDanhSach.Location = new System.Drawing.Point(0, 47);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcDanhSach.Location = new System.Drawing.Point(0, 42);
             this.gcDanhSach.MainView = this.gvDanhSach;
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(830, 200);
+            this.gcDanhSach.Size = new System.Drawing.Size(711, 162);
             this.gcDanhSach.TabIndex = 2;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -154,60 +156,62 @@ namespace THUEPHONG
             this.DONGIA,
             this.SONGUOITOIDA,
             this.SOGIUONG});
+            this.gvDanhSach.DetailHeight = 284;
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
             this.gvDanhSach.OptionsView.ShowGroupPanel = false;
+            this.gvDanhSach.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvDanhSach_CustomDrawCell);
             this.gvDanhSach.Click += new System.EventHandler(this.gvDanhSach_Click);
             // 
             // DISABLED
             // 
             this.DISABLED.Caption = "DIS";
             this.DISABLED.FieldName = "DISABLED";
-            this.DISABLED.MinWidth = 25;
+            this.DISABLED.MinWidth = 21;
             this.DISABLED.Name = "DISABLED";
             this.DISABLED.Visible = true;
             this.DISABLED.VisibleIndex = 0;
-            this.DISABLED.Width = 36;
+            this.DISABLED.Width = 31;
             // 
             // TENLOAIPHONG
             // 
             this.TENLOAIPHONG.Caption = "TÊN LOẠI PHÒNG";
             this.TENLOAIPHONG.FieldName = "TENLOAIPHONG";
-            this.TENLOAIPHONG.MinWidth = 25;
+            this.TENLOAIPHONG.MinWidth = 21;
             this.TENLOAIPHONG.Name = "TENLOAIPHONG";
             this.TENLOAIPHONG.Visible = true;
             this.TENLOAIPHONG.VisibleIndex = 1;
-            this.TENLOAIPHONG.Width = 49;
+            this.TENLOAIPHONG.Width = 42;
             // 
             // DONGIA
             // 
             this.DONGIA.Caption = "ĐƠN GIÁ";
             this.DONGIA.FieldName = "DONGIA";
-            this.DONGIA.MinWidth = 25;
+            this.DONGIA.MinWidth = 21;
             this.DONGIA.Name = "DONGIA";
             this.DONGIA.Visible = true;
             this.DONGIA.VisibleIndex = 2;
-            this.DONGIA.Width = 98;
+            this.DONGIA.Width = 84;
             // 
             // SONGUOITOIDA
             // 
             this.SONGUOITOIDA.Caption = "SỐ NGƯỜI";
             this.SONGUOITOIDA.FieldName = "SONGUOITOIDA";
-            this.SONGUOITOIDA.MinWidth = 25;
+            this.SONGUOITOIDA.MinWidth = 21;
             this.SONGUOITOIDA.Name = "SONGUOITOIDA";
             this.SONGUOITOIDA.Visible = true;
             this.SONGUOITOIDA.VisibleIndex = 3;
-            this.SONGUOITOIDA.Width = 172;
+            this.SONGUOITOIDA.Width = 147;
             // 
             // SOGIUONG
             // 
             this.SOGIUONG.Caption = "SỐ GIƯỜNG";
             this.SOGIUONG.FieldName = "SOGIUONG";
-            this.SOGIUONG.MinWidth = 25;
+            this.SOGIUONG.MinWidth = 21;
             this.SOGIUONG.Name = "SOGIUONG";
             this.SOGIUONG.Visible = true;
             this.SOGIUONG.VisibleIndex = 4;
-            this.SOGIUONG.Width = 98;
+            this.SOGIUONG.Width = 84;
             // 
             // groupBox1
             // 
@@ -221,9 +225,11 @@ namespace THUEPHONG
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 247);
+            this.groupBox1.Location = new System.Drawing.Point(0, 204);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(830, 170);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(711, 135);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -231,25 +237,27 @@ namespace THUEPHONG
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 50);
+            this.label6.Location = new System.Drawing.Point(11, 41);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 17);
+            this.label6.Size = new System.Drawing.Size(80, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Tên Loại Phòng";
             // 
             // txtTenLoaiPhong
             // 
-            this.txtTenLoaiPhong.Location = new System.Drawing.Point(127, 47);
+            this.txtTenLoaiPhong.Location = new System.Drawing.Point(109, 38);
+            this.txtTenLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenLoaiPhong.Name = "txtTenLoaiPhong";
-            this.txtTenLoaiPhong.Size = new System.Drawing.Size(187, 23);
+            this.txtTenLoaiPhong.Size = new System.Drawing.Size(161, 21);
             this.txtTenLoaiPhong.TabIndex = 11;
             // 
             // chDisabled
             // 
             this.chDisabled.AutoSize = true;
-            this.chDisabled.Location = new System.Drawing.Point(667, 46);
+            this.chDisabled.Location = new System.Drawing.Point(572, 37);
+            this.chDisabled.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chDisabled.Name = "chDisabled";
-            this.chDisabled.Size = new System.Drawing.Size(80, 21);
+            this.chDisabled.Size = new System.Drawing.Size(66, 17);
             this.chDisabled.TabIndex = 10;
             this.chDisabled.Text = "Disabled";
             this.chDisabled.UseVisualStyleBackColor = true;
@@ -257,59 +265,63 @@ namespace THUEPHONG
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(361, 94);
+            this.label5.Location = new System.Drawing.Point(309, 76);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 17);
+            this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Số Giuong";
             // 
             // txtSoGiuong
             // 
-            this.txtSoGiuong.Location = new System.Drawing.Point(435, 94);
+            this.txtSoGiuong.Location = new System.Drawing.Point(373, 76);
+            this.txtSoGiuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSoGiuong.Name = "txtSoGiuong";
-            this.txtSoGiuong.Size = new System.Drawing.Size(188, 23);
+            this.txtSoGiuong.Size = new System.Drawing.Size(162, 21);
             this.txtSoGiuong.TabIndex = 8;
             // 
             // txtSoNguoi
             // 
-            this.txtSoNguoi.Location = new System.Drawing.Point(127, 94);
+            this.txtSoNguoi.Location = new System.Drawing.Point(109, 76);
+            this.txtSoNguoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSoNguoi.Name = "txtSoNguoi";
-            this.txtSoNguoi.Size = new System.Drawing.Size(187, 23);
+            this.txtSoNguoi.Size = new System.Drawing.Size(161, 21);
             this.txtSoNguoi.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(361, 50);
+            this.label3.Location = new System.Drawing.Point(309, 41);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
+            this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Đơn Gía";
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(435, 44);
+            this.txtDonGia.Location = new System.Drawing.Point(373, 36);
+            this.txtDonGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(188, 23);
+            this.txtDonGia.Size = new System.Drawing.Size(162, 21);
             this.txtDonGia.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 97);
+            this.label2.Location = new System.Drawing.Point(11, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Số Người";
             // 
             // frmLoaiPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 417);
+            this.ClientSize = new System.Drawing.Size(711, 339);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLoaiPhong";
             this.Text = "Danh Mục Loại phòng";
             this.Load += new System.EventHandler(this.frmLoaiPhong_Load);

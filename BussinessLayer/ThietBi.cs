@@ -21,11 +21,12 @@ namespace BussinessLayer
         {
             return db.tb_ThietBi.ToList();
         }
-        public void add(tb_ThietBi sp)
+
+        public void add(tb_ThietBi tp)
         {
             try
             {
-                db.tb_ThietBi.Add(sp);
+                db.tb_ThietBi.Add(tp);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -33,9 +34,11 @@ namespace BussinessLayer
                 throw new Exception("Có lỗi" + ex.Message);
             }
         }
+
         public void update(tb_ThietBi tp)
         {
-            tb_ThietBi _tp = db.tb_ThietBi.FirstOrDefault(x => x.TENTHIETBI == tp.TENTHIETBI);
+            tb_ThietBi _tp = db.tb_ThietBi.FirstOrDefault(x => x.IDTB == tp.IDTB);
+            _tp.TENTHIETBI = tp.TENTHIETBI;
             _tp.DONGIA = tp.DONGIA;
             _tp.DISABLED = tp.DISABLED;
             try
@@ -51,8 +54,8 @@ namespace BussinessLayer
         }
         public void delete(string idtp)
         {
-            tb_ThietBi cty = db.tb_ThietBi.FirstOrDefault(x => x.IDTB == idtp);
-            cty.DISABLED = true;
+            tb_ThietBi tb = db.tb_ThietBi.FirstOrDefault(x => x.IDTB == idtp);
+            tb.DISABLED = true;
             try
             {
                 db.SaveChanges();

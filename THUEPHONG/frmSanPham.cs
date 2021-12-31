@@ -27,7 +27,7 @@ namespace THUEPHONG
         {
             _sanpham = new SANPHAM();
             loadData();
-            txtTenSP.Enabled = false;
+            txtIDSP.Enabled = false;
             _enabled(true);
             showHideControl(true);
         }
@@ -43,6 +43,7 @@ namespace THUEPHONG
 
         void _enabled(bool t)
         {
+            txtIDSP.Enabled = t;
             txtTenSP.Enabled = t;
             txtDonGia.Enabled = t;
             chDisabled.Visible = !t;
@@ -50,6 +51,7 @@ namespace THUEPHONG
 
         void _reset()
         {
+            txtIDSP.Text = "";
             txtTenSP.Text = "";
             txtDonGia.Text = "0.1";
             chDisabled.Checked = false;
@@ -73,7 +75,10 @@ namespace THUEPHONG
         private void btnSua_Click(object sender, EventArgs e)
         {
             _them = false;
-            _enabled(true);
+            txtIDSP.Enabled = false;
+            txtTenSP.Enabled = true;
+            txtDonGia.Enabled = true;
+            chDisabled.Visible = true;
             showHideControl(false);
 
         }
@@ -93,6 +98,7 @@ namespace THUEPHONG
             if (_them)
             {
                 tb_SanPham sp = new tb_SanPham();
+                sp.IDSP = int.Parse(txtIDSP.Text);
                 sp.TENSP = txtTenSP.Text;
                 sp.DISABLED = chDisabled.Checked;
                 sp.DONGIA = int.Parse(txtDonGia.Text);
@@ -100,7 +106,7 @@ namespace THUEPHONG
             }
             else
             {
-                tb_SanPham sp = new tb_SanPham();
+                tb_SanPham sp = _sanpham.getItem(_idsp);
                 sp.TENSP = txtTenSP.Text;
                 sp.DISABLED = chDisabled.Checked;
                 sp.DONGIA = int.Parse(txtDonGia.Text);
@@ -130,9 +136,21 @@ namespace THUEPHONG
         {
             if (gvDanhSach.RowCount > 0)
             {
+                _idsp = int.Parse(gvDanhSach.GetFocusedRowCellValue("IDSP").ToString());
+                txtIDSP.Text = gvDanhSach.GetFocusedRowCellValue("IDSP").ToString();
                 txtTenSP.Text = gvDanhSach.GetFocusedRowCellValue("TENSP").ToString();
                 txtDonGia.Text = gvDanhSach.GetFocusedRowCellValue("DONGIA").ToString();
                 chDisabled.Checked = bool.Parse(gvDanhSach.GetFocusedRowCellValue("DISABLED").ToString());
+            }
+        }
+
+        private void gvDanhSach_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.Name == "DISABLED" && bool.Parse(e.CellValue.ToString()) == true)
+            {
+                Image img = Properties.Resources._132192_delete_icon;
+                e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
+                e.Handled = true;
             }
         }
     }

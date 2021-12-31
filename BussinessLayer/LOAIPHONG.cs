@@ -35,7 +35,8 @@ namespace BussinessLayer
         }
         public void update(tb_LoaiPhong sp)
         {
-            tb_LoaiPhong _sp = db.tb_LoaiPhong.FirstOrDefault(x => x.TENLOAIPHONG == sp.TENLOAIPHONG);
+            tb_LoaiPhong _sp = db.tb_LoaiPhong.FirstOrDefault(x => x.IDLOAIPHONG == sp.IDLOAIPHONG);
+            _sp.TENLOAIPHONG = sp.TENLOAIPHONG;
             _sp.DONGIA = sp.DONGIA;
             _sp.SONGUOITOIDA = sp.SONGUOITOIDA;
             _sp.SOGIUONG = sp.SOGIUONG;

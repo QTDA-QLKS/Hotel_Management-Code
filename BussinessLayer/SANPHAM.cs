@@ -35,7 +35,8 @@ namespace BussinessLayer
         }
         public void update(tb_SanPham sp)
         {
-            tb_SanPham _sp= db.tb_SanPham.FirstOrDefault(x => x.TENSP == sp.TENSP);
+            tb_SanPham _sp= db.tb_SanPham.FirstOrDefault(x => x.IDSP == sp.IDSP);
+            _sp.TENSP = sp.TENSP;
             _sp.DONGIA = sp.DONGIA;
             _sp.DISABLED = sp.DISABLED;
             try
@@ -53,8 +54,8 @@ namespace BussinessLayer
 
         public void delete(int idsp)
         {
-            tb_SanPham cty = db.tb_SanPham.FirstOrDefault(x => x.IDSP == idsp);
-            cty.DISABLED = true;
+            tb_SanPham sp = db.tb_SanPham.FirstOrDefault(x => x.IDSP == idsp);
+            sp.DISABLED = true;
             try
             {
                 db.SaveChanges();

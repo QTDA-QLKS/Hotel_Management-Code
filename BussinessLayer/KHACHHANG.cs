@@ -1,5 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DataLayer;
+using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,9 +35,10 @@ namespace BussinessLayer
                 db.tb_KhachHang.Add(kh);
                 db.SaveChanges();
             }
-            catch (Exception ex)
+            catch (DbEntityValidationException ex)
             {
-                throw new Exception("Có lỗi" + ex.Message);
+                string errorMessages = string.Join("; ", ex.EntityValidationErrors.SelectMany(x => x.ValidationErrors).Select(x => x.PropertyName + ": " + x.ErrorMessage));
+                throw new DbEntityValidationException(errorMessages);
             }
         }
         public void update(tb_KhachHang kh)
